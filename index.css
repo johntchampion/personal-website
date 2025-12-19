@@ -103,10 +103,16 @@
     width: 10px;
     height: 1.2em;
     background: var(--color-secondary);
-    animation: blink 1s infinite;
     vertical-align: baseline;
     margin-left: 0;
     transform: translateY(0.2em);
+    opacity: 0.3;
+    transition: opacity var(--transition-base);
+}
+
+.terminal-window:focus .terminal-cursor {
+    opacity: 1;
+    animation: blink 1s infinite;
 }
 
 @keyframes blink {
