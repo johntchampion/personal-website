@@ -350,6 +350,20 @@ blockquote {
     box-shadow: var(--shadow-md);
 }
 
+.btn-outline-light {
+    background-color: transparent;
+    color: white;
+    border: var(--border-width-thick) solid rgba(255, 255, 255, 0.5);
+}
+
+.btn-outline-light:hover:not(:disabled) {
+    background-color: white;
+    color: var(--color-primary);
+    border-color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+}
+
 .btn-ghost {
     background-color: transparent;
     color: var(--color-secondary);

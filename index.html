@@ -38,6 +38,19 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-text">
+                    <h1>John Champion</h1>
+                    <p class="hero-tagline">Software Developer, Private Pilot, and lifelong learner</p>
+                    <p class="hero-description">
+                        Building thoughtful, well-crafted software that solves real problems.
+                        When not coding: flying, learning languages, or hiking remote trails.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#work" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline-light">Let's Connect</a>
+                    </div>
+                </div>
+
                 <div class="terminal-window animate-slide-up">
                     <div class="terminal-header">
                         <span class="terminal-dot dot-red"></span>
@@ -72,10 +85,7 @@
                         <span class="terminal-command">echo $PASSION</span>
                     </div>
                     <div class="terminal-line">
-                        <span class="terminal-output">Building thoughtful, well-crafted software that solves real problems.</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-output">When not coding: flying, learning languages, or hiking remote trails.</span>
+                        <span class="terminal-output">Building thoughtful software.</span>
                     </div>
                     <div class="terminal-line terminal-input-line">
                         <span class="terminal-prompt">$</span>
@@ -436,6 +446,8 @@
 
             if (trimmedCommand === 'whoami') {
                 responseLine.innerHTML = '<span class="terminal-output">John Champion</span>';
+            } else if (trimmedCommand === 'faith') {
+                responseLine.innerHTML = '<span class="terminal-output">For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.</span>';
             } else if (trimmedCommand !== '') {
                 responseLine.innerHTML = `<span class="terminal-output">bash: command not found: ${trimmedCommand}</span>`;
             }
