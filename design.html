@@ -592,8 +592,90 @@ function isPrime(n) {
             <h2 class="design-section-title">Badges & Tags</h2>
             <p class="design-section-subtitle">Small labels for status and categorization</p>
 
+            <!-- Understanding the Difference -->
+            <div class="card" style="background: var(--color-neutral-50); padding: var(--space-8); margin-bottom: var(--space-12);">
+                <h3 style="margin-bottom: var(--space-6);">Badges vs Tags: When to Use Each</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8);">
+                    <!-- Badges Column -->
+                    <div>
+                        <h4 style="color: var(--color-secondary); margin-bottom: var(--space-4);">Badges</h4>
+                        <p style="margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                            <strong>Purpose:</strong> Celebrate achievements, status, or milestones
+                        </p>
+                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-4);">
+                            <p style="margin: 0; font-size: var(--text-sm);"><strong>Answer the question:</strong></p>
+                            <p style="margin: var(--space-2) 0 0 0; font-style: italic; color: var(--color-text-secondary);">
+                                "What have you achieved or earned?"
+                            </p>
+                        </div>
+                        <p style="margin-bottom: var(--space-3); font-size: var(--text-sm);"><strong>Characteristics:</strong></p>
+                        <ul style="margin: 0 0 var(--space-4) var(--space-6); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                            <li>Convey accomplishment or special designation</li>
+                            <li>Often quantifiable or measurable</li>
+                            <li>Emotional tone: Pride, accomplishment</li>
+                            <li>More visually prominent/colorful</li>
+                        </ul>
+                        <p style="margin-bottom: var(--space-2); font-size: var(--text-sm);"><strong>Examples:</strong></p>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                            <span class="badge badge-secondary">140+ Hours</span>
+                            <span class="badge badge-neutral">PPL Certified</span>
+                            <span class="badge badge-success">Coast to Coast</span>
+                            <span class="badge badge-primary">High Performance</span>
+                        </div>
+                    </div>
+
+                    <!-- Tags Column -->
+                    <div>
+                        <h4 style="color: var(--color-accent); margin-bottom: var(--space-4);">Tags</h4>
+                        <p style="margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                            <strong>Purpose:</strong> Categorize, label, or organize information
+                        </p>
+                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-4);">
+                            <p style="margin: 0; font-size: var(--text-sm);"><strong>Answer the question:</strong></p>
+                            <p style="margin: var(--space-2) 0 0 0; font-style: italic; color: var(--color-text-secondary);">
+                                "What category or type is this?"
+                            </p>
+                        </div>
+                        <p style="margin-bottom: var(--space-3); font-size: var(--text-sm);"><strong>Characteristics:</strong></p>
+                        <ul style="margin: 0 0 var(--space-4) var(--space-6); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                            <li>Factual classification or grouping</li>
+                            <li>Help with filtering or searching</li>
+                            <li>Emotional tone: Neutral, informational</li>
+                            <li>More subtle, less prominent styling</li>
+                        </ul>
+                        <p style="margin-bottom: var(--space-2); font-size: var(--text-sm);"><strong>Examples:</strong></p>
+                        <div style="display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start;">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Usage Guidelines -->
+                <div style="margin-top: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--color-neutral-300);">
+                    <h4 style="margin-bottom: var(--space-4);">Usage Guidelines</h4>
+                    <div style="display: grid; gap: var(--space-4);">
+                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); border-left: 4px solid var(--color-success);">
+                            <strong style="color: var(--color-success);">✓ Use Badges For:</strong>
+                            <p style="margin: var(--space-2) 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">
+                                Aviation hours, certifications, hiking achievements, proficiency levels, milestone numbers
+                            </p>
+                        </div>
+                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); border-left: 4px solid var(--color-accent);">
+                            <strong style="color: var(--color-accent);">✓ Use Tags For:</strong>
+                            <p style="margin: var(--space-2) 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">
+                                Tech stacks, programming languages, project categories, skills, frameworks, tools
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual Examples -->
             <div class="component-showcase">
-                <h3 class="component-title">Badges</h3>
+                <h3 class="component-title">Badges (Achievements & Status)</h3>
                 <div class="component-variants">
                     <span class="badge badge-primary">Primary</span>
                     <span class="badge badge-secondary">Secondary</span>
@@ -603,7 +685,7 @@ function isPrime(n) {
             </div>
 
             <div class="component-showcase">
-                <h3 class="component-title">Tech Stack Tags</h3>
+                <h3 class="component-title">Tags (Categories & Labels)</h3>
                 <div class="component-demo">
                     <span class="tag">JavaScript</span>
                     <span class="tag">TypeScript</span>
