@@ -400,7 +400,14 @@
         const terminalWindow = document.querySelector('.terminal-window');
         const terminalInputLine = document.querySelector('.terminal-input-line');
         const terminalUserInput = document.querySelector('.terminal-user-input');
+        const terminalCursor = document.querySelector('.terminal-cursor');
         let userInputText = '';
+
+        // Function to update cursor position
+        function updateCursorPosition() {
+            const inputWidth = terminalUserInput.offsetWidth;
+            terminalCursor.style.left = inputWidth + 'px';
+        }
 
         // Make terminal focusable
         terminalWindow.setAttribute('tabindex', '0');
@@ -459,6 +466,7 @@
 
             // Update display
             terminalUserInput.textContent = userInputText;
+            updateCursorPosition();
         });
     </script>
 </body>
