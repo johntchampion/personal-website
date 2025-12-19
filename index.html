@@ -21,7 +21,7 @@
     <header id="header" class="site-header">
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">JC</a>
+                <a href="#top" class="logo">JC</a>
                 <nav>
                     <ul class="nav">
                         <li><a href="#about" class="nav-link">About</a></li>
@@ -371,6 +371,15 @@
             } else {
                 header.classList.remove('scrolled');
             }
+        });
+
+        // Scroll to top when clicking logo
+        document.querySelector('.logo').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
 
         // Smooth scroll for navigation links
