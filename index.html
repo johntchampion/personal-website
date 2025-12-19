@@ -77,9 +77,12 @@
                     <div class="terminal-line">
                         <span class="terminal-output">When not coding: flying, learning languages, or hiking remote trails.</span>
                     </div>
-                    <div class="terminal-line">
+                    <div class="terminal-line terminal-input-line">
                         <span class="terminal-prompt">$</span>
-                        <span class="terminal-cursor"></span>
+                        <div class="terminal-input-container">
+                            <span class="terminal-user-input"></span>
+                            <span class="terminal-cursor"></span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -392,6 +395,76 @@
                 }
             });
         });
+
+        // Interactive terminal input
+        const terminalWindow = document.querySelector('.terminal-window');
+        const terminalInputLine = document.querySelector('.terminal-input-line');
+        const terminalUserInput = document.querySelector('.terminal-user-input');
+        let userInputText = '';
+
+        // Make terminal focusable
+        terminalWindow.setAttribute('tabindex', '0');
+
+        // Focus terminal when clicked
+        terminalWindow.addEventListener('click', () => {
+            terminalWindow.focus();
+        });
+
+        // Function to execute command
+        function executeCommand(command) {
+            const trimmedCommand = command.trim();
+
+            // Create a line showing the command that was entered
+            const commandLine = document.createElement('div');
+            commandLine.className = 'terminal-line';
+            commandLine.innerHTML = `<span class="terminal-prompt">$</span> <span class="terminal-command">${trimmedCommand}</span>`;
+            terminalInputLine.parentNode.insertBefore(commandLine, terminalInputLine);
+
+            // Create response line
+            const responseLine = document.createElement('div');
+            responseLine.className = 'terminal-line';
+
+            if (trimmedCommand === 'whoami') {
+                responseLine.innerHTML = '<span class="terminal-output">John Champion</span>';
+            } else if (trimmedCommand !== '') {
+                responseLine.innerHTML = `<span class="terminal-output">bash: command not found: ${trimmedCommand}</span>`;
+            }
+
+            if (trimmedCommand !== '') {
+                terminalInputLine.parentNode.insertBefore(responseLine, terminalInputLine);
+            }
+
+            // Clear input
+            userInputText = '';
+            terminalUserInput.textContent = '';
+        }
+
+        // Handle keyboard input
+        terminalWindow.addEventListener('keydown', (e) => {
+            // Prevent default behavior for most keys
+            if (e.key !== 'Tab') {
+                e.preventDefault();
+            }
+
+            if (e.key === 'Backspace') {
+                // Remove last character
+                userInputText = userInputText.slice(0, -1);
+            } else if (e.key === 'Enter') {
+                // Execute command
+                executeCommand(userInputText);
+            } else if (e.key.length === 1) {
+                // Add printable characters
+                userInputText += e.key;
+            }
+
+            // Update display
+            terminalUserInput.textContent = userInputText;
+        });
+
+        // Focus terminal on page load
+        setTimeout(() => {
+            terminalWindow.focus();
+        }, 100);
     </script>
 </body>
 </html>

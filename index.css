@@ -34,6 +34,14 @@
     font-family: var(--font-code);
     box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
     backdrop-filter: blur(10px);
+    cursor: text;
+    outline: none;
+    transition: all var(--transition-base);
+}
+
+.terminal-window:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 10px 40px rgba(255, 184, 48, 0.3), 0 0 0 3px rgba(255, 184, 48, 0.1);
 }
 
 .terminal-header {
@@ -81,13 +89,24 @@
     margin-left: var(--space-4);
 }
 
+.terminal-input-container {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.terminal-user-input {
+    color: var(--color-secondary);
+}
+
 .terminal-cursor {
     display: inline-block;
     width: 10px;
-    height: 20px;
+    height: 1.2em;
     background: var(--color-secondary);
     animation: blink 1s infinite;
-    margin-left: 4px;
+    vertical-align: baseline;
+    margin-left: 0;
+    transform: translateY(0.2em);
 }
 
 @keyframes blink {
