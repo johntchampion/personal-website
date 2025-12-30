@@ -870,6 +870,13 @@ textarea.input {
     padding: var(--space-16) 0;
 }
 
+/* Footer styling */
+footer {
+    padding: var(--space-6) 0;
+    text-align: center;
+    font-size: var(--text-sm);
+}
+
 /* ============================================
    COMMON PAGE COMPONENTS
    ============================================ */

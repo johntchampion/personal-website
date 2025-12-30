@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Daily Story - A language learning platform that delivers stories at your skill level with comprehension quizzes.">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta name="author" content="John Champion">
+    <title>Daily Story - John Champion</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="daily-story.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header id="header" class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">JC</a>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                        <li><a href="index.html#work" class="nav-link">Work</a></li>
+                        <li><a href="index.html#interests" class="nav-link">Interests</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="hero project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-layout">
+                    <!-- Left: Text Content -->
+                    <div class="hero-text-content">
+                        <!-- Breadcrumb -->
+                        <div class="breadcrumb">
+                            <a href="index.html#work">← Back to Projects</a>
+                        </div>
+
+                        <!-- Project Title -->
+                        <h1>Daily Story</h1>
+
+                        <!-- Project Tagline -->
+                        <p class="hero-tagline">
+                            Read a new story every day in the language you're learning, at your skill level.
+                        </p>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="tech-tags">
+                            <span class="badge">Node.js</span>
+                            <span class="badge">Express</span>
+                            <span class="badge">Claude AI</span>
+                        </div>
+
+                        <!-- Project Links -->
+                        <div class="hero-cta">
+                            <a href="https://dailystory.page" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                            <a href="https://github.com/appdevjohn/daily-story" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Floating Image -->
+                    <div class="hero-image-float">
+                        <img src="images/daily-story/german-story.png" alt="Daily Story interface preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Overview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content-wide">
+                <div class="section-content">
+                    <h2>Overview</h2>
+                    <p>
+                        Language immersion doesn't require a plane ticket. Daily Story delivers fresh, AI-generated stories in eight languages across four skill levels—beginner to advanced. Each story comes with comprehension quizzes to reinforce what you've learned and track your progress.
+                    </p>
+                    <p>
+                        Whether you're brushing up on Spanish before a trip or diving deep into Japanese grammar, Daily Story gives you something new to read every single day, perfectly calibrated to challenge you without overwhelming you.
+                    </p>
+                </div>
+
+                <!-- Main page screenshot -->
+                <div class="screenshot-single">
+                    <img src="images/daily-story/story-picker.png" alt="Daily Story main interface">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Challenge & Solution Section -->
+    <section class="section section-bg-neutral">
+        <div class="container">
+            <div class="section-content-wide">
+                <div class="section-content">
+                    <h2>The Challenge</h2>
+                    <p>
+                        One of the best ways to learn a language is to immerse yourself in it through reading. The problem? Finding content that matches your exact skill level is difficult. Too easy and you're not learning; too hard and you're frustrated.
+                    </p>
+                    <p>
+                        I found myself constantly asking ChatGPT to generate short stories at my skill level for language practice. It worked, but it was tedious to do manually every day. I realized this could be automated into a daily habit-building tool that others could benefit from too.
+                    </p>
+
+                    <h2 class="section-large-spacing">The Solution</h2>
+                    <p>
+                        Building Daily Story taught me that working with AI is less about the code and more about the conversation. The real challenge wasn't the architecture—it was prompt engineering.
+                    </p>
+                    <p>
+                        After a few days of testing, I noticed the AI kept generating eerily similar stories. Without memory of what it had created before, the model naturally gravitated toward the same narrative patterns. The solution? A curated library of about 100 themes per skill level that the app randomly selects from before each generation.
+                    </p>
+                    <p>
+                        This wasn't just about variety for variety's sake. A theme like "navigating cultural misunderstandings" works beautifully for intermediate learners but falls flat for beginners who need simpler vocabulary. Each proficiency level needed its own theme collection, carefully chosen to match both linguistic complexity and conceptual accessibility.
+                    </p>
+                </div>
+
+                <!-- Story examples showing variety -->
+                <div class="story-cards-showcase">
+                    <div class="story-cards-container">
+                        <div class="story-card story-card-left">
+                            <img src="images/daily-story/german-story.png" alt="German story example">
+                        </div>
+                        <div class="story-card story-card-center">
+                            <img src="images/daily-story/japanese-story.png" alt="Japanese story example">
+                        </div>
+                        <div class="story-card story-card-right">
+                            <img src="images/daily-story/quiz-questions.png" alt="Quiz questions example">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content-wide">
+                <h2 class="text-center mb-12">Key Features</h2>
+
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Fresh Content Daily</h3>
+                            <p>
+                                Every day brings a new story perfectly calibrated to your current proficiency—challenging enough to push your skills forward, accessible enough to keep you engaged.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Active Comprehension</h3>
+                            <p>
+                                Three targeted questions after each story transform passive reading into active learning, helping you retain vocabulary and internalize grammar patterns.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>8 Languages, 4 Levels</h3>
+                            <p>
+                                From beginner Spanish to advanced Japanese, find your perfect match across eight languages and four proficiency tiers.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Details Section -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Technical Implementation</h2>
+                <p>
+                    The architecture is intentionally straightforward. Built with Node.js and Express, the app runs on a simple cron schedule that handles AI content generation efficiently and cost-effectively.
+                </p>
+                <p>
+                    Every day at midnight, the server submits a batch request to the Claude API for 32 different stories—8 languages at 4 skill levels each. Batch requests process at half price but can take up to 24 hours, so at 6 PM the next day, the app retrieves the completed stories and stores them in a JSON file. When users visit, the appropriate story is rendered from this cache.
+                </p>
+                <p>
+                    Running on Google Cloud Run means I only pay for active compute time. By design, the app goes idle after sending the batch request and only wakes up 18 hours later to retrieve results—eliminating expensive wait time while the API processes stories. No database overhead, no complex state management—just reliable, daily language practice delivered through a clean API.
+                </p>
+
+                <!-- Technical screenshots showcase -->
+                <div class="story-cards-showcase">
+                    <div class="story-cards-container">
+                        <!-- Card 1 - Cloud Scheduler -->
+                        <div class="story-card story-card-left-large">
+                            <img src="images/daily-story/google-cloud-scheduler.png" alt="Cloud Scheduler cron jobs">
+                        </div>
+
+                        <!-- Card 2 - Claude Batch Dashboard -->
+                        <div class="story-card story-card-right-large">
+                            <img src="images/daily-story/claude-console-batches.png" alt="Claude batch requests dashboard">
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="section-heading-spacing">Tech Stack</h3>
+                <div class="tech-stack-tags">
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">Claude AI</span>
+                </div>
+
+                <h3 class="section-heading-spacing">What I Learned</h3>
+                <p>
+                    This project deepened my understanding of the Claude API and the nuanced art of prompt engineering. I learned that quality matters more than quantity—stories need to be genuinely engaging and leave learners feeling measurably better at their target language.
+                </p>
+                <p>
+                    The technical challenge came in structuring prompts to return consistent JSON across eight languages, ensuring that titles, quiz questions, and story content could be reliably parsed despite the linguistic variety. It required more iteration than I expected, but the result is a robust system that handles multilingual content seamlessly.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Try Daily Story</h2>
+                <p>
+                    Experience the platform and start improving your language skills today.
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://dailystory.page" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Daily Story</a>
+                    <a href="https://github.com/appdevjohn/daily-story" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-12">Other Projects</h2>
+
+            <div class="related-projects-grid">
+                <!-- Project Card 1 -->
+                <div class="card card-project">
+                    <div class="card-project-image" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);">
+                        OneTimeChat
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">OneTimeChat</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>A messaging web application that enables seamless, link-based conversations.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="onetimechat.html" class="btn btn-sm btn-primary">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="card card-project">
+                    <div class="card-project-image" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);">
+                        Chess
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Chess</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>A clean, responsive Progressive Web App for playing chess with Stockfish engine.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="chess.html" class="btn btn-sm btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-projects-cta">
+                <a href="index.html#work" class="btn btn-outline">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 John Champion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple scroll behavior script -->
+    <script>
+        // Add shadow to header on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>

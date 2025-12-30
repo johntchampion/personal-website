@@ -1,0 +1,346 @@
+/* Daily Story Project Page Styles */
+
+/* Hero Section */
+.project-hero {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    min-height: 60vh;
+    position: relative;
+    overflow: visible;
+}
+
+.project-hero .hero-content {
+    padding: var(--space-16) 0 var(--space-24) 0;
+}
+
+.hero-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
+    align-items: center;
+    position: relative;
+}
+
+.hero-text-content {
+    max-width: 600px;
+}
+
+.hero-image-float {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-image-float img {
+    width: 100%;
+    max-width: 500px;
+    transform: perspective(1000px) rotateY(-8deg) rotateX(2deg) translateY(20px);
+    transition: transform 0.5s ease;
+}
+
+.hero-image-float img:hover {
+    transform: perspective(1000px) rotateY(-4deg) rotateX(1deg) translateY(10px);
+}
+
+.project-hero .breadcrumb {
+    margin-bottom: var(--space-4);
+}
+
+.project-hero .breadcrumb a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: var(--text-sm);
+}
+
+.project-hero h1 {
+    color: white;
+    margin-bottom: var(--space-4);
+}
+
+.project-hero .hero-tagline {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-6);
+}
+
+.project-hero .tech-tags {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-8);
+}
+
+.project-hero .tech-tags .badge {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: var(--text-sm);
+}
+
+.project-hero .hero-cta {
+    display: flex;
+    gap: var(--space-4);
+}
+
+/* Content Sections */
+.section-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-content-wide {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.section-bg-neutral {
+    background: var(--color-neutral-50);
+}
+
+/* Images */
+.screenshot-single {
+    margin-top: var(--space-8);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screenshot-single img {
+    width: 100%;
+}
+
+/* Overlapping Story Cards (3 cards) */
+.story-cards-showcase {
+    margin-top: var(--space-12);
+    margin-bottom: var(--space-8);
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-cards-container {
+    position: relative;
+    width: 100%;
+    max-width: 900px;
+    height: 450px;
+}
+
+.story-card {
+    position: absolute;
+    width: 45%;
+    top: 50%;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.story-card img {
+    width: 100%;
+    display: block;
+}
+
+/* 3-card layout */
+.story-card-left {
+    left: 0;
+    transform: translateY(-50%) rotate(-6deg);
+    z-index: 1;
+}
+
+.story-card-center {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(2deg);
+    z-index: 3;
+}
+
+.story-card-right {
+    right: 0;
+    transform: translateY(-50%) rotate(5deg);
+    z-index: 2;
+}
+
+/* 2-card layout - larger and overlapping */
+.story-card-left-large {
+    width: 65%;
+    left: 0;
+    transform: translateY(-50%) rotate(-6deg);
+    z-index: 1;
+}
+
+.story-card-right-large {
+    width: 65%;
+    right: 0;
+    transform: translateY(-50%) rotate(5deg);
+    z-index: 2;
+}
+
+/* Hover states */
+.story-card-left:hover,
+.story-card-right:hover {
+    z-index: 10;
+    transform: translateY(-60%) rotate(0deg) scale(1.40);
+}
+
+.story-card-left-large:hover,
+.story-card-right-large:hover {
+    z-index: 10;
+    transform: translateY(-60%) rotate(0deg) scale(1.25);
+}
+
+.story-card-center:hover {
+    z-index: 10;
+    transform: translate(-50%, -55%) rotate(0deg) scale(1.40);
+}
+
+/* Key Features */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+}
+
+.feature-card h3 {
+    font-size: var(--text-xl);
+    margin-bottom: var(--space-3);
+}
+
+/* Tech Stack */
+.tech-stack-tags {
+    display: flex;
+    gap: var(--space-2);
+    flex-wrap: wrap;
+    margin-top: var(--space-4);
+}
+
+.section-heading-spacing {
+    margin-top: var(--space-8);
+}
+
+.section-large-spacing {
+    margin-top: var(--space-12);
+}
+
+/* CTA Section */
+.cta-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+    color: white;
+}
+
+.cta-content {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    color: white;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: var(--space-8);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: var(--space-4);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Related Projects */
+.related-projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-6);
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.related-projects-cta {
+    text-align: center;
+    margin-top: var(--space-8);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mb-12 {
+    margin-bottom: var(--space-12);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero-layout {
+        grid-template-columns: 1fr;
+        gap: var(--space-6);
+    }
+
+    .hero-image-float {
+        order: -1;
+    }
+
+    .hero-image-float img {
+        transform: perspective(1000px) rotateY(-4deg) rotateX(1deg);
+        max-width: 100%;
+    }
+
+    .screenshot-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .story-cards-container {
+        height: 700px;
+    }
+
+    .story-card {
+        width: 70%;
+    }
+
+    /* 3-card layout mobile */
+    .story-card-left {
+        left: 5%;
+        top: 15%;
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    .story-card-center {
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, 0) rotate(1deg);
+    }
+
+    .story-card-right {
+        right: 5%;
+        top: 75%;
+        transform: translateY(0) rotate(4deg);
+    }
+
+    /* 2-card layout mobile - larger */
+    .story-card-left-large,
+    .story-card-right-large {
+        width: 75%;
+    }
+
+    .story-card-left-large {
+        left: 5%;
+        top: 15%;
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    .story-card-right-large {
+        right: 5%;
+        top: 55%;
+        transform: translateY(0) rotate(4deg);
+    }
+
+    /* Hover states for mobile */
+    .story-card-left:hover,
+    .story-card-right:hover,
+    .story-card-left-large:hover,
+    .story-card-right-large:hover {
+        transform: translateY(-10px) rotate(0deg) scale(1.05);
+    }
+
+    .story-card-center:hover {
+        transform: translate(-50%, -10px) rotate(0deg) scale(1.05);
+    }
+}

@@ -15,7 +15,11 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--space-12);
-    align-items: center;
+    align-items: start;
+}
+
+.hero-text {
+    padding-top: var(--space-12);
 }
 
 .hero-text h1 {
