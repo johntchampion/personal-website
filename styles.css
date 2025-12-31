@@ -1025,6 +1025,161 @@ footer {
 }
 
 /* ============================================
+   DARK MODE
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Dark Mode Color Palette */
+        --color-primary: #F1F5F9;
+        --color-primary-light: #CBD5E1;
+        --color-primary-dark: #FFFFFF;
+
+        /* Keep secondary and accent vibrant */
+        --color-secondary: #00D4FF;
+        --color-secondary-light: #33DEFF;
+        --color-secondary-dark: #00A8CC;
+
+        --color-accent: #FFB830;
+        --color-accent-light: #FFC759;
+        --color-accent-dark: #E6A420;
+
+        /* Dark Neutrals */
+        --color-neutral-900: #F8FAFC;
+        --color-neutral-700: #E2E8F0;
+        --color-neutral-500: #94A3B8;
+        --color-neutral-300: #475569;
+        --color-neutral-100: #1E293B;
+        --color-neutral-50: #0F172A;
+
+        /* Dark Surface Colors */
+        --color-background: #0A0E14;
+        --color-surface: #1A1F2E;
+        --color-surface-elevated: #252B3A;
+
+        /* Dark Text Colors */
+        --color-text-primary: #F1F5F9;
+        --color-text-secondary: #CBD5E1;
+        --color-text-muted: #94A3B8;
+        --color-text-inverse: #0A1929;
+
+        /* Adjusted Shadows for Dark Mode */
+        --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+        --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.4), 0 1px 2px -1px rgba(0, 0, 0, 0.4);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4);
+        --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+        --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Code blocks in dark mode */
+    code {
+        background-color: var(--color-neutral-100);
+        color: var(--color-secondary);
+    }
+
+    pre {
+        background-color: #000;
+        color: var(--color-secondary);
+    }
+
+    /* Button adjustments */
+    .btn-primary {
+        color: #0A1929;
+    }
+
+    .btn-secondary {
+        color: #0A1929;
+    }
+
+    .btn-ghost:hover:not(:disabled) {
+        background-color: var(--color-neutral-100);
+        color: var(--color-secondary);
+    }
+
+    /* Card adjustments */
+    .card-bordered {
+        border-color: var(--color-neutral-300);
+    }
+
+    /* Project cards - ensure proper dark backgrounds */
+    .card-project {
+        background-color: var(--color-surface);
+    }
+
+    /* Interest cards - dark background with gradient border */
+    .card-interest {
+        background: linear-gradient(var(--color-surface), var(--color-surface)) padding-box,
+            linear-gradient(135deg, var(--color-secondary), var(--color-accent)) border-box;
+    }
+
+    .card-interest-title {
+        color: var(--color-text-primary);
+    }
+
+    .card-interest-subtitle {
+        color: var(--color-accent);
+    }
+
+    /* Card project image maintains vibrant gradients */
+    .card-project-image {
+        color: white;
+    }
+
+    /* Input adjustments */
+    .input {
+        background-color: var(--color-surface);
+        border-color: var(--color-neutral-300);
+        color: var(--color-text-primary);
+    }
+
+    .input:focus {
+        border-color: var(--color-secondary);
+        box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.2);
+    }
+
+    /* Badge adjustments */
+    .badge-neutral {
+        background-color: var(--color-neutral-100);
+        color: var(--color-neutral-900);
+    }
+
+    .tag {
+        background-color: var(--color-neutral-100);
+        color: var(--color-neutral-900);
+    }
+
+    /* Skill tag adjustments */
+    .skill-tag {
+        background-color: var(--color-surface);
+        color: var(--color-text-primary);
+        border-color: var(--color-neutral-300);
+    }
+
+    .skill-tag:hover {
+        background-color: var(--color-secondary);
+        color: #0A1929;
+        border-color: var(--color-secondary);
+    }
+
+    /* Site header adjustments */
+    .site-header {
+        background-color: rgba(10, 14, 20, 0.95);
+        border-bottom-color: var(--color-accent);
+    }
+
+    .site-header.scrolled {
+        box-shadow: 0 4px 20px rgba(255, 184, 48, 0.3);
+    }
+
+    /* Card and section backgrounds */
+    .card-header,
+    .card-footer {
+        border-color: var(--color-neutral-300);
+    }
+}
+
+/* ============================================
    RESPONSIVE BREAKPOINTS
    ============================================ */
 

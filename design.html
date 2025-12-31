@@ -178,16 +178,16 @@ function isPrime(n) {
 
             <div class="typography-sample">
                 <p>Font Families:</p>
-                <p style="font-family: var(--font-display); font-size: var(--text-xl);">
+                <p class="font-display-sample">
                     <strong>Display/Headers:</strong> Space Grotesk - Modern geometric sans
                 </p>
-                <p style="font-family: var(--font-body); font-size: var(--text-xl);">
+                <p class="font-body-sample">
                     <strong>Body:</strong> Inter - Readable sans optimized for screens
                 </p>
-                <p style="font-family: var(--font-code); font-size: var(--text-xl);">
+                <p class="font-code-sample">
                     <strong>Code:</strong> JetBrains Mono - Monospace for technical content
                 </p>
-                <p style="font-family: var(--font-accent); font-size: var(--text-xl);">
+                <p class="font-accent-sample">
                     <strong>Accent:</strong> Crimson Pro - Serif for quotes and emphasis
                 </p>
             </div>
@@ -348,26 +348,26 @@ function isPrime(n) {
             <h2 class="design-section-title">Card Types</h2>
             <p class="design-section-subtitle">Specialized card variations for different content types</p>
 
-            <div class="card" style="background: var(--color-neutral-50); padding: var(--space-8); margin-bottom: var(--space-12);">
-                <h3 style="margin-bottom: var(--space-4);">Design Philosophy</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--space-6);">
+            <div class="card philosophy-card">
+                <h3 class="category-heading">Design Philosophy</h3>
+                <div class="philosophy-grid">
                     <div>
-                        <h4 style="color: var(--color-secondary); margin-bottom: var(--space-2);">Visual Distinction</h4>
-                        <p style="margin: 0; font-size: var(--text-sm);">
+                        <h4 class="category-heading-secondary">Visual Distinction</h4>
+                        <p class="small-text">
                             <strong>Project cards:</strong> Playful (tilted), technical showcase<br>
                             <strong>Interest cards:</strong> Bold (gradient borders), personal showcase
                         </p>
                     </div>
                     <div>
-                        <h4 style="color: var(--color-accent); margin-bottom: var(--space-2);">Functional Distinction</h4>
-                        <p style="margin: 0; font-size: var(--text-sm);">
+                        <h4 class="category-heading-accent">Functional Distinction</h4>
+                        <p class="small-text">
                             <strong>Project cards:</strong> Action-oriented (demo, GitHub links)<br>
                             <strong>Interest cards:</strong> Information-oriented (badges, tags, descriptions)
                         </p>
                     </div>
                     <div>
-                        <h4 style="color: var(--color-success); margin-bottom: var(--space-2);">Consistency</h4>
-                        <p style="margin: 0; font-size: var(--text-sm);">
+                        <h4 class="category-heading-success">Consistency</h4>
+                        <p class="small-text">
                             Both inherit base <code>.card</code> properties, have hover effects, are responsive, and use the same color system
                         </p>
                     </div>
@@ -377,13 +377,13 @@ function isPrime(n) {
             <!-- Project Cards -->
             <div class="component-showcase">
                 <h3 class="component-title">Project Cards (.card-project)</h3>
-                <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">
+                <p class="muted-paragraph">
                     <strong>Purpose:</strong> Showcase technical work and portfolio projects
                 </p>
 
-                <div class="card" style="background: white; border: 1px solid var(--color-neutral-200); padding: var(--space-6); margin-bottom: var(--space-6);">
-                    <h4 style="margin-bottom: var(--space-3);">When to Use Project Cards</h4>
-                    <ul style="margin: 0; padding-left: var(--space-6); color: var(--color-text-secondary);">
+                <div class="card info-card">
+                    <h4 class="mb-space-3">When to Use Project Cards</h4>
+                    <ul class="info-list">
                         <li>Software projects and web applications</li>
                         <li>Technical work samples and code demonstrations</li>
                         <li>Open source contributions</li>
@@ -440,9 +440,9 @@ function isPrime(n) {
                     </div>
                 </div>
 
-                <div class="card" style="background: var(--color-primary); color: white; padding: var(--space-6); margin-top: var(--space-6);">
-                    <h4 style="color: var(--color-secondary); margin-bottom: var(--space-4);">Example HTML Structure</h4>
-                    <pre style="background: rgba(0,0,0,0.3); padding: var(--space-4); border-radius: var(--radius-md); overflow-x: auto; margin: 0;">
+                <div class="card code-example-card">
+                    <h4 class="category-heading">Example HTML Structure</h4>
+                    <pre>
 &lt;div class="card card-project"&gt;
   &lt;div class="card-project-image"&gt;
     &lt;!-- Screenshot or gradient placeholder --&gt;
@@ -466,15 +466,15 @@ function isPrime(n) {
             </div>
 
             <!-- Interest Cards -->
-            <div class="component-showcase" style="margin-top: var(--space-16);">
+            <div class="component-showcase mt-16">
                 <h3 class="component-title">Interest Cards (.card-interest)</h3>
-                <p style="margin-bottom: var(--space-6); color: var(--color-text-secondary);">
+                <p class="muted-paragraph">
                     <strong>Purpose:</strong> Share personal interests and add personality
                 </p>
 
-                <div class="card" style="background: white; border: 1px solid var(--color-neutral-200); padding: var(--space-6); margin-bottom: var(--space-6);">
-                    <h4 style="margin-bottom: var(--space-3);">When to Use Interest Cards</h4>
-                    <ul style="margin: 0; padding-left: var(--space-6); color: var(--color-text-secondary);">
+                <div class="card info-card">
+                    <h4 class="mb-space-3">When to Use Interest Cards</h4>
+                    <ul class="info-list">
                         <li>Personal hobbies and interests</li>
                         <li>Certifications and achievements</li>
                         <li>Languages spoken or learning</li>
@@ -527,9 +527,9 @@ function isPrime(n) {
                     </div>
                 </div>
 
-                <div class="card" style="background: var(--color-primary); color: white; padding: var(--space-6); margin-top: var(--space-6);">
-                    <h4 style="color: var(--color-accent); margin-bottom: var(--space-4);">Example HTML Structure</h4>
-                    <pre style="background: rgba(0,0,0,0.3); padding: var(--space-4); border-radius: var(--radius-md); overflow-x: auto; margin: 0;">
+                <div class="card code-example-card">
+                    <h4 class="category-heading">Example HTML Structure</h4>
+                    <pre>
 &lt;div class="card card-interest"&gt;
   &lt;div class="card-interest-icon"&gt;✈️&lt;/div&gt;
   &lt;h3 class="card-interest-title"&gt;Aviation&lt;/h3&gt;
@@ -546,41 +546,41 @@ function isPrime(n) {
             </div>
 
             <!-- Comparison Table -->
-            <div class="card" style="margin-top: var(--space-16); padding: var(--space-8); background: var(--color-neutral-50);">
-                <h3 style="margin-bottom: var(--space-6); text-align: center;">Quick Comparison</h3>
-                <table style="width: 100%; border-collapse: collapse;">
+            <div class="card comparison-card">
+                <h3 class="table-heading">Quick Comparison</h3>
+                <table class="comparison-table">
                     <thead>
-                        <tr style="border-bottom: 2px solid var(--color-neutral-300);">
-                            <th style="padding: var(--space-3); text-align: left;">Feature</th>
-                            <th style="padding: var(--space-3); text-align: left; color: var(--color-secondary);">Project Cards</th>
-                            <th style="padding: var(--space-3); text-align: left; color: var(--color-accent);">Interest Cards</th>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Project Cards</th>
+                            <th>Interest Cards</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr style="border-bottom: 1px solid var(--color-neutral-200);">
-                            <td style="padding: var(--space-3);"><strong>Visual Style</strong></td>
-                            <td style="padding: var(--space-3);">Playfully tilted</td>
-                            <td style="padding: var(--space-3);">Gradient border</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--color-neutral-200);">
-                            <td style="padding: var(--space-3);"><strong>Main Element</strong></td>
-                            <td style="padding: var(--space-3);">Screenshot/image</td>
-                            <td style="padding: var(--space-3);">Large icon/emoji</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--color-neutral-200);">
-                            <td style="padding: var(--space-3);"><strong>Hover Effect</strong></td>
-                            <td style="padding: var(--space-3);">Straightens and lifts</td>
-                            <td style="padding: var(--space-3);">Scales and lifts</td>
-                        </tr>
-                        <tr style="border-bottom: 1px solid var(--color-neutral-200);">
-                            <td style="padding: var(--space-3);"><strong>Content Type</strong></td>
-                            <td style="padding: var(--space-3);">Technical projects</td>
-                            <td style="padding: var(--space-3);">Personal interests</td>
+                        <tr>
+                            <td><strong>Visual Style</strong></td>
+                            <td>Playfully tilted</td>
+                            <td>Gradient border</td>
                         </tr>
                         <tr>
-                            <td style="padding: var(--space-3);"><strong>Actions</strong></td>
-                            <td style="padding: var(--space-3);">Buttons (View Demo, GitHub)</td>
-                            <td style="padding: var(--space-3);">Informational (badges, tags)</td>
+                            <td><strong>Main Element</strong></td>
+                            <td>Screenshot/image</td>
+                            <td>Large icon/emoji</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hover Effect</strong></td>
+                            <td>Straightens and lifts</td>
+                            <td>Scales and lifts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Content Type</strong></td>
+                            <td>Technical projects</td>
+                            <td>Personal interests</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Actions</strong></td>
+                            <td>Buttons (View Demo, GitHub)</td>
+                            <td>Informational (badges, tags)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -593,30 +593,30 @@ function isPrime(n) {
             <p class="design-section-subtitle">Small labels for status and categorization</p>
 
             <!-- Understanding the Difference -->
-            <div class="card" style="background: var(--color-neutral-50); padding: var(--space-8); margin-bottom: var(--space-12);">
-                <h3 style="margin-bottom: var(--space-6);">Badges vs Tags: When to Use Each</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-8);">
+            <div class="card philosophy-card">
+                <h3 class="table-heading">Badges vs Tags: When to Use Each</h3>
+                <div class="badges-tags-grid">
                     <!-- Badges Column -->
                     <div>
-                        <h4 style="color: var(--color-secondary); margin-bottom: var(--space-4);">Badges</h4>
-                        <p style="margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                        <h4 class="category-heading-secondary mb-space-4">Badges</h4>
+                        <p class="mb-space-4 secondary-text">
                             <strong>Purpose:</strong> Celebrate achievements, status, or milestones
                         </p>
-                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-4);">
-                            <p style="margin: 0; font-size: var(--text-sm);"><strong>Answer the question:</strong></p>
-                            <p style="margin: var(--space-2) 0 0 0; font-style: italic; color: var(--color-text-secondary);">
+                        <div class="guideline-box">
+                            <p class="small-text"><strong>Answer the question:</strong></p>
+                            <p class="small-text secondary-text" style="margin: var(--space-2) 0 0 0; font-style: italic;">
                                 "What have you achieved or earned?"
                             </p>
                         </div>
-                        <p style="margin-bottom: var(--space-3); font-size: var(--text-sm);"><strong>Characteristics:</strong></p>
-                        <ul style="margin: 0 0 var(--space-4) var(--space-6); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                        <p class="small-text mb-space-3"><strong>Characteristics:</strong></p>
+                        <ul class="info-list small-text mb-space-4">
                             <li>Convey accomplishment or special designation</li>
                             <li>Often quantifiable or measurable</li>
                             <li>Emotional tone: Pride, accomplishment</li>
                             <li>More visually prominent/colorful</li>
                         </ul>
-                        <p style="margin-bottom: var(--space-2); font-size: var(--text-sm);"><strong>Examples:</strong></p>
-                        <div style="display: flex; flex-direction: column; gap: var(--space-2);">
+                        <p class="small-text" style="margin-bottom: var(--space-2);"><strong>Examples:</strong></p>
+                        <div class="badge-examples">
                             <span class="badge badge-secondary">140+ Hours</span>
                             <span class="badge badge-neutral">PPL Certified</span>
                             <span class="badge badge-success">Coast to Coast</span>
@@ -626,25 +626,25 @@ function isPrime(n) {
 
                     <!-- Tags Column -->
                     <div>
-                        <h4 style="color: var(--color-accent); margin-bottom: var(--space-4);">Tags</h4>
-                        <p style="margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+                        <h4 class="category-heading-accent mb-space-4">Tags</h4>
+                        <p class="mb-space-4 secondary-text">
                             <strong>Purpose:</strong> Categorize, label, or organize information
                         </p>
-                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); margin-bottom: var(--space-4);">
-                            <p style="margin: 0; font-size: var(--text-sm);"><strong>Answer the question:</strong></p>
-                            <p style="margin: var(--space-2) 0 0 0; font-style: italic; color: var(--color-text-secondary);">
+                        <div class="guideline-box">
+                            <p class="small-text"><strong>Answer the question:</strong></p>
+                            <p class="small-text secondary-text" style="margin: var(--space-2) 0 0 0; font-style: italic;">
                                 "What category or type is this?"
                             </p>
                         </div>
-                        <p style="margin-bottom: var(--space-3); font-size: var(--text-sm);"><strong>Characteristics:</strong></p>
-                        <ul style="margin: 0 0 var(--space-4) var(--space-6); font-size: var(--text-sm); color: var(--color-text-secondary);">
+                        <p class="small-text mb-space-3"><strong>Characteristics:</strong></p>
+                        <ul class="info-list small-text mb-space-4">
                             <li>Factual classification or grouping</li>
                             <li>Help with filtering or searching</li>
                             <li>Emotional tone: Neutral, informational</li>
                             <li>More subtle, less prominent styling</li>
                         </ul>
-                        <p style="margin-bottom: var(--space-2); font-size: var(--text-sm);"><strong>Examples:</strong></p>
-                        <div style="display: flex; flex-direction: column; gap: var(--space-2); align-items: flex-start;">
+                        <p class="small-text" style="margin-bottom: var(--space-2);"><strong>Examples:</strong></p>
+                        <div class="tag-examples">
                             <span class="tag">JavaScript</span>
                             <span class="tag">React</span>
                             <span class="tag">Node.js</span>
@@ -654,18 +654,18 @@ function isPrime(n) {
                 </div>
 
                 <!-- Usage Guidelines -->
-                <div style="margin-top: var(--space-8); padding-top: var(--space-8); border-top: 1px solid var(--color-neutral-300);">
-                    <h4 style="margin-bottom: var(--space-4);">Usage Guidelines</h4>
-                    <div style="display: grid; gap: var(--space-4);">
-                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); border-left: 4px solid var(--color-success);">
+                <div class="guidelines-section">
+                    <h4 class="category-heading">Usage Guidelines</h4>
+                    <div class="guidelines-grid">
+                        <div class="guideline-box-success">
                             <strong style="color: var(--color-success);">✓ Use Badges For:</strong>
-                            <p style="margin: var(--space-2) 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">
+                            <p class="small-text secondary-text" style="margin: var(--space-2) 0 0 0;">
                                 Aviation hours, certifications, hiking achievements, proficiency levels, milestone numbers
                             </p>
                         </div>
-                        <div style="background: white; padding: var(--space-4); border-radius: var(--radius-md); border-left: 4px solid var(--color-accent);">
+                        <div class="guideline-box-accent">
                             <strong style="color: var(--color-accent);">✓ Use Tags For:</strong>
-                            <p style="margin: var(--space-2) 0 0 0; font-size: var(--text-sm); color: var(--color-text-secondary);">
+                            <p class="small-text secondary-text" style="margin: var(--space-2) 0 0 0;">
                                 Tech stacks, programming languages, project categories, skills, frameworks, tools
                             </p>
                         </div>
@@ -750,13 +750,13 @@ function isPrime(n) {
             <div class="grid-demo">
                 <div class="card">
                     <div class="card-header">
-                        <div style="font-size: 2rem; margin-bottom: var(--space-4);">✈️</div>
+                        <div class="large-icon">✈️</div>
                         <div class="card-title">Aviation</div>
                     </div>
                     <div class="card-body">
                         <p><strong>Private Pilot</strong></p>
                         <p>PPL certified with instrument rating. Nothing beats the perspective you get at 3,000 feet.</p>
-                        <div style="margin-top: var(--space-4);">
+                        <div class="mt-space-4">
                             <span class="badge badge-secondary">150+ Hours</span>
                         </div>
                     </div>
@@ -764,13 +764,13 @@ function isPrime(n) {
 
                 <div class="card">
                     <div class="card-header">
-                        <div style="font-size: 2rem; margin-bottom: var(--space-4);">🗣️</div>
+                        <div class="large-icon">🗣️</div>
                         <div class="card-title">Language Learning</div>
                     </div>
                     <div class="card-body">
                         <p><strong>Polyglot in Progress</strong></p>
                         <p>Fluent in English and Spanish. Currently learning Japanese and French.</p>
-                        <div style="margin-top: var(--space-4);">
+                        <div class="mt-space-4">
                             <span class="tag">EN</span>
                             <span class="tag">ES</span>
                             <span class="tag">JP</span>
@@ -781,13 +781,13 @@ function isPrime(n) {
 
                 <div class="card">
                     <div class="card-header">
-                        <div style="font-size: 2rem; margin-bottom: var(--space-4);">🏔️</div>
+                        <div class="large-icon">🏔️</div>
                         <div class="card-title">Backpacking</div>
                     </div>
                     <div class="card-body">
                         <p><strong>Trail Enthusiast</strong></p>
                         <p>Multi-day wilderness trips and thru-hiking. The best debugging happens on the trail.</p>
-                        <div style="margin-top: var(--space-4);">
+                        <div class="mt-space-4">
                             <span class="badge badge-success">1000+ Miles</span>
                         </div>
                     </div>
@@ -836,17 +836,17 @@ function isPrime(n) {
 
             <div class="component-demo">
                 <div class="component-variants">
-                    <div class="card animate-fade-in" style="max-width: 300px;">
+                    <div class="card animate-fade-in max-w-300">
                         <h4>Fade In</h4>
                         <p>Smooth opacity transition</p>
                         <code>.animate-fade-in</code>
                     </div>
-                    <div class="card animate-slide-up" style="max-width: 300px;">
+                    <div class="card animate-slide-up max-w-300">
                         <h4>Slide Up</h4>
                         <p>Enter from below</p>
                         <code>.animate-slide-up</code>
                     </div>
-                    <div class="card animate-slide-down" style="max-width: 300px;">
+                    <div class="card animate-slide-down max-w-300">
                         <h4>Slide Down</h4>
                         <p>Enter from above</p>
                         <code>.animate-slide-down</code>
@@ -854,14 +854,14 @@ function isPrime(n) {
                 </div>
             </div>
 
-            <div class="component-demo" style="margin-top: var(--space-8);">
+            <div class="component-demo mt-16">
                 <h4>Hover Interactions</h4>
-                <p style="margin-bottom: var(--space-4);">All interactive elements have smooth hover states:</p>
-                <ul style="list-style: none; padding: 0;">
-                    <li style="margin-bottom: var(--space-2);">• Buttons: Lift + shadow on hover</li>
-                    <li style="margin-bottom: var(--space-2);">• Cards: Lift + enhanced shadow</li>
-                    <li style="margin-bottom: var(--space-2);">• Links: Color transition</li>
-                    <li style="margin-bottom: var(--space-2);">• Navigation: Underline animation</li>
+                <p class="mb-space-4">All interactive elements have smooth hover states:</p>
+                <ul class="plain-list">
+                    <li>• Buttons: Lift + shadow on hover</li>
+                    <li>• Cards: Lift + enhanced shadow</li>
+                    <li>• Links: Color transition</li>
+                    <li>• Navigation: Underline animation</li>
                 </ul>
             </div>
         </section>
@@ -896,20 +896,20 @@ function isPrime(n) {
 
             <div class="card">
                 <h4>Using the Design System</h4>
-                <ol style="margin-left: var(--space-6); color: var(--color-text-secondary);">
-                    <li style="margin-bottom: var(--space-4);">
+                <ol class="implementation-list">
+                    <li>
                         <strong>Colors:</strong> Use CSS custom properties (e.g., <code>var(--color-primary)</code>) for consistency and easy theme updates
                     </li>
-                    <li style="margin-bottom: var(--space-4);">
+                    <li>
                         <strong>Spacing:</strong> Follow the 4px base unit system for consistent rhythm
                     </li>
-                    <li style="margin-bottom: var(--space-4);">
+                    <li>
                         <strong>Typography:</strong> Use semantic heading levels (h1-h6) and let the styles handle the sizing
                     </li>
-                    <li style="margin-bottom: var(--space-4);">
+                    <li>
                         <strong>Components:</strong> Combine base classes with modifiers (e.g., <code>.btn.btn-primary.btn-lg</code>)
                     </li>
-                    <li style="margin-bottom: var(--space-4);">
+                    <li>
                         <strong>Responsive:</strong> Design system includes mobile breakpoints - test on all screen sizes
                     </li>
                     <li>
@@ -920,9 +920,9 @@ function isPrime(n) {
         </section>
 
         <!-- Footer -->
-        <footer style="margin-top: var(--space-24); padding: var(--space-12) 0; border-top: 1px solid var(--color-neutral-300); text-align: center; color: var(--color-text-muted);">
+        <footer class="design-footer">
             <p>Design Language System - Last Updated: December 2025</p>
-            <p style="margin-top: var(--space-4);">
+            <p class="mt-space-4">
                 <a href="index.html" class="btn btn-outline btn-sm">Back to Home</a>
             </p>
         </footer>
