@@ -8,17 +8,6 @@
     overflow: visible;
 }
 
-.project-hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
-    opacity: 0.5;
-}
-
 .project-hero .hero-content {
     padding: var(--space-16) 0 var(--space-24) 0;
 }
@@ -425,6 +414,17 @@
     /* Hero Section - Dark Mode */
     .project-hero {
         background: linear-gradient(135deg, #0f1f2e 0%, #1a2d3f 100%);
+    }
+
+    .project-hero::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, transparent, var(--color-secondary), transparent);
+        opacity: 0.5;
     }
 
     .project-hero .tech-tags .badge {
