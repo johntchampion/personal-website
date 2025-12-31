@@ -59,40 +59,42 @@
                         <span class="terminal-dot dot-green"></span>
                     </div>
 
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-command">whoami</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-output">John Champion</span>
-                    </div>
+                    <div class="terminal-content">
+                        <div class="terminal-line">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">whoami</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">John Champion</span>
+                        </div>
 
-                    <div class="terminal-line" style="margin-top: var(--space-4);">
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-command">cat roles.txt</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-output">→ Software Developer</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-output">→ Private Pilot ✈️</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-output">→ Lifelong Learner 📚</span>
-                    </div>
+                        <div class="terminal-line" style="margin-top: var(--space-4);">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">cat roles.txt</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">→ Software Developer</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">→ Private Pilot ✈️</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">→ Lifelong Learner 📚</span>
+                        </div>
 
-                    <div class="terminal-line" style="margin-top: var(--space-4);">
-                        <span class="terminal-prompt">$</span>
-                        <span class="terminal-command">echo $PASSION</span>
-                    </div>
-                    <div class="terminal-line">
-                        <span class="terminal-output">Building thoughtful software.</span>
-                    </div>
-                    <div class="terminal-line terminal-input-line">
-                        <span class="terminal-prompt">$</span>
-                        <div class="terminal-input-container">
-                            <span class="terminal-user-input"></span>
-                            <span class="terminal-cursor"></span>
+                        <div class="terminal-line" style="margin-top: var(--space-4);">
+                            <span class="terminal-prompt">$</span>
+                            <span class="terminal-command">echo $PASSION</span>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="terminal-output">Building thoughtful software.</span>
+                        </div>
+                        <div class="terminal-line terminal-input-line">
+                            <span class="terminal-prompt">$</span>
+                            <div class="terminal-input-container">
+                                <span class="terminal-user-input"></span>
+                                <span class="terminal-cursor"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -433,6 +435,7 @@
 
         // Interactive terminal input
         const terminalWindow = document.querySelector('.terminal-window');
+        const terminalContent = document.querySelector('.terminal-content');
         const terminalInputLine = document.querySelector('.terminal-input-line');
         const terminalUserInput = document.querySelector('.terminal-user-input');
         const terminalCursor = document.querySelector('.terminal-cursor');
@@ -481,6 +484,9 @@
             // Clear input
             userInputText = '';
             terminalUserInput.textContent = '';
+
+            // Scroll to bottom
+            terminalContent.scrollTop = terminalContent.scrollHeight;
         }
 
         // Handle keyboard input
