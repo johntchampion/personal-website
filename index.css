@@ -203,6 +203,26 @@
     gap: var(--space-8);
 }
 
+/* Project card button layouts */
+.btn-layout-stacked {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.btn-layout-stacked .btn-full {
+    width: 100%;
+}
+
+.btn-layout-stacked .btn-row {
+    display: flex;
+    gap: var(--space-3);
+}
+
+.btn-layout-stacked .btn-row .btn {
+    flex: 1;
+}
+
 .contact-section {
     background: var(--color-primary);
     color: white;
