@@ -1177,6 +1177,21 @@ footer {
     .card-footer {
         border-color: var(--color-neutral-300);
     }
+
+    /* Navigation links - prominent and accessible */
+    .site-header .nav-link {
+        color: var(--color-text-primary);
+        font-weight: var(--font-medium);
+    }
+
+    .site-header .nav-link:hover,
+    .site-header .nav-link.active {
+        color: var(--color-accent);
+    }
+
+    .site-header .nav-link::after {
+        background-color: var(--color-accent);
+    }
 }
 
 /* ============================================

@@ -267,7 +267,35 @@
     margin-bottom: var(--space-12);
 }
 
-/* Responsive adjustments */
+/* ============================================
+   DARK MODE
+   ============================================ */
+
+@media (prefers-color-scheme: dark) {
+
+    /* CTA Section - prominent dark background */
+    .cta-section {
+        background: var(--color-surface);
+    }
+
+    .cta-content h2 {
+        color: var(--color-text-primary);
+    }
+
+    .cta-content p {
+        color: var(--color-neutral-500);
+    }
+
+    /* Neutral background sections */
+    .section-bg-neutral {
+        background: var(--color-surface);
+    }
+}
+
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+
 @media (max-width: 768px) {
     .hero-layout {
         grid-template-columns: 1fr;
