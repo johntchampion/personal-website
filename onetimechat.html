@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="OneTimeChat - A chat platform that allows users to have a conversation with an AI assistant, then deletes the conversation after it's finished.">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <meta name="author" content="John Champion">
+    <title>OneTimeChat - John Champion</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-page.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <header id="header" class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">JC</a>
+                <nav>
+                    <ul class="nav">
+                        <li><a href="index.html#about" class="nav-link">About</a></li>
+                        <li><a href="index.html#work" class="nav-link">Work</a></li>
+                        <li><a href="index.html#interests" class="nav-link">Interests</a></li>
+                        <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Hero Section -->
+    <section class="hero project-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-layout">
+                    <!-- Left: Text Content -->
+                    <div class="hero-text-content">
+                        <!-- Breadcrumb -->
+                        <div class="breadcrumb">
+                            <a href="index.html#work">← Back to Projects</a>
+                        </div>
+
+                        <!-- Project Title -->
+                        <h1>OneTimeChat</h1>
+
+                        <!-- Project Tagline -->
+                        <p class="hero-tagline">
+                            A chat platform that allows users to have a conversation with an AI assistant, then deletes the conversation after it's finished.
+                        </p>
+
+                        <!-- Tech Stack Tags -->
+                        <div class="tech-tags">
+                            <span class="badge">React</span>
+                            <span class="badge">Node.js</span>
+                            <span class="badge">Postgres</span>
+                        </div>
+
+                        <!-- Project Links -->
+                        <div class="hero-cta">
+                            <a href="https://onetimechat.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
+                            <a href="https://github.com/appdevjohn/web-messages" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
+                        </div>
+                    </div>
+
+                    <!-- Right: Floating Image -->
+                    <div class="hero-image-float">
+                        <img src="images/daily-story/german-a2.png" alt="OneTimeChat interface preview">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <p>OneTimeChat description</p>
+
+    <!-- Call to Action Section -->
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Try OneTimeChat</h2>
+                <p>
+                    Start temporary conversations with anyone just by sending a link. Start your chat today!
+                </p>
+                <div class="cta-buttons">
+                    <a href="https://onetimechat.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit OneTimeChat</a>
+                    <a href="https://github.com/appdevjohn/web-messages" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Projects Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center mb-12">Other Projects</h2>
+
+            <div class="related-projects-grid">
+                <!-- Project Card 1 -->
+                <div class="card card-project">
+                    <div class="card-project-image" style="background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-secondary) 100%);">
+                        Daily Story
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Daily Story</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Read a new story every day in the language you're learning, at your skill level.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="daily-story.html" class="btn btn-sm btn-primary">View Project</a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="card card-project">
+                    <div class="card-project-image" style="background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);">
+                        Chess
+                    </div>
+                    <div class="card-header">
+                        <h3 class="card-title">Chess</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>A clean, responsive Progressive Web App for playing chess with Stockfish engine.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="chess.html" class="btn btn-sm btn-primary">View Project</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="related-projects-cta">
+                <a href="index.html#work" class="btn btn-outline">View All Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 John Champion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Simple scroll behavior script -->
+    <script>
+        // Add shadow to header on scroll
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+</html>
