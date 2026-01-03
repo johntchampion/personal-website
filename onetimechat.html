@@ -79,7 +79,22 @@
     </section>
 
     <!-- Main Content Section -->
-    <p>OneTimeChat description</p>
+    <p>
+        OneTimeChat is a chat app that requires no app download and no account. Just click a link and start sending messages right in the browser. Thirty days after
+        the last message is sent, the chat dissapears. It's made for temporary chats where getting everyone to download an app is too cumbersome. The idea came to me 
+        when I was trying to start a flying club. We had about ten people come together to start a non-profit where we would own and share an airplane together. At first,
+        I was emailing the whole group, and for everyone to send replies meant people would have to reply all to the whole group. We needed a messaging app, but it can be difficult to pick one when we have a sizable group. Everyone would have to agree to download an app, create an account, and then we would have to get everyone 
+        in the same chat together. It would be so much easier to email a link to a chat to these people. And thus, the idea was born.
+    </p>
+    <p>
+        When you recieve a link, you can open the chat in the browser and see the chat, no questions asked. To send messages, just set a name and an avatar icon, and you can send messages right in the browser. Or, if you have an account, you can keep all messages tied to you, so if you change your name or icon, it will change across all conversations you're in. To create a new conversation, you'll need an account, and you can delete any conversation you create at any time - waiting the 30 days for the conversation to go stale isn't a requirement. Anyone who has access to the chat can send a link to the chat, and anyone who has the link can view the chat, so there's truly no signing in required. It works on both desktop and mobile devices, and if you're on desktop, you can leave the tab open and recieve push notifications while the tab is in the background.
+    </p>
+    <p>
+        The app is composed of three components; a Postgres database, a Node.js app, and a React app. The backend service is a Node.js app that uses the Express framework. It serves a REST API that handles all CRUD functions for conversations and messages as well as user accounts, authentication, and authorization. In addition to the REST API, the service also serves real-time data on a Web Socket through Socket.IO. The service also has a cron job that deletes stale conversations and messages. The front end is a React app built with TypeScript. It uses vite, and Redux is used to handle the auth state. It handles the login/signup functions and session refresh with the REST API, but everything else is done using the Socket.IO client. This means all messages sent will be recieved almost instantaneously by other members of conversations. It also uses this to update user profile data on everyone's device in the event that a logged-in user updates their profile.
+    </p>
+    <p>
+        Neither the backend nor the frontend were particularly difficult to build. The backend is pretty standard as far as CRDU goes and benefits from using Postgres triggers to update timestamp data automatically. It was a great exercise to practice REST API building and setting up a Socket.IO client, and the auth component was also a great exercise as it is a common component in apps. The frontend was also pretty standard, with the use of Redux for auth and React Router, which is very standard for React apps. It was a great exercise in the use of a wide vareity skills, like the Notifications API and CSS to get a message thread that looked precisely as it should. The real challenge for me here was deployment. Up until this, I've been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that can run on Cloud Run. But this web app requires a frontend, backend, and a Postgres database - a specific setup that would require more "doing" than just a Cloud Run or App Engine instance. The best way for this to be deployed was to set up a server myself with production builds of these apps. It was my first time doing that, so it was a great experience to take a step out of the managed world and take more responsibility for how the app is deployed.
+    </p>
 
     <!-- Call to Action Section -->
     <section class="section cta-section">
