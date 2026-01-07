@@ -1,0 +1,442 @@
+/* ===================================
+   UNIVERSAL DIAGRAM SYSTEM
+   Flexible, reusable styles for any diagram type
+   =================================== */
+
+/* ===================================
+   1. DIAGRAM CONTAINER
+   =================================== */
+
+.diagram {
+    background: #0A1929;
+    padding: 48px 24px;
+    border-radius: 12px;
+    margin: 32px 0;
+}
+
+.diagram.max-width {
+    width: min(1000px, 100%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===================================
+   2. COMPONENT BOXES
+   =================================== */
+
+.diagram-box {
+    background: #1E293B;
+    border: 2px solid #334155;
+    border-radius: 12px;
+    padding: 24px 28px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.diagram-box:hover {
+    border-color: #00D4FF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+}
+
+.diagram-box.highlight {
+    border-color: #00D4FF;
+    background: rgba(0, 212, 255, 0.05);
+}
+
+.diagram-box.small {
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.diagram-box.accent-border {
+    border-color: #FFB830;
+}
+
+.diagram-box.center-text {
+    text-align: center;
+}
+
+/* ===================================
+   3. TYPOGRAPHY
+   =================================== */
+
+.diagram-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #F1F5F9;
+    margin-bottom: 6px;
+}
+
+.diagram-title.small {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.diagram-title.accent {
+    color: #FFB830;
+}
+
+.diagram-subtitle {
+    font-size: 13px;
+    color: #64748B;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.diagram-subtitle.small {
+    font-size: 11px;
+}
+
+.diagram-accent {
+    font-size: 11px;
+    color: #FFB830;
+    margin-top: 4px;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.diagram-accent.small {
+    font-size: 10px;
+    margin-top: 2px;
+}
+
+/* ===================================
+   4. SECTIONS & GROUPING
+   =================================== */
+
+.diagram-section {
+    margin: 12px 0;
+}
+
+.diagram-section-title {
+    font-size: 11px;
+    font-weight: 600;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+/* ===================================
+   5. LIST ITEMS
+   =================================== */
+
+.diagram-item {
+    font-size: 13px;
+    color: #94A3B8;
+    padding: 4px 0;
+    border-left: 2px solid #334155;
+    padding-left: 10px;
+    margin: 3px 0;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.diagram-item.highlight {
+    color: #00D4FF;
+    border-left-color: #00D4FF;
+}
+
+/* ===================================
+   6. ARROWS & CONNECTIONS
+   =================================== */
+
+.diagram-arrow {
+    position: relative;
+}
+
+/* Arrow Directions */
+.diagram-arrow.vertical {
+    width: 2px;
+    height: 32px;
+    background: #00D4FF;
+    margin: 0 auto;
+}
+
+.diagram-arrow.horizontal {
+    width: 90px;
+    height: 2px;
+    background: #00D4FF;
+}
+
+/* Arrow Styles */
+.diagram-arrow.dashed {
+    background: repeating-linear-gradient(to right,
+            #64748B 0px,
+            #64748B 6px,
+            transparent 6px,
+            transparent 12px);
+}
+
+/* Arrow Heads - Vertical */
+.diagram-arrow.down::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 7px solid #00D4FF;
+}
+
+.diagram-arrow.up::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom: 6px solid #00D4FF;
+}
+
+/* Arrow Heads - Horizontal */
+.diagram-arrow.right::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 6px solid #00D4FF;
+}
+
+.diagram-arrow.left::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 6px solid #00D4FF;
+}
+
+/* Dashed Arrow Heads */
+.diagram-arrow.dashed.down::after {
+    border-top-color: #64748B;
+}
+
+.diagram-arrow.dashed.up::before {
+    border-bottom-color: #64748B;
+}
+
+.diagram-arrow.dashed.right::after {
+    border-left-color: #64748B;
+}
+
+.diagram-arrow.dashed.left::before {
+    border-right-color: #64748B;
+}
+
+/* ===================================
+   7. LABELS
+   =================================== */
+
+.diagram-label {
+    font-size: 10px;
+    color: #64748B;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.diagram-label.highlight {
+    color: #00D4FF;
+}
+
+.diagram-label.side {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ===================================
+   8. SPECIAL CONTAINERS
+   =================================== */
+
+.diagram-container {
+    border: 3px dashed #475569;
+    background: rgba(30, 41, 59, 0.3);
+    padding: 24px;
+    position: relative;
+    border-radius: 12px;
+}
+
+.diagram-container-label {
+    position: absolute;
+    top: -12px;
+    left: 16px;
+    background: #0A1929;
+    padding: 0 8px;
+    font-size: 11px;
+    color: #64748B;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ===================================
+   9. LEGEND
+   =================================== */
+
+.diagram-legend {
+    margin-top: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    font-size: 11px;
+}
+
+.diagram-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #64748B;
+}
+
+.diagram-legend-line {
+    width: 30px;
+    height: 2px;
+}
+
+.diagram-legend-line.solid {
+    background: #00D4FF;
+}
+
+.diagram-legend-line.dashed {
+    background: repeating-linear-gradient(to right,
+            #64748B 0px,
+            #64748B 6px,
+            transparent 6px,
+            transparent 12px);
+}
+
+/* ===================================
+   10. LAYOUT UTILITIES
+   =================================== */
+
+/* Grid Layout */
+.diagram-grid {
+    display: grid;
+    gap: 32px;
+    align-items: center;
+}
+
+.diagram-grid.cols-5 {
+    grid-template-columns: 1fr auto 1fr auto 1fr;
+}
+
+.diagram-grid.cols-3 {
+    grid-template-columns: 1fr auto 1fr;
+}
+
+.diagram-grid.auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+/* Flow Layout */
+.diagram-flow {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Connection Grouping */
+.diagram-connection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.diagram-connection-line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+/* ===================================
+   11. RESPONSIVE UTILITIES
+   =================================== */
+
+@media (max-width: 1000px) {
+
+    .diagram-grid.cols-5,
+    .diagram-grid.cols-3 {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .diagram-arrow.horizontal {
+        width: 2px;
+        height: 40px;
+    }
+
+    .diagram-arrow.horizontal.right::after {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 6px solid #00D4FF;
+        border-bottom: none;
+        top: auto;
+        bottom: -5px;
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .diagram-arrow.horizontal.left::before {
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-bottom: 6px solid #00D4FF;
+        border-top: none;
+        bottom: auto;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .diagram-arrow.horizontal.dashed.right::after {
+        border-top-color: #64748B;
+    }
+
+    .diagram-arrow.horizontal.dashed.left::before {
+        border-bottom-color: #64748B;
+    }
+}
+
+@media (max-width: 768px) {
+    .diagram-grid.auto-fit {
+        grid-template-columns: 1fr;
+    }
+
+    .diagram-label.side {
+        position: static;
+        transform: none;
+        margin-top: 4px;
+    }
+
+    .diagram {
+        padding: 32px 16px;
+    }
+
+    .diagram-legend {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+}

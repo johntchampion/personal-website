@@ -11,6 +11,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-page.css">
+    <link rel="stylesheet" href="diagram.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,30 +72,382 @@
 
                     <!-- Right: Floating Image -->
                     <div class="hero-image-float">
-                        <img src="images/daily-story/german-a2.png" alt="OneTimeChat interface preview">
+                        <img src="images/onetimechat/chat.png" alt="OneTimeChat interface preview">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <p>
-        OneTimeChat is a chat app that requires no app download and no account. Just click a link and start sending messages right in the browser. Thirty days after
-        the last message is sent, the chat dissapears. It's made for temporary chats where getting everyone to download an app is too cumbersome. The idea came to me 
-        when I was trying to start a flying club. We had about ten people come together to start a non-profit where we would own and share an airplane together. At first,
-        I was emailing the whole group, and for everyone to send replies meant people would have to reply all to the whole group. We needed a messaging app, but it can be difficult to pick one when we have a sizable group. Everyone would have to agree to download an app, create an account, and then we would have to get everyone 
-        in the same chat together. It would be so much easier to email a link to a chat to these people. And thus, the idea was born.
-    </p>
-    <p>
-        When you recieve a link, you can open the chat in the browser and see the chat, no questions asked. To send messages, just set a name and an avatar icon, and you can send messages right in the browser. Or, if you have an account, you can keep all messages tied to you, so if you change your name or icon, it will change across all conversations you're in. To create a new conversation, you'll need an account, and you can delete any conversation you create at any time - waiting the 30 days for the conversation to go stale isn't a requirement. Anyone who has access to the chat can send a link to the chat, and anyone who has the link can view the chat, so there's truly no signing in required. It works on both desktop and mobile devices, and if you're on desktop, you can leave the tab open and recieve push notifications while the tab is in the background.
-    </p>
-    <p>
-        The app is composed of three components; a Postgres database, a Node.js app, and a React app. The backend service is a Node.js app that uses the Express framework. It serves a REST API that handles all CRUD functions for conversations and messages as well as user accounts, authentication, and authorization. In addition to the REST API, the service also serves real-time data on a Web Socket through Socket.IO. The service also has a cron job that deletes stale conversations and messages. The front end is a React app built with TypeScript. It uses vite, and Redux is used to handle the auth state. It handles the login/signup functions and session refresh with the REST API, but everything else is done using the Socket.IO client. This means all messages sent will be recieved almost instantaneously by other members of conversations. It also uses this to update user profile data on everyone's device in the event that a logged-in user updates their profile.
-    </p>
-    <p>
-        Neither the backend nor the frontend were particularly difficult to build. The backend is pretty standard as far as CRDU goes and benefits from using Postgres triggers to update timestamp data automatically. It was a great exercise to practice REST API building and setting up a Socket.IO client, and the auth component was also a great exercise as it is a common component in apps. The frontend was also pretty standard, with the use of Redux for auth and React Router, which is very standard for React apps. It was a great exercise in the use of a wide vareity skills, like the Notifications API and CSS to get a message thread that looked precisely as it should. The real challenge for me here was deployment. Up until this, I've been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that can run on Cloud Run. But this web app requires a frontend, backend, and a Postgres database - a specific setup that would require more "doing" than just a Cloud Run or App Engine instance. The best way for this to be deployed was to set up a server myself with production builds of these apps. It was my first time doing that, so it was a great experience to take a step out of the managed world and take more responsibility for how the app is deployed.
-    </p>
+    <!-- Project Overview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content-wide">
+                <div class="section-content">
+                    <!-- Article Metadata -->
+                    <div class="article-meta">
+                        <span class="article-meta-item">November 2024</span>
+                        <span class="article-meta-divider">•</span>
+                        <span class="article-meta-item">6 min read</span>
+                        <div class="article-tags">
+                            <span class="tag">Real-Time Communication</span>
+                            <span class="tag">Web Development</span>
+                            <span class="tag">DevOps</span>
+                        </div>
+                    </div>
+
+                    <h2>From Flying Club Frustration to Link-Based Messaging</h2>
+                    <p>
+                        OneTimeChat is a messaging app that requires no download and no account. Just click a link and start sending messages right in the browser. Thirty days after the last message is sent, the conversation disappears. It's made for temporary group coordination where getting everyone to download an app is too cumbersome.
+                    </p>
+                    <p>
+                        The idea came to me when I was trying to start a flying club. We had about ten people come together to start a non-profit where we would own and share an airplane together. At first, I was emailing the whole group, and for everyone to send replies meant people would have to reply-all to keep everyone in the loop. We needed a messaging app, but picking one proved difficult with a sizable group. Everyone would have to agree to download an app, create an account, and then we'd have to get everyone in the same chat together.
+                    </p>
+
+                    <blockquote class="pullquote">
+                        <p>It would be so much easier to just email a link to a chat. And thus, the idea was born.</p>
+                    </blockquote>
+                </div>
+
+                <!-- Main interface screenshot -->
+                <div class="screenshot-single">
+                    <!-- PLACEHOLDER: Screenshot of OneTimeChat main interface showing a conversation -->
+                    <img src="images/onetimechat/interface.png" alt="OneTimeChat main conversation interface">
+                    <p class="image-caption">
+                        Clean, responsive interface that works seamlessly on desktop and mobile
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="section section-bg-neutral">
+        <div class="container">
+            <div class="section-content-wide">
+                <div class="section-content">
+                    <h2>No Barriers, Just Conversation</h2>
+                    <p>
+                        When you receive a link, you can open the chat in the browser and see the conversation immediately—no questions asked. To send messages, just set a name and an avatar icon, and you can start chatting right in the browser.
+                    </p>
+                    <p>
+                        If you have an account, all messages stay tied to your identity. Change your name or icon, and it updates across all conversations you're in. To create a new conversation, you'll need an account, and you can delete any conversation you create at any time—waiting the 30 days for the conversation to go stale isn't a requirement.
+                    </p>
+                    <p>
+                        Anyone who has access to the chat can share the link, and anyone with the link can view it, so there's truly no sign-in barrier. It works on both desktop and mobile devices, and if you're on desktop, you can leave the tab open and receive push notifications while the tab is in the background.
+                    </p>
+                </div>
+
+                <!-- Feature showcase screenshots -->
+                <div class="screenshot-single">
+                    <!-- PLACEHOLDER: Side-by-side showing guest vs logged-in user experience -->
+                    <img src="images/onetimechat/anonymous-chat.png" alt="Comparison of guest and account user experience">
+                    <p class="image-caption">
+                        Guest users can jump right in, while account holders get persistent identity across conversations
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content-wide">
+                <h2 class="text-center mb-12">Key Features</h2>
+
+                <p class="section-intro">
+                    OneTimeChat focuses on removing friction from temporary group coordination:
+                </p>
+
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Instant Access</h3>
+                            <p>
+                                Click a link and you're in. No app downloads, no account creation, no permission requests. Just immediate access to the conversation.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Real-Time Messaging</h3>
+                            <p>
+                                Messages appear instantly through WebSocket connections. Desktop users get push notifications even when the tab is in the background.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Auto-Cleanup</h3>
+                            <p>
+                                Conversations automatically delete 30 days after the last message, keeping your data minimal and temporary chats truly temporary.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section class="section section-bg-neutral">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Building for Real-Time</h2>
+                <p>
+                    The app is composed of three components: a Postgres database, a Node.js backend, and a React frontend. The architecture prioritizes real-time communication while maintaining a clean separation of concerns.
+                </p>
+
+                <h3 class="section-heading-spacing">Backend Architecture</h3>
+                <p>
+                    The backend service is a Node.js app using the Express framework. It serves a REST API that handles all CRUD operations for conversations and messages, as well as user accounts, authentication, and authorization.
+                </p>
+                <p>
+                    In addition to the REST API, the service delivers real-time data over WebSocket connections through Socket.IO. This dual approach means authentication and session management happen through traditional HTTP requests, while all message delivery happens over persistent WebSocket connections.
+                </p>
+                <p>
+                    The service also runs a cron job that deletes stale conversations and messages. Postgres triggers automatically update timestamp data, keeping the deletion logic simple and reliable.
+                </p>
+            </div>
+
+            <div>
+                <div class="diagram max-width">
+                    <div class="diagram-grid cols-5">
+                        <!-- Frontend -->
+                        <div class="diagram-box center-text">
+                            <div class="diagram-title">React Frontend</div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">UI Framework</div>
+                                <div class="diagram-item">React + TypeScript</div>
+                                <div class="diagram-item">React Router</div>
+                                <div class="diagram-item">Vite</div>
+                            </div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">Communication</div>
+                                <div class="diagram-item">Redux (auth)</div>
+                                <div class="diagram-item highlight">Socket.IO Client</div>
+                            </div>
+                        </div>
+
+                        <!-- Connection 1 -->
+                        <div class="diagram-connection">
+                            <div class="diagram-connection-line">
+                                <div class="diagram-label highlight">WebSocket</div>
+                                <div class="diagram-arrow horizontal right"></div>
+                                <div class="diagram-label highlight">Real-time</div>
+                            </div>
+                            <div class="diagram-connection-line">
+                                <div class="diagram-label">REST API</div>
+                                <div class="diagram-arrow horizontal dashed left"></div>
+                                <div class="diagram-label">Auth/CRUD</div>
+                            </div>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="diagram-box center-text">
+                            <div class="diagram-title">Node.js Backend</div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">HTTP Layer</div>
+                                <div class="diagram-item">Express.js</div>
+                                <div class="diagram-item">REST endpoints</div>
+                                <div class="diagram-item">JWT auth</div>
+                            </div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">Real-time</div>
+                                <div class="diagram-item highlight">Socket.IO Server</div>
+                                <div class="diagram-item highlight">WebSocket rooms</div>
+                            </div>
+                        </div>
+
+                        <!-- Connection 2 -->
+                        <div class="diagram-connection">
+                            <div class="diagram-connection-line">
+                                <div class="diagram-label">Queries</div>
+                                <div class="diagram-arrow horizontal right"></div>
+                            </div>
+                            <div class="diagram-connection-line">
+                                <div class="diagram-label">Results</div>
+                                <div class="diagram-arrow horizontal left"></div>
+                            </div>
+                        </div>
+
+                        <!-- Database -->
+                        <div class="diagram-box center-text">
+                            <div class="diagram-title">PostgreSQL</div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">Tables</div>
+                                <div class="diagram-item">users</div>
+                                <div class="diagram-item">conversations</div>
+                                <div class="diagram-item">messages</div>
+                            </div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">Features</div>
+                                <div class="diagram-item">Timestamp triggers</div>
+                                <div class="diagram-item">Auto-updates</div>
+                            </div>
+                            <div style="position: relative; margin-top: 48px;">
+                                <div class="diagram-box small accent-border" style="float: right; padding: 12px 20px;">
+                                    <div class="diagram-title small accent">Cron Job</div>
+                                    <div class="diagram-subtitle small">Delete stale chats</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-legend">
+                        <div class="diagram-legend-item">
+                            <div class="diagram-legend-line solid"></div>
+                            <span>WebSocket / Real-time</span>
+                        </div>
+                        <div class="diagram-legend-item">
+                            <div class="diagram-legend-line dashed"></div>
+                            <span>HTTP / REST API</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="image-caption">
+                    System architecture showing REST API for authentication and Socket.IO for real-time messaging
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h3 class="section-heading-spacing">Frontend Implementation</h3>
+                <p>
+                    The frontend is a React app built with TypeScript and Vite. Redux handles authentication state, while React Router manages navigation. The app handles login, signup, and session refresh through the REST API, but everything else—messaging, presence updates, profile changes—happens through the Socket.IO client.
+                </p>
+                <p>
+                    This means all messages sent are received almost instantaneously by other members of conversations. Profile updates from logged-in users propagate in real-time to everyone in their conversations.
+                </p>
+
+                <blockquote class="pullquote">
+                    <p>Messages appear instantly through WebSocket connections—no polling, no delay, no refresh required.</p>
+                </blockquote>
+
+                <h3 class="section-heading-spacing">Tech Stack</h3>
+                <div class="tech-stack-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">TypeScript</span>
+                    <span class="tag">Redux</span>
+                    <span class="tag">Node.js</span>
+                    <span class="tag">Express</span>
+                    <span class="tag">Socket.IO</span>
+                    <span class="tag">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Challenge Section -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Learning to Deploy Beyond Managed Services</h2>
+                <p>
+                    Neither the backend nor the frontend were particularly difficult to build. The backend follows standard REST API patterns and benefits from Postgres triggers for automatic timestamp updates. The frontend uses familiar patterns—Redux for auth, React Router for navigation, the Notifications API for background alerts.
+                </p>
+                <p>
+                    The real challenge for me was deployment. Up until this point, I'd been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that runs on Cloud Run with no state to manage. But OneTimeChat requires a frontend, backend, and a Postgres database—a setup that demands more than just deploying to a managed platform.
+                </p>
+
+                <blockquote class="pullquote">
+                    <p>The best way to deploy this was to set up a server myself with production builds of each component.</p>
+                </blockquote>
+
+                <p>
+                    It was my first time deploying a full-stack application to a self-managed server. I had to think about:
+                </p>
+                <ul>
+                    <li>Building production versions of both the React app and Node.js backend</li>
+                    <li>Setting up and configuring a Postgres database</li>
+                    <li>Configuring Nginx as a reverse proxy to route requests to the right services</li>
+                    <li>Managing environment variables and secrets across different processes</li>
+                    <li>Setting up SSL certificates for secure WebSocket connections</li>
+                    <li>Ensuring the Node.js service restarts automatically if it crashes</li>
+                </ul>
+                <p>
+                    It was a great experience to step out of the managed world and take more responsibility for how the app runs in production. Understanding the deployment process—from build pipelines to process management to reverse proxies—gave me a much deeper appreciation for what managed services abstract away.
+                </p>
+            </div>
+
+            <div>
+                <div class="diagram max-width">
+                        <div class="diagram-flow">
+                            <!-- Internet Traffic -->
+                            <div class="diagram-box center-text highlight">
+                                <div class="diagram-title">Internet Traffic</div>
+                                <div class="diagram-subtitle">onetimechat.app</div>
+                                <div class="diagram-accent">SSL/TLS Certificate</div>
+                            </div>
+
+                            <div class="diagram-arrow vertical down">
+                                <div class="diagram-label side">HTTPS</div>
+                            </div>
+
+                            <!-- Nginx -->
+                            <div class="diagram-box center-text highlight">
+                                <div class="diagram-title">Nginx</div>
+                                <div class="diagram-subtitle">Reverse Proxy</div>
+                                <div class="diagram-accent">Port 80/443</div>
+                            </div>
+
+                            <div class="diagram-arrow vertical down"></div>
+
+                            <!-- Server -->
+                            <div class="diagram-box diagram-container">
+                                <div class="diagram-container-label">VPS Server</div>
+                                <div class="diagram-grid auto-fit">
+                                    <div class="diagram-box small">
+                                        <div class="diagram-title small">Node.js</div>
+                                        <div class="diagram-subtitle small">Backend API</div>
+                                        <div class="diagram-accent small">:3000</div>
+                                    </div>
+                                    <div class="diagram-box small highlight">
+                                        <div class="diagram-title small">React</div>
+                                        <div class="diagram-subtitle small">Static Build</div>
+                                        <div class="diagram-accent small">/var/www</div>
+                                    </div>
+                                    <div class="diagram-box small">
+                                        <div class="diagram-title small">PostgreSQL</div>
+                                        <div class="diagram-subtitle small">Database</div>
+                                        <div class="diagram-accent small">:5432</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="diagram-arrow vertical down"></div>
+
+                            <!-- Process Management -->
+                            <div class="diagram-box center-text">
+                                <div class="diagram-title">Process Management</div>
+                                <div class="diagram-subtitle">PM2 / systemd</div>
+                                <div class="diagram-accent">Auto-restart on crash</div>
+                            </div>
+                        </div>
+                    </div>
+
+                <p class="image-caption">
+                    Moving from managed services to self-hosted deployment taught valuable lessons in infrastructure management
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h3 class="section-heading-spacing">What I Learned</h3>
+                <p>
+                    This project was an exercise in using a wide variety of skills. The Notifications API for background alerts, CSS to get a message thread that looked precisely right, Socket.IO for real-time communication, and Redux for state management all came together to create a cohesive experience.
+                </p>
+                <p>
+                    But the most valuable lesson came from deployment. Managed services are powerful, but understanding what happens underneath—how processes are managed, how routing works, how databases connect to applications—makes you a better developer regardless of what platform you ultimately deploy to.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Call to Action Section -->
     <section class="section cta-section">
