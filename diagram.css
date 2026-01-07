@@ -104,7 +104,7 @@
    =================================== */
 
 .diagram-section {
-    margin: 12px 0;
+    margin: 24px 0;
 }
 
 .diagram-section-title {
@@ -124,15 +124,11 @@
     font-size: 13px;
     color: #94A3B8;
     padding: 4px 0;
-    border-left: 2px solid #334155;
-    padding-left: 10px;
-    margin: 3px 0;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .diagram-item.highlight {
     color: #00D4FF;
-    border-left-color: #00D4FF;
 }
 
 /* ===================================
