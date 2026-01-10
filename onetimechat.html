@@ -203,17 +203,6 @@
                 <p>
                     The app is composed of three components: a Postgres database, a Node.js backend, and a React frontend. The architecture prioritizes real-time communication while maintaining a clean separation of concerns.
                 </p>
-
-                <h3 class="section-heading-spacing">Backend Architecture</h3>
-                <p>
-                    The backend service is a Node.js app using the Express framework. It serves a REST API that handles all CRUD operations for conversations and messages, as well as user accounts, authentication, and authorization.
-                </p>
-                <p>
-                    In addition to the REST API, the service delivers real-time data over WebSocket connections through Socket.IO. This dual approach means authentication and session management happen through traditional HTTP requests, while all message delivery happens over persistent WebSocket connections.
-                </p>
-                <p>
-                    The service also runs a cron job that deletes stale conversations and messages. Postgres triggers automatically update timestamp data, keeping the deletion logic simple and reliable.
-                </p>
             </div>
 
             <div>
@@ -319,6 +308,19 @@
 
                 <p class="image-caption">
                     System architecture showing REST API for authentication and Socket.IO for real-time messaging
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h3 class="section-heading-spacing">Backend Architecture</h3>
+                <p>
+                    The backend service is a Node.js app using the Express framework. It serves a REST API that handles all CRUD operations for conversations and messages, as well as user accounts, authentication, and authorization.
+                </p>
+                <p>
+                    In addition to the REST API, the service delivers real-time data over WebSocket connections through Socket.IO. This dual approach means authentication and session management happen through traditional HTTP requests, while all message delivery happens over persistent WebSocket connections.
+                </p>
+                <p>
+                    The service also runs a cron job that deletes stale conversations and messages. Postgres triggers automatically update timestamp data, keeping the deletion logic simple and reliable.
                 </p>
             </div>
 
