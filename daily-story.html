@@ -11,6 +11,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-page.css">
+    <link rel="stylesheet" href="diagram.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -270,7 +271,58 @@ const themes = {
                 <blockquote class="pullquote">
                     <p>By retrieving stories at 6 PM, they're ready the moment users need them at midnight—eliminating any lag while still taking advantage of half-price batch processing.</p>
                 </blockquote>
+            </div>
 
+            <div>
+                <div class="diagram max-width">
+                    <div class="diagram-flow">
+                        <div class="diagram-box center-text highlight">
+                            <div class="diagram-title">Cron Job Runs</div>
+                            <div class="diagram-subtitle">Daily story generation check</div>
+                            <div class="diagram-accent">Runs on schedule</div>
+                        </div>
+
+                        <div class="diagram-arrow vertical down"></div>
+
+                        <div class="diagram-box center-text">
+                            <div class="diagram-title">Check Today's Stories</div>
+                            <div>
+                                <div class="diagram-item">Already generated?</div>
+                                <div class="diagram-item">Batch in progress?</div>
+                            </div>
+                        </div>
+
+                        <div class="diagram-arrow vertical down"></div>
+
+                        <div class="diagram-box diagram-container">
+                            <div class="diagram-container-label">Cron Job Outcomes</div>
+                            <div class="diagram-grid auto-fit">
+                                <div class="diagram-box small">
+                                    <div class="diagram-title small">Stories Ready</div>
+                                    <div class="diagram-subtitle small">Save to filesystem</div>
+                                    <div class="diagram-accent small">/stories folder</div>
+                                </div>
+                                <div class="diagram-box small highlight">
+                                    <div class="diagram-title small">Not Generated</div>
+                                    <div class="diagram-subtitle small">Submit batch request</div>
+                                    <div class="diagram-accent small">32 stories total</div>
+                                </div>
+                                <div class="diagram-box small">
+                                    <div class="diagram-title small">Batch Running</div>
+                                    <div class="diagram-subtitle small">Return status message</div>
+                                    <div class="diagram-accent small">"Batches in progress"</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="image-caption">
+                    Cron job decides whether to save stories, submit a batch, or report an in-progress batch
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
                 <p>
                     Running on Google Cloud Run means I only pay for active compute time. No database overhead, no complex state management—just reliable, daily language practice delivered through a clean API.
                 </p>
