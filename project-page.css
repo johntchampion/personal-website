@@ -31,8 +31,7 @@
 }
 
 .hero-image-float img {
-    width: 100%;
-    max-width: 400px;
+    max-height: 600px;
     transform: perspective(1000px) rotateY(-8deg) rotateX(2deg) translateY(20px);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
     box-shadow: 0 12px 32px rgba(0, 0, 0, 0.3);
@@ -105,8 +104,36 @@
     margin-right: auto;
 }
 
-.screenshot-single img {
+.screenshot-single img,
+.screenshot-video {
     width: 100%;
+    display: block;
+    border-radius: 8px;
+}
+
+.screenshot-video {
+    max-height: 600px;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Three-column screenshot grid for portrait images */
+.screenshot-grid-three {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+    margin-top: var(--space-8);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.screenshot-item img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Technical Screenshots - Thumbnail Grid to Large View */
@@ -498,6 +525,11 @@
     .proficiency-large-display {
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
     }
+
+    /* Screenshot Grid - Dark Mode */
+    .screenshot-item img {
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    }
 }
 
 /* ============================================
@@ -516,7 +548,7 @@
 
     .hero-image-float img {
         transform: perspective(1000px) rotateY(-4deg) rotateX(1deg);
-        max-width: 100%;
+        max-height: 300px;
         border-radius: 12px;
     }
 
@@ -556,5 +588,11 @@
 
     .proficiency-large-display {
         max-width: 100%;
+    }
+
+    /* Three-column screenshot grid - Mobile */
+    .screenshot-grid-three {
+        grid-template-columns: 1fr;
+        gap: var(--space-3);
     }
 }

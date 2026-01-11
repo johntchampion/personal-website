@@ -11,6 +11,7 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="project-page.css">
+    <link rel="stylesheet" href="diagram.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -71,15 +72,282 @@
 
                     <!-- Right: Floating Image -->
                     <div class="hero-image-float">
-                        <img src="images/daily-story/german-a2.png" alt="Chess interface preview">
+                        <!-- PLACEHOLDER: Hero image showing chess app on phone/tablet -->
+                        <img src="images/chess/new-game.png" alt="Chess interface preview">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Main Content Section -->
-    <p>Chess description</p>
+    <!-- Project Overview Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content-wide">
+                <div class="section-content">
+                    <!-- Article Metadata -->
+                    <div class="article-meta">
+                        <span class="article-meta-item">2022</span>
+                        <span class="article-meta-divider">•</span>
+                        <span class="article-meta-item">7 min read</span>
+                        <div class="article-tags">
+                            <span class="tag">Game Development</span>
+                            <span class="tag">PWA</span>
+                            <span class="tag">Animation</span>
+                        </div>
+                    </div>
+
+                    <h2>Chess Without the Clutter</h2>
+                    <p>
+                        I love chess—not the competitive, metric-tracking, rating-chasing kind of chess, but the casual, conversation-over-coffee kind. The game you play with friends while catching up, where the board is just an excuse to spend time together. I wanted that same casual experience on my phone for those spare moments throughout the day.
+                    </p>
+                    <p>
+                        The problem? Every chess app I found was either bloated with features for serious players—opening databases, performance analytics, puzzle trainers—or so old and outdated it felt like it was pulled from 2008. I didn't need all those bells and whistles. I just wanted a clean, elegant chess app that worked well and got out of the way.
+                    </p>
+
+                    <blockquote class="pullquote">
+                        <p>So I built one—a Progressive Web App designed for casual play, thoughtful design, and nothing more.</p>
+                    </blockquote>
+                </div>
+
+                <!-- Main interface screenshots - game progression -->
+                <div class="screenshot-grid-three">
+                    <div class="screenshot-item">
+                        <img src="images/chess/beginning-game.png" alt="Chess board at the beginning of a game">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/chess/mid-game.png" alt="Chess board during mid-game">
+                    </div>
+                    <div class="screenshot-item">
+                        <img src="images/chess/end-game.png" alt="Chess board near the end of a game">
+                    </div>
+                </div>
+                <p class="image-caption">
+                    The entire interface is the board—no distractions, no clutter, just chess
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interface Design Section -->
+    <section class="section section-bg-neutral">
+        <div class="container">
+            <div class="section-content-wide">
+                <div class="section-content">
+                    <h2>Just the Board, Nothing Else</h2>
+                    <p>
+                        When you open the app, you see the board. That's it. No menus, no sidebars, no floating buttons. Move a piece by dragging or tapping—whichever feels natural. If you're in check, a subtle indicator appears on your side of the board. Everything else stays out of sight until you need it.
+                    </p>
+                    <p>
+                        Starting a new game required special attention. I didn't want a jarring "reset" button or confirmation dialog that breaks the experience. Instead, you press and hold below the board. A bubble grows smoothly, pauses for a moment, then pops. The current board slides off the screen, and a fresh game glides in from the right.
+                    </p>
+
+                    <blockquote class="pullquote">
+                        <p>The bubble animation had to feel natural—timing, easing, and visual weight all mattered.</p>
+                    </blockquote>
+
+                    <p>
+                        Getting that animation right took days of iteration. The bubble needed to expand at just the right speed, pause long enough to give you a chance to release if you changed your mind, and pop with satisfying finality. The board transition had to feel smooth and deliberate, not abrupt. These micro-interactions transform the app from functional to enjoyable.
+                    </p>
+                </div>
+
+                <!-- Interface detail screenshots -->
+                <div class="screenshot-single">
+                    <!-- PLACEHOLDER: Reset animation video -->
+                    <video class="screenshot-video" autoplay muted loop playsinline>
+                        <!-- <source src="images/chess/reset-animation.mp4" type="video/mp4"> -->
+                        <source src="images/chess/reset-animation.webm" type="video/webm">
+                        Your browser doesn't support video playback.
+                    </video>
+                    <p class="image-caption">
+                        Press and hold to trigger the reset animation—release early to cancel, hold through the pop to start fresh
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-content-wide">
+                <h2 class="text-center mb-12">Key Features</h2>
+
+                <p class="section-intro">
+                    Built for casual players who value simplicity and craftsmanship:
+                </p>
+
+                <div class="features-grid">
+                    <!-- Feature 1 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Minimal Interface</h3>
+                            <p>
+                                No menus, no sidebars, no distractions. Just the board and your next move. Every piece of the interface serves the game, nothing more.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Thoughtful Animations</h3>
+                            <p>
+                                The bubble reset animation, smooth piece movements, and board transitions were crafted with attention to timing and natural motion.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="card feature-card">
+                        <div class="card-body">
+                            <h3>Progressive Web App</h3>
+                            <p>
+                                Install it on your home screen, and it behaves like a native app. No app store required, and the board works offline—though you'll need a connection to play the engine.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Architecture Section -->
+    <section class="section section-bg-neutral">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>Building with React and Stockfish</h2>
+                <p>
+                    The app is a React Progressive Web App built with Create React App. The chess logic comes from two excellent libraries: <code>react-chessboard</code> for rendering a highly customizable board, and <code>chess.js</code> for managing game state, legal moves, and win conditions.
+                </p>
+                <p>
+                    Everything else is orchestrated by a custom hook I built called <code>useGame</code>. This hook provides the React components with all the game state they need—current position, legal moves, check status, whose turn it is—along with functions to interact with the game like making moves, requesting engine analysis, and resetting the board.
+                </p>
+            </div>
+
+            <div>
+                <div class="diagram max-width">
+                    <div class="diagram-grid cols-3">
+                        <!-- Frontend -->
+                        <div class="diagram-box center-text">
+                            <div class="diagram-title">React Frontend</div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">UI Components</div>
+                                <div class="diagram-item">react-chessboard</div>
+                                <div class="diagram-item">Custom animations</div>
+                                <div class="diagram-item">PWA manifest</div>
+                            </div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">Game Logic</div>
+                                <div class="diagram-item">chess.js</div>
+                                <div class="diagram-item highlight">useGame hook</div>
+                            </div>
+                        </div>
+
+                        <!-- Connection -->
+                        <div class="diagram-connection">
+                            <div class="diagram-connection-line">
+                                <div class="diagram-label">FEN notation</div>
+                                <div class="diagram-arrow horizontal right"></div>
+                                <div class="diagram-label">Best move</div>
+                            </div>
+                            <div class="diagram-connection-line">
+                                <div class="diagram-label">Game state</div>
+                                <div class="diagram-arrow horizontal dashed left"></div>
+                                <div class="diagram-label">Move response</div>
+                            </div>
+                        </div>
+
+                        <!-- Backend -->
+                        <div class="diagram-box center-text">
+                            <div class="diagram-title">Python Backend</div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">API Layer</div>
+                                <div class="diagram-item">FastAPI</div>
+                                <div class="diagram-item">Single endpoint</div>
+                            </div>
+                            <div class="diagram-section">
+                                <div class="diagram-section-title">Chess Engine</div>
+                                <div class="diagram-item highlight">Stockfish</div>
+                                <div class="diagram-item">Difficulty tuning</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="diagram-legend">
+                        <div class="diagram-legend-item">
+                            <div class="diagram-legend-line solid"></div>
+                            <span>Engine move request</span>
+                        </div>
+                        <div class="diagram-legend-item">
+                            <div class="diagram-legend-line dashed"></div>
+                            <span>Move response</span>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="image-caption">
+                    Frontend handles all game logic and UI, backend wraps Stockfish to provide engine analysis
+                </p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h3 class="section-heading-spacing">The Stockfish Backend</h3>
+                <p>
+                    Stockfish is the most powerful open-source chess engine in the world. It's written in C++, which means it can't run directly in a browser without compiling to WebAssembly—a path that felt overly complex for this project. Instead, I built a small Python service using FastAPI to act as a bridge between the browser and Stockfish.
+                </p>
+                <p>
+                    The API has just one endpoint. The frontend sends the current game state in FEN notation—a compact text format that encodes the entire board position. The backend passes that to Stockfish, waits for it to calculate the best move, and returns the result. The engine is tuned to play at my level, which means I win about half the time.
+                </p>
+
+                <blockquote class="pullquote">
+                    <p>Stockfish plays at exactly my skill level—challenging enough to keep me engaged, beatable enough to stay fun.</p>
+                </blockquote>
+
+                <h3 class="section-heading-spacing">Progressive Web App</h3>
+                <p>
+                    The app is a PWA, which means it can be installed on your home screen and feels like a native app. The board and game logic work offline since <code>chess.js</code> runs entirely in the browser. The only time you need a connection is when requesting a move from the Stockfish backend.
+                </p>
+
+                <h3 class="section-heading-spacing">Tech Stack</h3>
+                <div class="tech-stack-tags">
+                    <span class="tag">React</span>
+                    <span class="tag">chess.js</span>
+                    <span class="tag">react-chessboard</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">FastAPI</span>
+                    <span class="tag">Stockfish</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What's Next Section -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <h2>What's Next</h2>
+                <p>
+                    Right now, the app is a minimal viable product. You can play against the engine at a fixed difficulty, and your color is chosen randomly when you start a new game. It's intentionally simple, but there are features I'd like to add—undo moves, move suggestions, difficulty selection, color choice, and move history.
+                </p>
+                <p>
+                    Eventually, it would be interesting to add multiplayer—playing real people instead of just the engine. The challenge isn't adding functionality; it's doing so in a way that preserves the elegant, uncluttered feel of the current design.
+                </p>
+
+                <blockquote class="pullquote">
+                    <p>The challenge isn't adding features—it's adding them without making the app feel bloated.</p>
+                </blockquote>
+
+                <h3 class="section-heading-spacing">What I Learned</h3>
+                <p>
+                    This project taught me a lot about animation and polish. Getting the bubble reset animation to feel natural required careful attention to timing curves, visual weight, and user feedback. The board slide transitions needed to be smooth and deliberate, not jarring. These details take time, but they're what separate a functional app from an enjoyable one.
+                </p>
+                <p>
+                    It was also my first time deploying a React app alongside a backend service. I learned to deploy the frontend on AWS Amplify and the Python backend on Google Cloud Run—both effectively free for this scale. And working with Stockfish gave me my first exposure to chess engines, FEN notation, and wrapping a C++ binary in a REST API.
+                </p>
+            </div>
+        </div>
+    </section>
 
     <!-- Call to Action Section -->
     <section class="section cta-section">
