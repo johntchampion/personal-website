@@ -307,6 +307,11 @@
     box-shadow: 0 8px 20px rgba(255, 184, 48, 0.4);
 }
 
+.contact-icon {
+    width: 1.25em;
+    height: 1.25em;
+}
+
 /* Footer styling */
 footer {
     background-color: var(--color-primary);

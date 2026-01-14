@@ -482,6 +482,20 @@ blockquote {
     position: relative;
     overflow: hidden;
     background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    perspective: 1000px;
+    perspective-origin: center center;
+}
+
+/* Skewed screenshot effect - like looking at a screen on a table */
+.card-project-image img {
+    width: 1000px;
+    height: 1000px;
+    object-fit: cover;
+    transform: rotateX(51deg) rotateZ(-43deg);
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-base);
 }
 
 /* Subtle gradient overlay on images */
@@ -489,8 +503,9 @@ blockquote {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(45deg, rgba(0, 0, 0, 0.1) 0%, transparent 100%);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%);
     pointer-events: none;
+    z-index: 1;
 }
 
 /* Optional: Different heights for variety */
