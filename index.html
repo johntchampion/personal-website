@@ -433,84 +433,9 @@
             });
         });
 
-        // Interactive terminal input
-        const terminalWindow = document.querySelector('.terminal-window');
-        const terminalContent = document.querySelector('.terminal-content');
-        const terminalInputLine = document.querySelector('.terminal-input-line');
-        const terminalUserInput = document.querySelector('.terminal-user-input');
-        const terminalCursor = document.querySelector('.terminal-cursor');
-        let userInputText = '';
-
-        // Function to update cursor position
-        function updateCursorPosition() {
-            const inputWidth = terminalUserInput.offsetWidth;
-            terminalCursor.style.left = inputWidth + 'px';
-        }
-
-        // Make terminal focusable
-        terminalWindow.setAttribute('tabindex', '0');
-
-        // Focus terminal when clicked
-        terminalWindow.addEventListener('click', () => {
-            terminalWindow.focus();
-        });
-
-        // Function to execute command
-        function executeCommand(command) {
-            const trimmedCommand = command.trim();
-
-            // Create a line showing the command that was entered
-            const commandLine = document.createElement('div');
-            commandLine.className = 'terminal-line';
-            commandLine.innerHTML = `<span class="terminal-prompt">$</span> <span class="terminal-command">${trimmedCommand}</span>`;
-            terminalInputLine.parentNode.insertBefore(commandLine, terminalInputLine);
-
-            // Create response line
-            const responseLine = document.createElement('div');
-            responseLine.className = 'terminal-line';
-
-            if (trimmedCommand === 'whoami') {
-                responseLine.innerHTML = '<span class="terminal-output">John Champion</span>';
-            } else if (trimmedCommand === 'faith') {
-                responseLine.innerHTML = '<span class="terminal-output">For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.</span>';
-            } else if (trimmedCommand !== '') {
-                responseLine.innerHTML = `<span class="terminal-output">bash: command not found: ${trimmedCommand}</span>`;
-            }
-
-            if (trimmedCommand !== '') {
-                terminalInputLine.parentNode.insertBefore(responseLine, terminalInputLine);
-            }
-
-            // Clear input
-            userInputText = '';
-            terminalUserInput.textContent = '';
-
-            // Scroll to bottom
-            terminalContent.scrollTop = terminalContent.scrollHeight;
-        }
-
-        // Handle keyboard input
-        terminalWindow.addEventListener('keydown', (e) => {
-            // Prevent default behavior for most keys
-            if (e.key !== 'Tab') {
-                e.preventDefault();
-            }
-
-            if (e.key === 'Backspace') {
-                // Remove last character
-                userInputText = userInputText.slice(0, -1);
-            } else if (e.key === 'Enter') {
-                // Execute command
-                executeCommand(userInputText);
-            } else if (e.key.length === 1) {
-                // Add printable characters
-                userInputText += e.key;
-            }
-
-            // Update display
-            terminalUserInput.textContent = userInputText;
-            updateCursorPosition();
-        });
     </script>
+
+    <!-- Terminal interaction script -->
+    <script src="terminal.js"></script>
 </body>
 </html>
