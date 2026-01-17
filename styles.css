@@ -488,8 +488,8 @@ blockquote {
 
 /* Skewed screenshot effect - like looking at a screen on a table */
 .card-project-image img {
-    width: 1000px;
-    height: 1000px;
+    width: 500px;
+    height: 500px;
     object-fit: cover;
     transform: rotateX(51deg) rotateZ(-43deg);
     transform-origin: center center;

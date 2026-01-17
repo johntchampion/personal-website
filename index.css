@@ -291,7 +291,7 @@
     display: flex;
     align-items: center;
     gap: var(--space-2);
-    color: var(--color-primary);
+    color: #0A1929;
     background: var(--color-accent);
     padding: var(--space-3) var(--space-6);
     border-radius: var(--radius-full);
@@ -302,7 +302,7 @@
 
 .contact-link:hover {
     background: var(--color-accent-light);
-    color: var(--color-primary-light);
+    color: #0A1929;
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(255, 184, 48, 0.4);
 }
@@ -410,13 +410,13 @@ footer a:hover {
     }
 
     .contact-link {
-        color: var(--color-primary-dark);
+        color: #0A1929;
         background: var(--color-accent);
     }
 
     .contact-link:hover {
         background: var(--color-accent-light);
-        color: var(--color-primary-dark);
+        color: #0A1929;
     }
 
     /* Footer */
