@@ -391,6 +391,16 @@ function isPrime(n) {
                     </ul>
                 </div>
 
+                <div class="card info-card" style="margin-top: var(--space-6);">
+                    <h4 class="mb-space-3">Key Features</h4>
+                    <ul class="info-list">
+                        <li><strong>Playful Tilt:</strong> Cards have a subtle rotation (-1deg, 1deg, -0.5deg) using nth-child selectors for visual interest</li>
+                        <li><strong>Hover Animation:</strong> On hover, cards straighten (rotate to 0deg) and lift up 8px with enhanced shadow</li>
+                        <li><strong>3D Screenshot Effect:</strong> Images inside cards use a skewed 3D transform (rotateX + rotateZ) creating a "looking at a screen on a table" perspective</li>
+                        <li><strong>Gradient Overlay:</strong> Images have a subtle gradient overlay for depth and visual polish</li>
+                    </ul>
+                </div>
+
                 <div class="component-demo">
                     <div class="grid-demo">
                         <div class="card card-project">
@@ -445,7 +455,8 @@ function isPrime(n) {
                     <pre>
 &lt;div class="card card-project"&gt;
   &lt;div class="card-project-image"&gt;
-    &lt;!-- Screenshot or gradient placeholder --&gt;
+    &lt;img src="project-screenshot.png" alt="Project Screenshot"&gt;
+    &lt;!-- Or use gradient placeholder if no image --&gt;
   &lt;/div&gt;
   &lt;div class="card-header"&gt;
     &lt;h3 class="card-title"&gt;Project Title&lt;/h3&gt;
@@ -462,6 +473,11 @@ function isPrime(n) {
     &lt;a href="#" class="btn btn-sm btn-outline"&gt;GitHub&lt;/a&gt;
   &lt;/div&gt;
 &lt;/div&gt;</pre>
+                    <p class="small-text secondary-text" style="margin-top: var(--space-4);">
+                        <strong>Note:</strong> The .card-project-image container uses CSS perspective and the img inside
+                        uses 3D transforms (rotateX: 51deg, rotateZ: -43deg) to create a skewed screenshot effect.
+                        Images should be tall (2000px height recommended) to work with the transform.
+                    </p>
                 </div>
             </div>
 
@@ -559,18 +575,18 @@ function isPrime(n) {
                     <tbody>
                         <tr>
                             <td><strong>Visual Style</strong></td>
-                            <td>Playfully tilted</td>
+                            <td>Playfully tilted (-1deg to 1deg)</td>
                             <td>Gradient border</td>
                         </tr>
                         <tr>
                             <td><strong>Main Element</strong></td>
-                            <td>Screenshot/image</td>
+                            <td>3D skewed screenshot/image</td>
                             <td>Large icon/emoji</td>
                         </tr>
                         <tr>
                             <td><strong>Hover Effect</strong></td>
-                            <td>Straightens and lifts</td>
-                            <td>Scales and lifts</td>
+                            <td>Straightens (0deg) and lifts 8px</td>
+                            <td>Scales (1.02) and lifts 8px</td>
                         </tr>
                         <tr>
                             <td><strong>Content Type</strong></td>
@@ -581,6 +597,11 @@ function isPrime(n) {
                             <td><strong>Actions</strong></td>
                             <td>Buttons (View Demo, GitHub)</td>
                             <td>Informational (badges, tags)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mobile Behavior</strong></td>
+                            <td>4px lift on hover</td>
+                            <td>Same as desktop</td>
                         </tr>
                     </tbody>
                 </table>
@@ -860,6 +881,8 @@ function isPrime(n) {
                 <ul class="plain-list">
                     <li>• Buttons: Lift + shadow on hover</li>
                     <li>• Cards: Lift + enhanced shadow</li>
+                    <li>• Project Cards: Straighten rotation + 8px lift + enhanced shadow</li>
+                    <li>• Interest Cards: Scale (1.02) + 8px lift + enhanced shadow</li>
                     <li>• Links: Color transition</li>
                     <li>• Navigation: Underline animation</li>
                 </ul>
