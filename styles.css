@@ -479,6 +479,7 @@ blockquote {
     font-size: var(--text-2xl);
     font-weight: var(--font-semibold);
     color: white;
+    background-color: white;
     position: relative;
     overflow: hidden;
     perspective: 1000px;
