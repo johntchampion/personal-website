@@ -136,6 +136,61 @@
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* Playful overlapping cards layout (for Daily Story) */
+.screenshot-cards-playful {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: var(--space-16);
+    margin-bottom: calc(var(--space-4) - 120px);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    min-height: 650px;
+}
+
+.screenshot-cards-playful .screenshot-item {
+    position: relative;
+    width: 450px;
+    transition: transform 0.3s ease, z-index 0s 0.3s;
+}
+
+/* Playful card overlap effect - two on top */
+.screenshot-cards-playful .screenshot-item:nth-child(1) {
+    transform: rotate(-3deg) translateX(40px);
+    z-index: 1;
+    margin-top: 0;
+}
+
+.screenshot-cards-playful .screenshot-item:nth-child(2) {
+    transform: rotate(3deg) translateX(-40px);
+    z-index: 1;
+    margin-top: 0;
+}
+
+/* Third card centered below, overlapping with top cards */
+.screenshot-cards-playful .screenshot-item:nth-child(3) {
+    transform: rotate(-2deg) translateY(-120px);
+    z-index: 2;
+    margin-top: var(--space-8);
+}
+
+/* Hover effect - lift and bring to front */
+.screenshot-cards-playful .screenshot-item:hover {
+    transform: rotate(0deg) translateY(-12px) scale(1.05);
+    z-index: 10;
+    transition: transform 0.3s ease, z-index 0s 0s;
+}
+
+.screenshot-cards-playful .screenshot-item img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
 /* Technical Screenshots - Thumbnail Grid to Large View */
 .technical-screenshots {
     margin-top: var(--space-6);
@@ -530,6 +585,11 @@
     .screenshot-item img {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
+
+    /* Playful cards keep no shadow in dark mode */
+    .screenshot-cards-playful .screenshot-item img {
+        box-shadow: none;
+    }
 }
 
 /* ============================================
@@ -594,5 +654,30 @@
     .screenshot-grid-three {
         grid-template-columns: 1fr;
         gap: var(--space-3);
+    }
+
+    /* Playful cards - Mobile */
+    .screenshot-cards-playful {
+        flex-direction: column;
+        gap: var(--space-6);
+        min-height: auto;
+        margin-bottom: var(--space-4);
+    }
+
+    /* Remove rotations and overlaps on mobile for playful cards */
+    .screenshot-cards-playful .screenshot-item:nth-child(1),
+    .screenshot-cards-playful .screenshot-item:nth-child(2),
+    .screenshot-cards-playful .screenshot-item:nth-child(3) {
+        transform: none;
+        margin-top: 0;
+    }
+
+    .screenshot-cards-playful .screenshot-item {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .screenshot-cards-playful .screenshot-item:hover {
+        transform: translateY(-4px) scale(1.02);
     }
 }
