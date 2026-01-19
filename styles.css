@@ -469,10 +469,10 @@ blockquote {
 
 /* Project image/screenshot */
 .card-project-image {
-    width: 100%;
-    height: 200px;
-    border-radius: var(--radius-lg);
-    margin-bottom: var(--space-4);
+    width: calc(100% + var(--space-6) * 2);
+    height: 250px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    margin: calc(var(--space-6) * -1) calc(var(--space-6) * -1) var(--space-4);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -481,7 +481,6 @@ blockquote {
     color: white;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
     perspective: 1000px;
     perspective-origin: center center;
 }
@@ -491,10 +490,10 @@ blockquote {
     width: 500px;
     height: 500px;
     object-fit: cover;
+    background-color: white;
     transform: rotateX(51deg) rotateZ(-43deg);
     transform-origin: center center;
     transform-style: preserve-3d;
-    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
     transition: transform var(--transition-base);
 }
 
@@ -506,15 +505,6 @@ blockquote {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, transparent 50%, rgba(0, 0, 0, 0.2) 100%);
     pointer-events: none;
     z-index: 1;
-}
-
-/* Optional: Different heights for variety */
-.card-project-image.tall {
-    height: 250px;
-}
-
-.card-project-image.short {
-    height: 150px;
 }
 
 /* === INTEREST CARDS === */
