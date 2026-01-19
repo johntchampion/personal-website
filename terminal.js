@@ -73,8 +73,13 @@ function executeCommand(command) {
       break
 
     case 'faith':
-      response =
-        'For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord.'
+      const gospelResponses = [
+        '"For the wages of sin is death, but the gift of God is eternal life in Christ Jesus our Lord." - Romans 6:23',
+        '"I can do all things through Christ who strengthens me." - Philippians 4:13',
+        '"For God so loved the world that He gave His only begotten Son, that whoever believes in Him should not perish but have everlasting life." - John 3:16',
+        '"Trust in the Lord with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He shall direct your paths." - Proverbs 3:5-6',
+      ]
+      response = randomItem(gospelResponses)
       break
 
     // Navigation commands
