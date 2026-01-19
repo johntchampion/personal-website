@@ -377,44 +377,40 @@
                                 <div class="diagram-label side">HTTPS</div>
                             </div>
 
-                            <!-- Nginx -->
-                            <div class="diagram-box center-text highlight">
-                                <div class="diagram-title">Nginx</div>
-                                <div class="diagram-subtitle">Reverse Proxy</div>
-                                <div class="diagram-accent">Port 80/443</div>
-                            </div>
-
-                            <div class="diagram-arrow vertical down"></div>
-
                             <!-- Server -->
                             <div class="diagram-box diagram-container">
                                 <div class="diagram-container-label">VPS Server</div>
-                                <div class="diagram-grid auto-fit">
-                                    <div class="diagram-box small">
-                                        <div class="diagram-title small">Node.js</div>
-                                        <div class="diagram-subtitle small">Backend API</div>
-                                        <div class="diagram-accent small">:3000</div>
+                                <!-- Nginx -->
+                                <div class="diagram-box center-text highlight">
+                                    <div class="diagram-title">Nginx</div>
+                                    <div class="diagram-subtitle">Reverse Proxy</div>
+                                    <div class="diagram-accent">Port 80/443</div>
+                                </div>
+                                <div class="diagram-arrow vertical down" style="margin: 24px auto;"></div>
+                                <div class="diagram-grid" style="grid-template-columns: 2fr 1fr; gap: 12px;">
+                                    <!-- Docker Container -->
+                                    <div class="diagram-box diagram-container" style="border-style: dashed;">
+                                        <div class="diagram-container-label">Docker</div>
+                                        <div class="diagram-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
+                                            <div class="diagram-box small">
+                                                <div class="diagram-title small">Node.js</div>
+                                                <div class="diagram-subtitle small">Backend API</div>
+                                                <div class="diagram-accent small">:3000</div>
+                                            </div>
+                                            <div class="diagram-box small">
+                                                <div class="diagram-title small">PostgreSQL</div>
+                                                <div class="diagram-subtitle small">Database</div>
+                                                <div class="diagram-accent small">:5432</div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    <!-- React App (outside Docker) -->
                                     <div class="diagram-box small highlight">
                                         <div class="diagram-title small">React</div>
                                         <div class="diagram-subtitle small">Static Build</div>
                                         <div class="diagram-accent small">/var/www</div>
                                     </div>
-                                    <div class="diagram-box small">
-                                        <div class="diagram-title small">PostgreSQL</div>
-                                        <div class="diagram-subtitle small">Database</div>
-                                        <div class="diagram-accent small">:5432</div>
-                                    </div>
                                 </div>
-                            </div>
-
-                            <div class="diagram-arrow vertical down"></div>
-
-                            <!-- Process Management -->
-                            <div class="diagram-box center-text">
-                                <div class="diagram-title">Process Management</div>
-                                <div class="diagram-subtitle">PM2 / systemd</div>
-                                <div class="diagram-accent">Auto-restart on crash</div>
                             </div>
                         </div>
                     </div>
