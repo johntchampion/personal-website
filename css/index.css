@@ -394,7 +394,7 @@ footer a:hover {
 
     /* Contact section */
     .contact-section {
-        background: linear-gradient(135deg, #0A0E14 0%, #1A2332 100%);
+        background: #121923;
     }
 
     .contact-section::before {
@@ -421,7 +421,7 @@ footer a:hover {
 
     /* Footer */
     footer {
-        background-color: #000;
+        background: #121923;
     }
 
     footer p {
