@@ -121,8 +121,8 @@ function executeCommand(command) {
           <tr><td style="padding: 2px 8px;">faith</td><td style="padding: 2px 8px;">exit</td><td style="padding: 2px 8px;">secret</td></tr>
           <tr><td style="padding: 2px 8px;">ls</td><td style="padding: 2px 8px;">quit</td><td style="padding: 2px 8px;">konami</td></tr>
           <tr><td style="padding: 2px 8px;">cd</td><td style="padding: 2px 8px;">coffee</td><td style="padding: 2px 8px;">hack</td></tr>
-          <tr><td style="padding: 2px 8px;">pwd</td><td style="padding: 2px 8px;">joke</td><td style="padding: 2px 8px;">contact</td></tr>
-          <tr><td style="padding: 2px 8px;">clear</td><td style="padding: 2px 8px;">help</td></tr>
+          <tr><td style="padding: 2px 8px;">pwd</td><td style="padding: 2px 8px;">joke</td><td style="padding: 2px 8px;">clear</td></tr>
+          <tr><td style="padding: 2px 8px;">help</td></tr>
         </table>`
       break
 
