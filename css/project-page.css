@@ -177,13 +177,6 @@
     margin-top: var(--space-8);
 }
 
-/* Hover effect - lift and bring to front */
-.screenshot-cards-playful .screenshot-item:hover {
-    transform: rotate(0deg) translateY(-12px) scale(1.05);
-    z-index: 10;
-    transition: transform 0.3s ease, z-index 0s 0s;
-}
-
 .screenshot-cards-playful .screenshot-item img {
     width: 100%;
     display: block;
@@ -687,10 +680,5 @@
     .screenshot-cards-playful .screenshot-item {
         width: 100%;
         max-width: 400px;
-    }
-
-    .screenshot-cards-playful .screenshot-item:hover {
-        transform: rotate(0deg) translateY(-4px) scale(1.02);
-        z-index: 10;
     }
 }
