@@ -378,6 +378,20 @@
         gap: 32px;
     }
 
+    .diagram-connection {
+        flex-direction: row;
+        justify-content: center;
+        gap: 24px;
+    }
+
+    .diagram-connection .diagram-label {
+        display: none;
+    }
+
+    .diagram-container .diagram-grid {
+        grid-template-columns: 1fr !important;
+    }
+
     .diagram-arrow.horizontal {
         width: 2px;
         height: 40px;
