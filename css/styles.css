@@ -482,8 +482,6 @@ blockquote {
     background-color: white;
     position: relative;
     overflow: hidden;
-    perspective: 1000px;
-    perspective-origin: center center;
 }
 
 /* Skewed screenshot effect - like looking at a screen on a table */
@@ -492,7 +490,7 @@ blockquote {
     height: 2000px;
     object-fit: contain;
     background-color: white;
-    transform: rotateX(51deg) rotateZ(-43deg);
+    transform: perspective(1000px) rotateX(51deg) rotateZ(-43deg);
     transform-origin: center center;
     transform-style: preserve-3d;
     transition: transform var(--transition-base);
