@@ -1,5 +1,10 @@
 /* Project Page Styles - Shared across all project detail pages */
 
+/* Lists */
+.section ul {
+    padding-left: var(--space-6);
+}
+
 /* Hero Section */
 .project-hero {
     background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
