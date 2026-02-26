@@ -210,23 +210,11 @@
 }
 
 /* Project card button layouts */
-.btn-layout-stacked {
+.btn-layout-row {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
     gap: var(--space-3);
-}
-
-.btn-layout-stacked .btn-full {
-    width: 100%;
-}
-
-.btn-layout-stacked .btn-row {
-    display: flex;
-    gap: var(--space-3);
-}
-
-.btn-layout-stacked .btn-row .btn {
-    flex: 1;
 }
 
 .contact-section {

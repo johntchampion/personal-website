@@ -927,6 +927,47 @@ function isPrime(n) {
             </div>
         </section>
 
+        <!-- Photo Gallery Section -->
+        <section class="design-section">
+            <h2 class="design-section-title">Photo Gallery</h2>
+            <p class="design-section-subtitle">Interactive image gallery with thumbnail navigation and auto-advance</p>
+
+            <div class="component-showcase">
+                <h3 class="component-title">Live Demo</h3>
+                <div class="component-demo">
+                    <div class="photo-gallery" id="designGalleryDemo" style="max-width: 700px; margin: 0 auto;">
+                        <div class="photo-gallery-main">
+                            <img class="photo-gallery-main-img" src="../images/aviation/aerial-southern-pines.jpeg" alt="Aerial view of Southern Pines">
+                        </div>
+                        <div class="photo-gallery-thumbs">
+                            <img class="photo-gallery-thumb active" src="../images/aviation/aerial-southern-pines.jpeg" alt="Aerial view of Southern Pines">
+                            <img class="photo-gallery-thumb" src="../images/aviation/aerial-ktta.jpeg" alt="Aerial view near Sanford-Lee County Airport">
+                            <img class="photo-gallery-thumb" src="../images/aviation/aerial-raleigh.jpeg" alt="Aerial view of Raleigh">
+                            <img class="photo-gallery-thumb" src="../images/aviation/cockpit-cruising.jpeg" alt="Cockpit view while cruising">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card code-example-card">
+                <h4 class="category-heading">Example HTML Structure</h4>
+                <pre>
+&lt;div class="photo-gallery" id="myGallery"&gt;
+  &lt;div class="photo-gallery-main"&gt;
+    &lt;img class="photo-gallery-main-img" src="image1.jpg" alt="..."&gt;
+  &lt;/div&gt;
+  &lt;div class="photo-gallery-thumbs"&gt;
+    &lt;img class="photo-gallery-thumb active" src="image1.jpg" alt="..."&gt;
+    &lt;img class="photo-gallery-thumb" src="image2.jpg" alt="..."&gt;
+    &lt;img class="photo-gallery-thumb" src="image3.jpg" alt="..."&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+                <p class="small-text secondary-text" style="margin-top: var(--space-4);">
+                    <strong>JS (js/photo-gallery.js):</strong> Call <code>initPhotoGallery('myGallery')</code> after including the script. The gallery auto-advances every 4 seconds and responds to thumbnail clicks. Multiple independent galleries on the same page are supported.
+                </p>
+            </div>
+        </section>
+
         <!-- Implementation Notes -->
         <section class="design-section">
             <h2 class="design-section-title">Implementation Notes</h2>
@@ -964,5 +1005,9 @@ function isPrime(n) {
             </p>
         </footer>
     </main>
+    <script src="../js/photo-gallery.js"></script>
+    <script>
+        initPhotoGallery('designGalleryDemo');
+    </script>
 </body>
 </html>
