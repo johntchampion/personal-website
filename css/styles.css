@@ -1041,6 +1041,7 @@ footer {
     color: var(--color-neutral-600);
     font-size: var(--text-sm);
     font-style: italic;
+    min-height: 4.5em;
 }
 
 /* ============================================
