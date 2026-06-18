@@ -142,7 +142,7 @@
                     </div>
                 </div>
                 <p class="image-caption">
-                    The entire interface is the board, with a subtle dynamic drawer for everything you might needs while playing chess.
+                    The entire interface is the board, with a subtle dynamic drawer for everything you might need while playing chess.
                 </p>
             </div>
         </div>
@@ -158,7 +158,7 @@
                         Opening the app skips straight to the game. No menus to tap through, no options to configure—just the board, ready to play. Move pieces by dragging or tapping, whichever feels natural. If you're in check, a quiet indicator appears above the board. Nothing else demands your attention unless you go looking for it.
                     </p>
                     <p>
-                        A slim drawer rests at the bottom of the screen, out of the way until you need it. By default, it shows four quick-access buttons: new game, undo move, show hint, and show last move—the things you actually reach for mid-game. Open the drawer to see more options, tap any of them, and it replaces the default toolbar. The whole thing adapts quietly to how you play without ever interrupting it.
+                        A slim drawer rests at the bottom of the screen, out of the way until you need it. By default, it shows four quick-access buttons: new game, undo move, show hint, and show last move—the things you actually reach for mid-game.
                     </p>
 
                     <blockquote class="pullquote">
@@ -166,7 +166,7 @@
                     </blockquote>
 
                     <p>
-                        What makes the drawer work is that it's genuinely satisfying to use. Swipe it up and it reveals a fuller set of options—change player color, change theme, change difficulty, and view move history. Swipe it back down and it collapses cleanly. But the best part is what happens when you tap something in the expanded drawer: it closes, and the collapsed toolbar transforms. The four default buttons are replaced by a dynamic set of controls for what you want to do.
+                        Drag the drawer up and it springs open to reveal a fuller set of options—change player color, change theme, change difficulty, and view move history. Tap one and the drawer closes, but the collapsed toolbar transforms: the four default buttons are replaced by controls for whatever you picked. Tap "Change Difficulty" and a slider takes over the toolbar; tap "Done" and the original four snap back into place. It's a small trick, but it lets the app carry real features without ever feeling cluttered.
                     </p>
                 </div>
 
@@ -333,7 +333,7 @@
             <div style="max-width: 800px; margin: 0 auto;">
                 <h2>What's Next</h2>
                 <p>
-                    Right now, the app includes basic features one might want in a chess game, like the ability to view the game history or suggest a move. But there's more bells and whistles that could be added to make it more delightful, like the ability to set up the game pieces in a state other than the normal starting game.
+                    The app already covers the basics you'd want in a casual chess game—viewing move history, asking for a hint, changing difficulty, swapping sides. But there are more bells and whistles that could make it even more delightful, like setting up custom board positions to play out a specific scenario.
                 </p>
                 <p>
                     Eventually, it would be interesting to add multiplayer—playing real people instead of just the engine. The challenge isn't adding functionality; it's doing so in a way that preserves the elegant, uncluttered feel of the current design.
@@ -345,7 +345,7 @@
 
                 <h3 class="section-heading-spacing">What I Learned</h3>
                 <p>
-                    This project taught me a lot about animation and polish. Getting the drawer to feel natural required careful attention. The board slide transitions needed to be smooth and deliberate, not jarring. These details take time, but they're what separate a functional app from an enjoyable one.
+                    This project taught me a lot about animation and polish. Getting the drawer to feel natural—the spring as it opens, the morph as the collapsed toolbar swaps in new controls, the snap back to default—took real time with timing curves and visual weight. The board transitions had to be smooth and deliberate, not jarring. These details take time, but they're what separate a functional app from an enjoyable one.
                 </p>
                 <p>
                     It was also my first time deploying a React app alongside a backend service. I learned to deploy the frontend on AWS Amplify and the Python backend on Google Cloud Run—both effectively free for this scale. And working with Stockfish gave me my first exposure to chess engines, FEN notation, and wrapping a C++ binary in a REST API.
