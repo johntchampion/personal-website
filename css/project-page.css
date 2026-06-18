@@ -121,6 +121,7 @@
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Three-column screenshot grid for portrait images */
@@ -580,7 +581,8 @@
     }
 
     /* Screenshot Grid - Dark Mode */
-    .screenshot-item img {
+    .screenshot-item img,
+    .screenshot-video {
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
     }
 
@@ -648,10 +650,9 @@
         max-width: 100%;
     }
 
-    /* Three-column screenshot grid - Mobile */
+    /* Three-column screenshot grid - Mobile (keep side-by-side) */
     .screenshot-grid-three {
-        grid-template-columns: 1fr;
-        gap: var(--space-3);
+        gap: var(--space-2);
     }
 
     /* Playful cards - Mobile */
