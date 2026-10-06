@@ -4,570 +4,342 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Daily Story - A language learning platform that delivers stories at your skill level with comprehension quizzes.">
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/icon.png" />
     <meta name="author" content="John Champion">
     <title>Daily Story - John Champion</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/icon.png">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://johnchampion.dev/projects/daily-story.html">
-    <meta property="og:title" content="Daily Story - AI-Powered Language Learning Platform">
+    <meta property="og:title" content="Teaching an AI to write me a new story every day">
     <meta property="og:description" content="Read a new story every day in the language you're learning, at your skill level. Fresh AI-generated content across 8 languages and 4 proficiency levels.">
     <meta property="og:image" content="https://johnchampion.dev/images/daily-story/japanese-story.png">
     <meta property="og:site_name" content="John Champion">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/project-page.css">
-    <link rel="stylesheet" href="../css/diagram.css">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/device-frames.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="../css/diagram.css">
+
+    <script src="../js/terminal-shortcut.js" defer></script>
+    <script src="../js/image-switcher.js" defer></script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header id="header" class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../index.html" class="logo">JC</a>
-                <nav>
-                    <ul class="nav">
-                        <li><a href="../index.html#about" class="nav-link">About</a></li>
-                        <li><a href="../index.html#work" class="nav-link">Work</a></li>
-                        <li><a href="../index.html#interests" class="nav-link">Interests</a></li>
-                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <header class="site-header page-width">
+        <a href="../index.html" class="site-brand">
+            <span class="site-brand-name">John Champion</span>
+            <span class="site-brand-path">~/field-notes</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="../index.html#posts">Posts</a>
+            <a href="../index.html#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Project Hero Section -->
-    <section class="hero project-hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-layout">
-                    <!-- Left: Text Content -->
-                    <div class="hero-text-content">
-                        <!-- Breadcrumb -->
-                        <div class="breadcrumb">
-                            <a href="../index.html#work">← Back to Projects</a>
-                        </div>
-
-                        <!-- Project Title -->
-                        <h1>Daily Story</h1>
-
-                        <!-- Project Tagline -->
-                        <p class="hero-tagline">
-                            Read a new story every day in the language you're learning, at your skill level.
-                        </p>
-
-                        <!-- Tech Stack Tags -->
-                        <div class="tech-tags">
-                            <span class="badge">Node.js</span>
-                            <span class="badge">Express</span>
-                            <span class="badge">Claude AI</span>
-                        </div>
-
-                        <!-- Project Links -->
-                        <div class="hero-cta">
-                            <a href="https://dailystory.page" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
-                            <a href="https://github.com/johntchampion/daily-story" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Floating Image -->
-                    <div class="hero-image-float">
-                        <img src="../images/daily-story/german-a2.png" alt="Daily Story interface preview">
-                    </div>
+    <main>
+        <div class="post-intro page-width">
+            <a href="../index.html#posts" class="back-link">← All posts</a>
+            <div class="post-kind">
+                <span class="eyebrow">PROJECT</span>
+                <span class="post-topics">Language Learning · AI · Web Development</span>
+            </div>
+            <h1 class="post-title">Teaching an AI to write me a new story every day</h1>
+            <p class="post-dek">How I built Daily Story—fresh reading practice in eight languages, calibrated to your level—and what it taught me about prompt engineering.</p>
+            <div class="post-facts">
+                <div class="post-fact-list">
+                    <span><span class="post-fact-label">stack </span>Node.js · Express · Claude AI</span>
+                    <span><span class="post-fact-label">status </span>live</span>
+                </div>
+                <div class="button-row">
+                    <a href="https://dailystory.page" class="button button-compact" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+                    <a href="https://github.com/johntchampion/daily-story" class="button button-compact" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/github-icon.svg" alt=""></span>GitHub Repository</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Project Overview Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-content-wide">
-                <div class="section-content">
-                    <!-- Article Metadata -->
-                    <div class="article-meta">
-                        <div class="article-tags">
-                            <span class="tag">Language Learning</span>
-                            <span class="tag">AI</span>
-                            <span class="tag">Web Development</span>
-                        </div>
+        <div class="wide-width">
+            <div class="post-hero browser-stage" style="--stage-color: #EFE2C6">
+                <div class="browser-window">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">dailystory.page</span>
                     </div>
-
-                    <h2>Building Language Immersion Without a Plane Ticket</h2>
-                    <p>
-                        Language immersion doesn't require a plane ticket. Daily Story delivers fresh, AI-generated stories in eight languages across four skill levels—beginner to advanced. Each story comes with comprehension quizzes to reinforce what you've learned and track your progress.
-                    </p>
-                    <p>
-                        Whether you're brushing up on Spanish before a trip or diving deep into Japanese grammar, Daily Story gives you something new to read every single day, perfectly calibrated to challenge you without overwhelming you.
-                    </p>
-                </div>
-
-                <!-- Main page screenshot -->
-                <div class="screenshot-cards-playful">
-                    <div class="screenshot-item">
-                        <img src="../images/daily-story/story-picker.png" alt="Daily Story main interface">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="../images/daily-story/japanese-story.png" alt="Japanese story example">
-                    </div>
-                    <div class="screenshot-item">
-                        <img src="../images/daily-story/quiz-questions.png" alt="Comprehension quiz questions">
-                    </div>
+                    <img src="../images/daily-story/german-a2.png" alt="Daily Story interface preview">
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Challenge & Solution Section -->
-    <section class="section section-bg-neutral">
-        <div class="container">
-            <div class="section-content-wide">
-                <div class="section-content">
-                    <h2>The Problem with Finding Content at Your Level</h2>
-                    <p>
-                        One of the best ways to learn a language is to immerse yourself in it through reading. The problem? Finding content that matches your exact skill level is difficult. Too easy and you're not learning; too hard and you're frustrated.
-                    </p>
-                    <p>
-                        I found myself constantly asking ChatGPT to generate short stories at my skill level for language practice. It worked, but it was tedious to do manually every day. I realized this could be automated into a daily habit-building tool that others could benefit from too.
-                    </p>
+        <article class="prose space-before-l">
+            <h2>Building Language Immersion Without a Plane Ticket</h2>
+            <p>Language immersion doesn't require a plane ticket. Daily Story delivers fresh, AI-generated stories in eight languages across four skill levels—beginner to advanced. Each story comes with comprehension quizzes to reinforce what you've learned and track your progress.</p>
+            <p>Whether you're brushing up on Spanish before a trip or diving deep into Japanese grammar, Daily Story gives you something new to read every single day, perfectly calibrated to challenge you without overwhelming you.</p>
+        </article>
 
-                    <h2 class="section-large-spacing">Teaching AI to Curate, Not Just Generate</h2>
-                    <p>
-                        Building Daily Story taught me that working with AI is less about the code and more about the conversation. The technical infrastructure was straightforward, but getting consistent, quality output required a completely different skill set.
-                    </p>
+        <div class="wide-width space-before-m">
+            <div class="screenshot-fan">
+                <div class="browser-window browser-window-small">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">dailystory.page</span>
+                    </div>
+                    <img src="../images/daily-story/story-picker.png" alt="Daily Story main interface">
+                </div>
+                <div class="browser-window browser-window-small">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">dailystory.page</span>
+                    </div>
+                    <img src="../images/daily-story/japanese-story.png" alt="Japanese story example">
+                </div>
+                <div class="browser-window browser-window-small">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">dailystory.page</span>
+                    </div>
+                    <img src="../images/daily-story/quiz-questions.png" alt="Comprehension quiz questions">
+                </div>
+            </div>
+        </div>
 
-                    <blockquote class="pullquote">
-                        <p>The real challenge wasn't the architecture—it was prompt engineering.</p>
-                    </blockquote>
-
-                    <p>
-                        After a few days of testing, I noticed the AI kept generating eerily similar stories. Without memory of what it had created before, the model naturally gravitated toward the same narrative patterns. The solution? A curated library of about 100 themes per skill level that the app randomly selects from before each generation.
-                    </p>
-
-                    <pre>// Daily theme selection prevents repetitive stories
+        <article class="prose space-before-l">
+            <h2>The Problem with Finding Content at Your Level</h2>
+            <p>One of the best ways to learn a language is to immerse yourself in it through reading. The problem? Finding content that matches your exact skill level is difficult. Too easy and you're not learning; too hard and you're frustrated.</p>
+            <p>I found myself constantly asking ChatGPT to generate short stories at my skill level for language practice. It worked, but it was tedious to do manually every day. I realized this could be automated into a daily habit-building tool that others could benefit from too.</p>
+            <h2>Teaching AI to Curate, Not Just Generate</h2>
+            <p>Building Daily Story taught me that working with AI is less about the code and more about the conversation. The technical infrastructure was straightforward, but getting consistent, quality output required a completely different skill set.</p>
+            <blockquote class="pull-quote">
+                <p>The real challenge wasn't the architecture—it was prompt engineering.</p>
+            </blockquote>
+            <p>After a few days of testing, I noticed the AI kept generating eerily similar stories. Without memory of what it had created before, the model naturally gravitated toward the same narrative patterns. The solution? A curated library of about 100 themes per skill level that the app randomly selects from before each generation.</p>
+            <div class="code-block">
+                <div class="code-block-header"><span>themes.js</span><span>JavaScript</span></div>
+<pre><code><span class="code-comment">// Daily theme selection prevents repetitive stories</span>
 const themes = {
   a1: [
-    "introducing yourself and saying hello",
-    "saying where you are from",
-    "ordering coffee or tea"
+    <span class="code-string">"introducing yourself and saying hello"</span>,
+    <span class="code-string">"saying where you are from"</span>,
+    <span class="code-string">"ordering coffee or tea"</span>
   ],
   a2: [
-    "planning a weekend trip with friends",
-    "discussing your favorite restaurant",
-    "discussing why you like your job"
+    <span class="code-string">"planning a weekend trip with friends"</span>,
+    <span class="code-string">"discussing your favorite restaurant"</span>,
+    <span class="code-string">"discussing why you like your job"</span>
   ],
   b1: [
-    "talking about changing careers or jobs",
-    "explaining how you balance work and personal life",
-    "discussing a time you had a disagreement with someone"
+    <span class="code-string">"talking about changing careers or jobs"</span>,
+    <span class="code-string">"explaining how you balance work and personal life"</span>,
+    <span class="code-string">"discussing a time you had a disagreement with someone"</span>
   ],
   b2: [
-    "debating the ethics of human enhancement technologies",
-    "analyzing the role of traditional media versus independent journalism",
-    "evaluating the long-term consequences of the gig economy"
+    <span class="code-string">"debating the ethics of human enhancement technologies"</span>,
+    <span class="code-string">"analyzing the role of traditional media versus independent journalism"</span>,
+    <span class="code-string">"evaluating the long-term consequences of the gig economy"</span>
   ]
-};</pre>
+};</code></pre>
+            </div>
+            <p>This wasn't just about variety for variety's sake. A theme like "navigating cultural misunderstandings" works beautifully for intermediate learners but falls flat for beginners who need simpler vocabulary. Each proficiency level needed its own theme collection, carefully chosen to match both linguistic complexity and conceptual accessibility.</p>
+            <p>Another major shift came from rethinking the story format itself. Initially, all stories were fables—traditional tales with morals and lessons. But fables proved too challenging for absolute beginners and too simplistic for upper-intermediate readers. More importantly, fables rely heavily on past tense narration, which doesn't reflect the language learners actually use in real conversations. I pivoted to a conversation format between two or more people. This made stories immediately more relevant across all skill levels, focusing on the present-tense dialogue and natural speech patterns that learners encounter in daily life.</p>
+        </article>
 
-                    <p>
-                        This wasn't just about variety for variety's sake. A theme like "navigating cultural misunderstandings" works beautifully for intermediate learners but falls flat for beginners who need simpler vocabulary. Each proficiency level needed its own theme collection, carefully chosen to match both linguistic complexity and conceptual accessibility.
-                    </p>
-                    <p>
-                        Another major shift came from rethinking the story format itself. Initially, all stories were fables—traditional tales with morals and lessons. But fables proved too challenging for absolute beginners and too simplistic for upper-intermediate readers. More importantly, fables rely heavily on past tense narration, which doesn't reflect the language learners actually use in real conversations. I pivoted to a conversation format between two or more people. This made stories immediately more relevant across all skill levels, focusing on the present-tense dialogue and natural speech patterns that learners encounter in daily life.
-                    </p>
-                </div>
-
-                <h3 class="section-large-spacing text-center">Seeing the Progression</h3>
-
-                <!-- Story examples showing variety -->
-                <div class="proficiency-showcase">
-                    <!-- Thumbnail Grid -->
-                    <div class="proficiency-thumbnails">
-                        <button class="proficiency-thumbnail active" data-level="a1" aria-label="View A1 Beginner level">
-                            <span class="proficiency-label">A1</span>
-                            <img src="../images/daily-story/english-a1.png" alt="English A1 beginner story">
-                        </button>
-                        <button class="proficiency-thumbnail" data-level="a2" aria-label="View A2 Elementary level">
-                            <span class="proficiency-label">A2</span>
-                            <img src="../images/daily-story/english-a2.png" alt="English A2 elementary story">
-                        </button>
-                        <button class="proficiency-thumbnail" data-level="b1" aria-label="View B1 Intermediate level">
-                            <span class="proficiency-label">B1</span>
-                            <img src="../images/daily-story/english-b1.png" alt="English B1 intermediate story">
-                        </button>
-                        <button class="proficiency-thumbnail" data-level="b2" aria-label="View B2 Upper-Intermediate level">
-                            <span class="proficiency-label">B2</span>
-                            <img src="../images/daily-story/english-b2.png" alt="English B2 upper-intermediate story">
-                        </button>
-                    </div>
-
-                    <!-- Large Display Area -->
-                    <div class="proficiency-large-display">
-                        <img id="proficiency-large-image" src="../images/daily-story/english-a1.png" alt="English A1 beginner story">
-                    </div>
-
-                    <!-- Level-Specific Caption -->
-                    <div class="proficiency-caption">
-                        <p id="proficiency-caption-text" class="image-caption">
-                            <strong>A1 Beginner:</strong> Simple vocabulary and present tense, designed for beginners starting their language journey.
-                        </p>
-                    </div>
+        <section class="level-switcher medium-width space-before-l" data-image-switcher>
+            <div class="section-rule">
+                <h3 class="level-switcher-heading">Seeing the Progression</h3>
+                <div class="segmented-control" role="group" aria-label="Proficiency level">
+                    <button type="button" data-switcher-option aria-pressed="true" data-image="../images/daily-story/english-a1.png" data-alt="English A1 beginner story" data-caption-title="A1 Beginner" data-caption="Simple vocabulary and present tense, designed for beginners starting their language journey.">A1</button>
+                    <button type="button" data-switcher-option aria-pressed="false" data-image="../images/daily-story/english-a2.png" data-alt="English A2 elementary story" data-caption-title="A2 Elementary" data-caption="Introduces past tense and common phrases, building on foundational grammar skills.">A2</button>
+                    <button type="button" data-switcher-option aria-pressed="false" data-image="../images/daily-story/english-b1.png" data-alt="English B1 intermediate story" data-caption-title="B1 Intermediate" data-caption="Complex sentence structures and diverse vocabulary for expressing nuanced ideas.">B1</button>
+                    <button type="button" data-switcher-option aria-pressed="false" data-image="../images/daily-story/english-b2.png" data-alt="English B2 upper-intermediate story" data-caption-title="B2 Upper-Intermediate" data-caption="Advanced grammar, idiomatic expressions, and sophisticated storytelling for near-fluent learners.">B2</button>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Key Features Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-content-wide">
-                <h2 class="text-center mb-12">Key Features</h2>
-
-                <p class="section-intro">
-                    Language learning apps often promise too much. Daily Story focuses on doing three things really well:
-                </p>
-
-                <div class="features-grid">
-                    <!-- Feature 1 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Fresh Content Daily</h3>
-                            <p>
-                                Every day brings a new story perfectly calibrated to your current proficiency—challenging enough to push your skills forward, accessible enough to keep you engaged.
-                            </p>
-                        </div>
+            <div class="soft-panel">
+                <div class="browser-window">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
                     </div>
+                    <img src="../images/daily-story/english-a1.png" alt="English A1 beginner story" data-switcher-image>
+                </div>
+            </div>
+            <p class="figure-caption" data-switcher-caption aria-live="polite"><strong>A1 Beginner:</strong> Simple vocabulary and present tense, designed for beginners starting their language journey.</p>
+        </section>
 
-                    <!-- Feature 2 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Active Comprehension</h3>
-                            <p>
-                                Three targeted questions after each story transform passive reading into active learning, helping you retain vocabulary and internalize grammar patterns.
-                            </p>
+        <section class="medium-width space-before-xl">
+            <h2 class="section-heading">Key Features</h2>
+            <p class="section-lead">Language learning apps often promise too much. Daily Story focuses on doing three things really well:</p>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Fresh Content Daily</h3>
+                    <p>Every day brings a new story perfectly calibrated to your current proficiency—challenging enough to push your skills forward, accessible enough to keep you engaged.</p>
+                </div>
+                <div class="feature">
+                    <h3>Active Comprehension</h3>
+                    <p>Three targeted questions after each story transform passive reading into active learning, helping you retain vocabulary and internalize grammar patterns.</p>
+                </div>
+                <div class="feature">
+                    <h3>8 Languages, 4 Levels</h3>
+                    <p>Find your perfect match across four proficiency tiers (A1, A2, B1, B2) in English, Spanish, French, German, Italian, Portuguese, Chinese, and Japanese.</p>
+                </div>
+            </div>
+        </section>
+
+        <article class="prose space-before-xl">
+            <h2>Architecture Designed for Cost Efficiency</h2>
+            <p>The architecture is intentionally straightforward. Built with Node.js and Express, the app runs on a simple cron schedule that handles AI content generation efficiently and cost-effectively.</p>
+            <p>The app runs on two cron schedules. At midnight, it submits a batch request to the Claude API for 32 different stories—8 languages at 4 skill levels each. Batch requests process at half price but can take up to 24 hours. At 6 PM, the app retrieves any completed stories and caches them, ensuring they're ready with no delay when midnight rolls around. If stories aren't ready by 6 PM, they're picked up during the next midnight cycle when submitting the following day's request.</p>
+            <blockquote class="pull-quote pull-quote-long">
+                <p>By retrieving stories at 6 PM, they're ready the moment users need them at midnight—eliminating any lag while still taking advantage of half-price batch processing.</p>
+            </blockquote>
+        </article>
+
+        <figure class="medium-width space-before-s">
+            <div class="diagram diagram-column">
+                <div class="diagram-node diagram-node-narrow">
+                    <p class="diagram-node-title">Cron Job Runs</p>
+                    <p class="diagram-node-subtitle">Daily story generation check</p>
+                    <p class="diagram-node-detail">Runs at 12 AM and 6 PM daily</p>
+                </div>
+                <div class="diagram-connector diagram-connector-down"></div>
+                <div class="diagram-node diagram-node-narrow">
+                    <p class="diagram-node-title">Check Today's Stories</p>
+                    <p class="diagram-node-code">Already generated?</p>
+                    <p class="diagram-node-code">Batch in progress?</p>
+                </div>
+                <div class="diagram-connector diagram-connector-down"></div>
+                <div class="diagram-group diagram-group-dashed diagram-group-centered">
+                    <span class="diagram-group-label">Cron Job Outcomes</span>
+                    <div class="diagram-columns">
+                        <div class="diagram-node diagram-node-quiet">
+                            <p class="diagram-node-title">Stories Ready</p>
+                            <p class="diagram-node-subtitle">Save to filesystem</p>
+                            <p class="diagram-node-detail">/stories folder</p>
                         </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>8 Languages, 4 Levels</h3>
-                            <p>
-                                Find your perfect match across four proficiency tiers (A1, A2, B1, B2) in English, Spanish, French, German, Italian, Portuguese, Chinese, and Japanese.
-                            </p>
+                        <div class="diagram-node diagram-node-quiet">
+                            <p class="diagram-node-title">Batch Requested</p>
+                            <p class="diagram-node-subtitle">Submit batch request</p>
+                            <p class="diagram-node-detail">32 stories total</p>
+                        </div>
+                        <div class="diagram-node diagram-node-quiet">
+                            <p class="diagram-node-title">Batch Pending</p>
+                            <p class="diagram-node-subtitle">Return status</p>
+                            <p class="diagram-node-detail">"Batches in progress"</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <figcaption class="figure-label">Fig. 1 — Cron job decides whether to save stories, submit a batch, or report an in-progress batch</figcaption>
+        </figure>
 
-    <!-- Technical Details Section -->
-    <section class="section">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2>Architecture Designed for Cost Efficiency</h2>
-                <p>
-                    The architecture is intentionally straightforward. Built with Node.js and Express, the app runs on a simple cron schedule that handles AI content generation efficiently and cost-effectively.
-                </p>
-                <p>
-                    The app runs on two cron schedules. At midnight, it submits a batch request to the Claude API for 32 different stories—8 languages at 4 skill levels each. Batch requests process at half price but can take up to 24 hours. At 6 PM, the app retrieves any completed stories and caches them, ensuring they're ready with no delay when midnight rolls around. If stories aren't ready by 6 PM, they're picked up during the next midnight cycle when submitting the following day's request.
-                </p>
+        <article class="prose space-before-m">
+            <p>Running on Google Cloud Run means I only pay for active compute time. No database overhead, no complex state management—just reliable, daily language practice delivered through a clean API.</p>
+        </article>
 
-                <blockquote class="pullquote">
-                    <p>By retrieving stories at 6 PM, they're ready the moment users need them at midnight—eliminating any lag while still taking advantage of half-price batch processing.</p>
-                </blockquote>
+        <section class="medium-width space-before-s">
+            <div class="screenshot-picker" data-image-switcher>
+                <div class="browser-window">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                    </div>
+                    <img src="../images/daily-story/google-cloud-scheduler.png" alt="Cloud Scheduler cron jobs" data-switcher-image>
+                </div>
+                <p class="figure-caption" data-switcher-caption aria-live="polite">Automated cron jobs scheduled for midnight (batch submission) and 6 PM (story retrieval)</p>
+                <div class="screenshot-picker-options">
+                    <button type="button" class="screenshot-picker-option" data-switcher-option aria-pressed="true" data-image="../images/daily-story/google-cloud-scheduler.png" data-alt="Cloud Scheduler cron jobs" data-caption="Automated cron jobs scheduled for midnight (batch submission) and 6 PM (story retrieval)">
+                        <img src="../images/daily-story/google-cloud-scheduler.png" alt="">
+                        <span>Cloud Scheduler</span>
+                    </button>
+                    <button type="button" class="screenshot-picker-option" data-switcher-option aria-pressed="false" data-image="../images/daily-story/claude-console-batches.png" data-alt="Claude batch requests dashboard" data-caption="Claude API batch requests dashboard showing daily story generation batches">
+                        <img src="../images/daily-story/claude-console-batches.png" alt="">
+                        <span>Claude batches</span>
+                    </button>
+                    <button type="button" class="screenshot-picker-option" data-switcher-option aria-pressed="false" data-image="../images/daily-story/claude-console-cost.png" data-alt="Claude API cost tracking" data-caption="API cost tracking—batch requests process at half price, significantly reducing operational costs">
+                        <img src="../images/daily-story/claude-console-cost.png" alt="">
+                        <span>API cost</span>
+                    </button>
+                    <button type="button" class="screenshot-picker-option" data-switcher-option aria-pressed="false" data-image="../images/daily-story/google-cloud-run-logs.png" data-alt="Google Cloud Run logs" data-caption="Google Cloud Run logs showing the app waking up only for batch submission and retrieval, minimizing compute costs">
+                        <img src="../images/daily-story/google-cloud-run-logs.png" alt="">
+                        <span>Cloud Run logs</span>
+                    </button>
+                </div>
             </div>
+        </section>
 
+        <article class="prose space-before-l">
+            <h3>Tech Stack</h3>
+            <div class="tag-list">
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">Claude AI</span>
+            </div>
+            <h3>Lessons in Prompt Engineering</h3>
+            <p>This project transformed how I think about working with AI. I expected the hard part to be building the infrastructure—cron jobs, API integration, deployment. But the real challenge was prompting the large language model to consistently generate stories that felt authentic and educational across eight different languages.</p>
+            <p>I spent days iterating on prompts, discovering that small changes in phrasing could mean the difference between a compelling story and something that read like a textbook exercise. Quality matters more than quantity—each story needs to be genuinely engaging and leave learners feeling measurably better at their target language.</p>
+            <p>The trickiest part? Getting consistent JSON responses across all languages. The LLM would sometimes fail to properly escape characters or add characters that would break the JSON parsing—especially problematic when working with eight different languages, each with unique character sets and punctuation. After countless malformed responses, I discovered structured output tools specifically designed for this purpose. Using these tools ensures the LLM generates properly formatted JSON every single time, regardless of language. What started as my biggest pain point became a solved problem once I learned the right approach.</p>
+        </article>
+
+        <section class="medium-width space-before-l">
+            <div class="try-it">
+                <div>
+                    <h2>Try Daily Story</h2>
+                    <p>Start improving your language skills today.</p>
+                </div>
+                <div class="button-row">
+                    <a href="https://dailystory.page" class="button button-primary" target="_blank" rel="noopener noreferrer">Visit Daily Story ↗</a>
+                    <a href="https://github.com/johntchampion/daily-story" class="button button-on-soft" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="more-posts page-width space-before-xl" aria-label="More posts">
+            <div class="section-rule">
+                <span class="section-rule-title">More posts</span>
+                <a href="../index.html#posts" class="section-rule-note">All posts →</a>
+            </div>
+            <div class="post-card-grid">
+                <a href="../interests/language-learning.html" class="post-card">
+                    <div class="post-card-image photo-frame"><img src="../images/language-learning/reichstag.jpeg" alt="The Reichstag in Berlin"></div>
+                    <div>
+                        <span class="eyebrow">EXPERIENCE</span>
+                        <h3>588 days of German, then three weeks to test it</h3>
+                        <p>A year and a half of daily practice, then an immersion trip to Germany.</p>
+                    </div>
+                </a>
+                <a href="onetimechat.html" class="post-card">
+                    <div class="post-card-image browser-stage" style="--stage-color: #D9E1EA">
+                        <div class="browser-window browser-window-tiny">
+                            <div class="browser-toolbar"><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span></div>
+                            <img src="../images/onetimechat/chat.png" alt="OneTimeChat interface">
+                        </div>
+                    </div>
+                    <div>
+                        <span class="eyebrow">PROJECT</span>
+                        <h3>OneTimeChat: conversations without sign-ups</h3>
+                        <p>Link-based messaging with no accounts and no friction.</p>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <section id="contact" class="contact-section page-width">
+        <div class="contact-panel">
             <div>
-                <div class="diagram max-width">
-                    <div class="diagram-flow">
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">Cron Job Runs</div>
-                            <div class="diagram-subtitle">Daily story generation check</div>
-                            <div class="diagram-accent">Runs at 12 AM and 6 PM daily</div>
-                        </div>
-
-                        <div class="diagram-arrow vertical down"></div>
-
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">Check Today's Stories</div>
-                            <div>
-                                <div class="diagram-item">Already generated?</div>
-                                <div class="diagram-item">Batch in progress?</div>
-                            </div>
-                        </div>
-
-                        <div class="diagram-arrow vertical down"></div>
-
-                        <div class="diagram-box diagram-container">
-                            <div class="diagram-container-label">Cron Job Outcomes</div>
-                            <div class="diagram-grid auto-fit">
-                                <div class="diagram-box small">
-                                    <div class="diagram-title small">Stories Ready</div>
-                                    <div class="diagram-subtitle small">Save to filesystem</div>
-                                    <div class="diagram-accent small">/stories folder</div>
-                                </div>
-                                <div class="diagram-box small">
-                                    <div class="diagram-title small">Batch Requested</div>
-                                    <div class="diagram-subtitle small">Submit batch request</div>
-                                    <div class="diagram-accent small">32 stories total</div>
-                                </div>
-                                <div class="diagram-box small">
-                                    <div class="diagram-title small">Batch Pending</div>
-                                    <div class="diagram-subtitle small">Return status</div>
-                                    <div class="diagram-accent small">"Batches in progress"</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="image-caption">
-                    Cron job decides whether to save stories, submit a batch, or report an in-progress batch
-                </p>
+                <h2 class="contact-title">Let's talk.</h2>
+                <p class="contact-text">Open to new roles, projects, or a chat about code and flying.</p>
             </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <p>
-                    Running on Google Cloud Run means I only pay for active compute time. No database overhead, no complex state management—just reliable, daily language practice delivered through a clean API.
-                </p>
-
-                <!-- Technical screenshots showcase -->
-                <div class="technical-screenshots">
-                    <!-- Thumbnail Grid -->
-                    <div class="technical-thumbnails">
-                        <button class="technical-thumbnail active" data-screenshot="scheduler" aria-label="View Cloud Scheduler">
-                            <img src="../images/daily-story/google-cloud-scheduler.png" alt="Cloud Scheduler cron jobs">
-                        </button>
-                        <button class="technical-thumbnail" data-screenshot="batches" aria-label="View Batch Requests">
-                            <img src="../images/daily-story/claude-console-batches.png" alt="Claude batch requests dashboard">
-                        </button>
-                        <button class="technical-thumbnail" data-screenshot="cost" aria-label="View API Costs">
-                            <img src="../images/daily-story/claude-console-cost.png" alt="Claude API cost tracking">
-                        </button>
-                        <button class="technical-thumbnail" data-screenshot="logs" aria-label="View Cloud Run Logs">
-                            <img src="../images/daily-story/google-cloud-run-logs.png" alt="Google Cloud Run logs">
-                        </button>
-                    </div>
-
-                    <!-- Large Display Area -->
-                    <div class="technical-large-display">
-                        <img id="technical-large-image" src="../images/daily-story/google-cloud-scheduler.png" alt="Cloud Scheduler cron jobs">
-                    </div>
-
-                    <!-- Screenshot-Specific Caption -->
-                    <div class="technical-caption">
-                        <p id="technical-caption-text" class="image-caption">
-                            Automated cron jobs scheduled for midnight (batch submission) and 6 PM (story retrieval)
-                        </p>
-                    </div>
-                </div>
-
-                <h3 class="section-heading-spacing">Tech Stack</h3>
-                <div class="tech-stack-tags">
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">Claude AI</span>
-                </div>
-
-                <h3 class="section-heading-spacing">Lessons in Prompt Engineering</h3>
-                <p>
-                    This project transformed how I think about working with AI. I expected the hard part to be building the infrastructure—cron jobs, API integration, deployment. But the real challenge was prompting the large language model to consistently generate stories that felt authentic and educational across eight different languages.
-                </p>
-                <p>
-                    I spent days iterating on prompts, discovering that small changes in phrasing could mean the difference between a compelling story and something that read like a textbook exercise. Quality matters more than quantity—each story needs to be genuinely engaging and leave learners feeling measurably better at their target language.
-                </p>
-                <p>
-                    The trickiest part? Getting consistent JSON responses across all languages. The LLM would sometimes fail to properly escape characters or add characters that would break the JSON parsing—especially problematic when working with eight different languages, each with unique character sets and punctuation. After countless malformed responses, I discovered structured output tools specifically designed for this purpose. Using these tools ensures the LLM generates properly formatted JSON every single time, regardless of language. What started as my biggest pain point became a solved problem once I learned the right approach.
-                </p>
+            <div class="button-row">
+                <a href="mailto:sate.falcons-7t@icloud.com" class="button"><span class="monochrome-icon"><img src="../images/email-icon.svg" alt=""></span>Email</a>
+                <a href="https://github.com/johntchampion" class="button" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/github-icon.svg" alt=""></span>GitHub</a>
+                <a href="https://www.linkedin.com/in/john-champion-108ba8141/" class="button" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/linkedin-icon.png" alt=""></span>LinkedIn</a>
             </div>
         </div>
+        <footer class="site-footer">
+            <span>© 2026 John Champion</span>
+            <a href="../index.html#open-terminal" class="terminal-hint" data-terminal-trigger>press ~ for a terminal</a>
+        </footer>
     </section>
-
-    <!-- Call to Action Section -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Try Daily Story</h2>
-                <p>
-                    Start improving your language skills today.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://dailystory.page" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Daily Story</a>
-                    <a href="https://github.com/johntchampion/daily-story" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Projects Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center mb-12">Other Projects</h2>
-
-            <div class="related-projects-grid">
-                <!-- Project Card 1 -->
-                <div class="card card-project">
-                    <div class="card-project-image">
-                        <img src="../images/onetimechat/onetimechat-thumbnail.png" alt="OneTimeChat interface">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">OneTimeChat</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>A messaging web application that enables seamless, link-based conversations.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="onetimechat.html" class="btn btn-sm btn-primary">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="card card-project">
-                    <div class="card-project-image" style="background: #f5f0e6;">
-                        <img src="../images/chess/chess-thumbnail.png" style="background: transparent;" alt="Chess PWA interface">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">Chess</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>A clean, responsive Progressive Web App for playing chess with Stockfish engine.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="chess.html" class="btn btn-sm btn-primary">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="related-projects-cta">
-                <a href="../index.html#work" class="btn btn-outline">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 John Champion. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Simple scroll behavior script -->
-    <script>
-        // Add shadow to header on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Technical screenshots interaction
-        const technicalData = {
-            scheduler: {
-                image: '../images/daily-story/google-cloud-scheduler.png',
-                alt: 'Cloud Scheduler cron jobs',
-                caption: 'Automated cron jobs scheduled for midnight (batch submission) and 6 PM (story retrieval)'
-            },
-            batches: {
-                image: '../images/daily-story/claude-console-batches.png',
-                alt: 'Claude batch requests dashboard',
-                caption: 'Claude API batch requests dashboard showing daily story generation batches'
-            },
-            cost: {
-                image: '../images/daily-story/claude-console-cost.png',
-                alt: 'Claude API cost tracking',
-                caption: 'API cost tracking—batch requests process at half price, significantly reducing operational costs'
-            },
-            logs: {
-                image: '../images/daily-story/google-cloud-run-logs.png',
-                alt: 'Google Cloud Run logs',
-                caption: 'Google Cloud Run logs showing the app waking up only for batch submission and retrieval, minimizing compute costs'
-            }
-        };
-
-        const technicalThumbnails = document.querySelectorAll('.technical-thumbnail');
-        const technicalLargeImage = document.getElementById('technical-large-image');
-        const technicalCaptionText = document.getElementById('technical-caption-text');
-
-        technicalThumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', () => {
-                const screenshot = thumbnail.dataset.screenshot;
-                const data = technicalData[screenshot];
-
-                // Update active state
-                technicalThumbnails.forEach(t => t.classList.remove('active'));
-                thumbnail.classList.add('active');
-
-                // Fade out, change, fade in
-                technicalLargeImage.style.opacity = '0';
-                setTimeout(() => {
-                    technicalLargeImage.src = data.image;
-                    technicalLargeImage.alt = data.alt;
-                    technicalCaptionText.textContent = data.caption;
-                    technicalLargeImage.style.opacity = '1';
-                }, 150);
-            });
-        });
-
-        // Proficiency level showcase interaction
-        const proficiencyData = {
-            a1: {
-                image: '../images/daily-story/english-a1.png',
-                alt: 'English A1 beginner story',
-                caption: '<strong>A1 Beginner:</strong> Simple vocabulary and present tense, designed for beginners starting their language journey.'
-            },
-            a2: {
-                image: '../images/daily-story/english-a2.png',
-                alt: 'English A2 elementary story',
-                caption: '<strong>A2 Elementary:</strong> Introduces past tense and common phrases, building on foundational grammar skills.'
-            },
-            b1: {
-                image: '../images/daily-story/english-b1.png',
-                alt: 'English B1 intermediate story',
-                caption: '<strong>B1 Intermediate:</strong> Complex sentence structures and diverse vocabulary for expressing nuanced ideas.'
-            },
-            b2: {
-                image: '../images/daily-story/english-b2.png',
-                alt: 'English B2 upper-intermediate story',
-                caption: '<strong>B2 Upper-Intermediate:</strong> Advanced grammar, idiomatic expressions, and sophisticated storytelling for near-fluent learners.'
-            }
-        };
-
-        const thumbnails = document.querySelectorAll('.proficiency-thumbnail');
-        const largeImage = document.getElementById('proficiency-large-image');
-        const captionText = document.getElementById('proficiency-caption-text');
-
-        thumbnails.forEach(thumbnail => {
-            thumbnail.addEventListener('click', () => {
-                const level = thumbnail.dataset.level;
-                const data = proficiencyData[level];
-
-                // Update active state
-                thumbnails.forEach(t => t.classList.remove('active'));
-                thumbnail.classList.add('active');
-
-                // Fade out, change, fade in
-                largeImage.style.opacity = '0';
-                setTimeout(() => {
-                    largeImage.src = data.image;
-                    largeImage.alt = data.alt;
-                    captionText.innerHTML = data.caption;
-                    largeImage.style.opacity = '1';
-                }, 150);
-            });
-        });
-    </script>
 </body>
 </html>

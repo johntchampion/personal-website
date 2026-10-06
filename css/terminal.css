@@ -1,0 +1,81 @@
+.terminal {
+  background: #0B1520;
+  border: 1px solid #1E2E40;
+  border-radius: 10px;
+  font-family: var(--font-mono);
+  color: #D6DDE6;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.terminal-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  border-bottom: 1px solid #1E2E40;
+  font-size: 12px;
+  color: #7E8C9C;
+}
+
+.terminal-prompt-symbol {
+  color: #FFB830;
+}
+
+.terminal-command-line {
+  color: #F1F5F9;
+  white-space: pre-wrap;
+}
+
+.terminal-output-line {
+  color: #93A0B0;
+  white-space: pre-wrap;
+}
+
+.terminal-output-accent {
+  color: #FFB830;
+}
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.2em;
+  background: #FFB830;
+  vertical-align: -0.2em;
+  margin-left: 2px;
+}
+
+.terminal:focus-within {
+  border-color: #4A5E76;
+}
+
+.terminal-input-line .terminal-cursor {
+  visibility: hidden;
+}
+
+.terminal:focus-within .terminal-input-line .terminal-cursor {
+  visibility: visible;
+  animation: terminal-cursor-blink 1.06s steps(1) infinite;
+}
+
+@keyframes terminal-cursor-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.terminal-input-line {
+  position: relative;
+}
+
+/* The real input stays invisible; typed text and the block cursor are mirrored into spans. */
+.terminal-input {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  opacity: 0;
+  border: none;
+  /* iOS Safari zooms the page when focusing an input smaller than 16px. */
+  font-size: 16px;
+  cursor: text;
+}

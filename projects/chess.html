@@ -4,435 +4,306 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Chess - A clean, responsive Progressive Web App for playing chess, designed for fast loading and a clean interface.">
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/icon.png" />
     <meta name="author" content="John Champion">
     <title>Chess - John Champion</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/icon.png">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://johnchampion.dev/projects/chess.html">
-    <meta property="og:title" content="Chess - Progressive Web App for Casual Play">
+    <meta property="og:title" content="Chess, without the metrics">
     <meta property="og:description" content="A clean, responsive Progressive Web App for playing chess with Stockfish engine. Minimal interface, thoughtful animations, and offline support.">
     <meta property="og:image" content="https://johnchampion.dev/images/chess/chess-thumbnail.png">
     <meta property="og:site_name" content="John Champion">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/project-page.css">
-    <link rel="stylesheet" href="../css/diagram.css">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/device-frames.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="../css/diagram.css">
+
+    <script src="../js/terminal-shortcut.js" defer></script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header id="header" class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../index.html" class="logo">JC</a>
-                <nav>
-                    <ul class="nav">
-                        <li><a href="../index.html#about" class="nav-link">About</a></li>
-                        <li><a href="../index.html#work" class="nav-link">Work</a></li>
-                        <li><a href="../index.html#interests" class="nav-link">Interests</a></li>
-                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <header class="site-header page-width">
+        <a href="../index.html" class="site-brand">
+            <span class="site-brand-name">John Champion</span>
+            <span class="site-brand-path">~/field-notes</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="../index.html#posts">Posts</a>
+            <a href="../index.html#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Project Hero Section -->
-    <section class="hero project-hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-layout">
-                    <!-- Left: Text Content -->
-                    <div class="hero-text-content">
-                        <!-- Breadcrumb -->
-                        <div class="breadcrumb">
-                            <a href="../index.html#work">← Back to Projects</a>
-                        </div>
-
-                        <!-- Project Title -->
-                        <h1>Chess</h1>
-
-                        <!-- Project Tagline -->
-                        <p class="hero-tagline">
-                            A clean, responsive Progressive Web App for playing chess, designed for fast loading and a clean interface.
-                        </p>
-
-                        <!-- Tech Stack Tags -->
-                        <div class="tech-tags">
-                            <span class="badge">React</span>
-                            <span class="badge">Python</span>
-                            <span class="badge">Stockfish</span>
-                        </div>
-
-                        <!-- Project Links -->
-                        <div class="hero-cta">
-                            <a href="https://webchess.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
-                            <a href="https://github.com/johntchampion/chess-pwa" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Floating Image -->
-                    <div class="hero-image-float">
-                        <!-- PLACEHOLDER: Hero image showing chess app on phone/tablet -->
-                         <picture>
-                            <source srcset="../images/chess/new-game-dark.png" media="(prefers-color-scheme: dark)">
-                            <img src="../images/chess/new-game-light.png" alt="Chess interface on a mobile device.">
-                         </picture>
-                        
-                    </div>
+    <main>
+        <div class="post-intro page-width">
+            <a href="../index.html#posts" class="back-link">← All posts</a>
+            <div class="post-kind">
+                <span class="eyebrow">PROJECT</span>
+                <span class="post-topics">Game Development · PWA · Animation</span>
+            </div>
+            <h1 class="post-title">Chess, without the metrics</h1>
+            <p class="post-dek">Why I built a chess app with no ratings and no streaks—just the board, a hidden drawer, and an engine tuned to my level.</p>
+            <div class="post-facts">
+                <div class="post-fact-list">
+                    <span><span class="post-fact-label">stack </span>React · Python · Stockfish</span>
+                    <span><span class="post-fact-label">status </span>live</span>
+                </div>
+                <div class="button-row">
+                    <a href="https://webchess.app" class="button button-compact" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+                    <a href="https://github.com/johntchampion/chess-pwa" class="button button-compact" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/github-icon.svg" alt=""></span>GitHub Repository</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Project Overview Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-content-wide">
-                <div class="section-content">
-                    <!-- Article Metadata -->
-                    <div class="article-meta">
-                        <div class="article-tags">
-                            <span class="tag">Game Development</span>
-                            <span class="tag">PWA</span>
-                            <span class="tag">Animation</span>
-                        </div>
-                    </div>
-
-                    <h2>Chess Without the Clutter</h2>
-                    <p>
-                        I love chess—not the competitive, metric-tracking, rating-chasing kind of chess, but the casual, conversation-over-coffee kind. The game you play with friends while catching up, where the board is just an excuse to spend time together. I wanted that same casual experience on my phone for those spare moments throughout the day.
-                    </p>
-                    <p>
-                        The problem? Every chess app I found was either bloated with features for serious players—opening databases, performance analytics, puzzle trainers—or so old and outdated it felt like it was pulled from 2008. I didn't need all those bells and whistles. I just wanted a clean, elegant chess app that worked well and got out of the way.
-                    </p>
-
-                    <blockquote class="pullquote">
-                        <p>So I built one—a Progressive Web App designed for casual play, thoughtful design, and nothing more.</p>
-                    </blockquote>
+        <div class="wide-width">
+            <div class="post-hero phone-stage" style="--stage-color: #E6E0CF">
+                <div class="post-hero-phone phone-frame">
+                    <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="../images/chess/new-game-dark.png">
+                        <img src="../images/chess/new-game-light.png" alt="Chess interface on a mobile device.">
+                    </picture>
                 </div>
+            </div>
+        </div>
 
-                <!-- Main interface screenshots - game progression -->
-                <div class="screenshot-grid-three">
-                    <div class="screenshot-item">
+        <article class="prose space-before-l">
+            <h2>Chess Without the Clutter</h2>
+            <p>I love chess—not the competitive, metric-tracking, rating-chasing kind of chess, but the casual, conversation-over-coffee kind. The game you play with friends while catching up, where the board is just an excuse to spend time together. I wanted that same casual experience on my phone for those spare moments throughout the day.</p>
+            <p>The problem? Every chess app I found was either bloated with features for serious players—opening databases, performance analytics, puzzle trainers—or so old and outdated it felt like it was pulled from 2008. I didn't need all those bells and whistles. I just wanted a clean, elegant chess app that worked well and got out of the way.</p>
+            <blockquote class="pull-quote">
+                <p>So I built one—a Progressive Web App designed for casual play, thoughtful design, and nothing more.</p>
+            </blockquote>
+        </article>
+
+        <figure class="wide-width space-before-s">
+            <div class="phone-fan">
+                <div class="phone-frame">
+                    <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="../images/chess/drawer-open-dark.png">
+                        <img src="../images/chess/drawer-open-light.png" alt="The drawer opened during a game.">
+                    </picture>
+                </div>
+                <div class="phone-frame">
+                    <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="../images/chess/change-color-dark.png">
+                        <img src="../images/chess/change-color-light.png" alt="Changing the player's color.">
+                    </picture>
+                </div>
+                <div class="phone-frame">
+                    <picture>
+                        <source media="(prefers-color-scheme: dark)" srcset="../images/chess/existing-game-dark.png">
+                        <img src="../images/chess/existing-game-light.png" alt="In the middle of a chess game.">
+                    </picture>
+                </div>
+            </div>
+            <figcaption class="figure-caption figure-caption-centered">The entire interface is the board, with a subtle dynamic drawer for everything you might need while playing chess.</figcaption>
+        </figure>
+
+        <article class="prose space-before-l">
+            <h2>Just the Game, Nothing Else</h2>
+            <p>Opening the app skips straight to the game. No menus to tap through, no options to configure—just the board, ready to play. Move pieces by dragging or tapping, whichever feels natural. If you're in check, a quiet indicator appears above the board. Nothing else demands your attention unless you go looking for it.</p>
+            <p>A slim drawer rests at the bottom of the screen, out of the way until you need it. By default, it shows four quick-access buttons: new game, undo move, show hint, and show last move—the things you actually reach for mid-game.</p>
+            <blockquote class="pull-quote">
+                <p>The interface should disappear. Your attention belongs on the game, not the app.</p>
+            </blockquote>
+            <p>Drag the drawer up and it springs open to reveal a fuller set of options—change player color, change theme, change difficulty, and view move history. Tap one and the drawer closes, but the collapsed toolbar transforms: the four default buttons are replaced by controls for whatever you picked. Tap "Change Difficulty" and a slider takes over the toolbar; tap "Done" and the original four snap back into place. It's a small trick, but it lets the app carry real features without ever feeling cluttered.</p>
+        </article>
+
+        <figure class="medium-width space-before-m">
+            <div class="drawer-comparison soft-panel">
+                <div class="drawer-comparison-state">
+                    <span class="mono-note">collapsed</span>
+                    <div class="phone-frame">
                         <picture>
-                            <source srcset="../images/chess/drawer-open-dark.png" media="(prefers-color-scheme: dark)">
-                            <img src="../images/chess/drawer-open-light.png" alt="The drawer opened during a game.">
-                        </picture>
-                    </div>
-                    <div class="screenshot-item">
-                        <picture>
-                            <source srcset="../images/chess/change-color-dark.png" media="(prefers-color-scheme: dark)">
-                            <img src="../images/chess/change-color-light.png" alt="Changing the player's color.">
-                        </picture>
-                    </div>
-                    <div class="screenshot-item">
-                        <picture>
-                            <source srcset="../images/chess/existing-game-dark.png" media="(prefers-color-scheme: dark)">
-                            <img src="../images/chess/existing-game-light.png" alt="In the middle of a chess game.">
+                            <source media="(prefers-color-scheme: dark)" srcset="../images/chess/existing-game-dark.png">
+                            <img src="../images/chess/existing-game-light.png" alt="Drawer collapsed during a game">
                         </picture>
                     </div>
                 </div>
-                <p class="image-caption">
-                    The entire interface is the board, with a subtle dynamic drawer for everything you might need while playing chess.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interface Design Section -->
-    <section class="section section-bg-neutral">
-        <div class="container">
-            <div class="section-content-wide">
-                <div class="section-content">
-                    <h2>Just the Game, Nothing Else</h2>
-                    <p>
-                        Opening the app skips straight to the game. No menus to tap through, no options to configure—just the board, ready to play. Move pieces by dragging or tapping, whichever feels natural. If you're in check, a quiet indicator appears above the board. Nothing else demands your attention unless you go looking for it.
-                    </p>
-                    <p>
-                        A slim drawer rests at the bottom of the screen, out of the way until you need it. By default, it shows four quick-access buttons: new game, undo move, show hint, and show last move—the things you actually reach for mid-game.
-                    </p>
-
-                    <blockquote class="pullquote">
-                        <p>The interface should disappear. Your attention belongs on the game, not the app.</p>
-                    </blockquote>
-
-                    <p>
-                        Drag the drawer up and it springs open to reveal a fuller set of options—change player color, change theme, change difficulty, and view move history. Tap one and the drawer closes, but the collapsed toolbar transforms: the four default buttons are replaced by controls for whatever you picked. Tap "Change Difficulty" and a slider takes over the toolbar; tap "Done" and the original four snap back into place. It's a small trick, but it lets the app carry real features without ever feeling cluttered.
-                    </p>
-                </div>
-
-                <!-- Interface detail screenshots -->
-                <div class="screenshot-single">
-                    <video class="screenshot-video" autoplay muted loop playsinline>
-                        <source src="../images/chess/drawer-demo-dark.webm" type="video/webm" media="(prefers-color-scheme: dark)">
-                        <source src="../images/chess/drawer-demo-light.webm" type="video/webm">
-                        Your browser doesn't support video playback.
-                    </video>
-                    <p class="image-caption">
-                        Open the drawer to see more bells and whistles.
-                    </p>
+                <span class="drawer-comparison-gesture" aria-hidden="true">drag ↑</span>
+                <div class="drawer-comparison-state">
+                    <span class="mono-note">open</span>
+                    <div class="phone-frame">
+                        <picture>
+                            <source media="(prefers-color-scheme: dark)" srcset="../images/chess/drawer-open-dark.png">
+                            <img src="../images/chess/drawer-open-light.png" alt="Drawer open with more options">
+                        </picture>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <figcaption class="figure-caption">Open the drawer to see more bells and whistles.</figcaption>
+        </figure>
 
-    <!-- Key Features Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-content-wide">
-                <h2 class="text-center mb-12">Key Features</h2>
+        <section class="medium-width space-before-xl">
+            <h2 class="section-heading">Key Features</h2>
+            <p class="section-lead">Built for casual players who value simplicity and craftsmanship:</p>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Simple Interface</h3>
+                    <p>No hoops to jump through, just the board and your next move. The interface and its controls get out of the way so you can focus on the game.</p>
+                </div>
+                <div class="feature">
+                    <h3>Thoughtful Animations</h3>
+                    <p>The drawer spring, smooth piece movements, and board transitions were crafted with attention to timing and natural motion. It's playful and satisfying, just like a game should be.</p>
+                </div>
+                <div class="feature">
+                    <h3>Progressive Web App</h3>
+                    <p>Install it on your home screen, and it behaves like a native app. Everything is optimized for how you would want it to feel as a full screen mobile app.</p>
+                </div>
+            </div>
+        </section>
 
-                <p class="section-intro">
-                    Built for casual players who value simplicity and craftsmanship:
-                </p>
+        <article class="prose space-before-xl">
+            <h2>Building with React and Stockfish</h2>
+            <p>The app is a React Progressive Web App built with Create React App. The chess logic comes from two excellent libraries: <code>react-chessboard</code> for rendering a highly customizable board, and <code>chess.js</code> for managing game state, legal moves, and win conditions.</p>
+            <p>Everything else is orchestrated by a custom hook I built called <code>useGame</code>. This hook provides the React components with all the game state they need—current position, legal moves, check status, whose turn it is—along with functions to interact with the game like making moves, requesting engine analysis, and resetting the board.</p>
+        </article>
 
-                <div class="features-grid">
-                    <!-- Feature 1 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Simple Interface</h3>
-                            <p>
-                                No hoops to jump through, just the board and your next move. The interface and its controls get out of the way so you can focus on the game.
-                            </p>
+        <figure class="medium-width space-before-s">
+            <div class="diagram">
+                <div class="diagram-flow" style="--diagram-flow-columns: minmax(0, 1fr) 200px minmax(0, 1fr); max-width: 820px">
+                    <div class="diagram-node diagram-node-stacked">
+                        <p class="diagram-node-title">React Frontend</p>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">UI Components</p>
+                            <p>react-chessboard</p>
+                            <p>Custom animations</p>
+                            <p>PWA manifest</p>
+                        </div>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Game Logic</p>
+                            <p class="diagram-node-section-highlight">chess.js</p>
+                            <p class="diagram-node-section-highlight">useGame hook</p>
                         </div>
                     </div>
-
-                    <!-- Feature 2 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Thoughtful Animations</h3>
-                            <p>
-                                The drawer spring, smooth piece movements, and board transitions were crafted with attention to timing and natural motion. It's playful and satisfying, just like a game should be.
-                            </p>
+                    <div class="diagram-connector-pair">
+                        <div class="diagram-connector-group">
+                            <span>Game state</span>
+                            <span class="diagram-connector"></span>
+                        </div>
+                        <div class="diagram-connector-group">
+                            <span class="diagram-connector diagram-connector-backward"></span>
+                            <span>Move response</span>
                         </div>
                     </div>
-
-                    <!-- Feature 3 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Progressive Web App</h3>
-                            <p>
-                                Install it on your home screen, and it behaves like a native app. Everything is optimized for how you would want it to feel as a full screen mobile app.
-                            </p>
+                    <div class="diagram-node diagram-node-stacked">
+                        <p class="diagram-node-title">Python Backend</p>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">API Layer</p>
+                            <p>FastAPI</p>
+                            <p>Single endpoint</p>
+                        </div>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Chess Engine</p>
+                            <p class="diagram-node-section-highlight">Stockfish</p>
+                            <p class="diagram-node-section-highlight">Difficulty tuning</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+            <figcaption class="figure-label">Fig. 1 — Frontend handles all game logic and UI, backend wraps Stockfish to provide engine analysis</figcaption>
+        </figure>
 
-    <!-- Technical Architecture Section -->
-    <section class="section section-bg-neutral">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2>Building with React and Stockfish</h2>
-                <p>
-                    The app is a React Progressive Web App built with Create React App. The chess logic comes from two excellent libraries: <code>react-chessboard</code> for rendering a highly customizable board, and <code>chess.js</code> for managing game state, legal moves, and win conditions.
-                </p>
-                <p>
-                    Everything else is orchestrated by a custom hook I built called <code>useGame</code>. This hook provides the React components with all the game state they need—current position, legal moves, check status, whose turn it is—along with functions to interact with the game like making moves, requesting engine analysis, and resetting the board.
-                </p>
+        <article class="prose space-before-l">
+            <h3>The Stockfish Backend</h3>
+            <p>Stockfish is the most powerful open-source chess engine in the world. It's written in C++, which means it can't run directly in a browser without compiling to WebAssembly—a path that felt overly complex for this project. Instead, I built a small Python service using FastAPI to act as a bridge between the browser and Stockfish.</p>
+            <p>The API has just one endpoint. The frontend sends the current game state in FEN notation—a compact text format that encodes the entire board position. The backend passes that to Stockfish, waits for it to calculate the best move, and returns the result. The engine is tuned to play at my level, which means I win about half the time.</p>
+            <blockquote class="pull-quote">
+                <p>Stockfish plays at exactly my skill level—challenging enough to keep me engaged, beatable enough to stay fun.</p>
+            </blockquote>
+            <h3>Progressive Web App</h3>
+            <p>The app is a PWA, which means it can be installed on your home screen and feels like a native app. The board and game logic work offline since <code>chess.js</code> runs entirely in the browser. The only time you need a connection is when requesting a move from the Stockfish backend.</p>
+            <h3>Tech Stack</h3>
+            <div class="tag-list">
+                <span class="tag">React</span>
+                <span class="tag">chess.js</span>
+                <span class="tag">react-chessboard</span>
+                <span class="tag">Python</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Stockfish</span>
             </div>
+            <h2>What's Next</h2>
+            <p>The app already covers the basics you'd want in a casual chess game—viewing move history, asking for a hint, changing difficulty, swapping sides. But there are more bells and whistles that could make it even more delightful, like setting up custom board positions to play out a specific scenario.</p>
+            <p>Eventually, it would be interesting to add multiplayer—playing real people instead of just the engine. The challenge isn't adding functionality; it's doing so in a way that preserves the elegant, uncluttered feel of the current design.</p>
+            <blockquote class="pull-quote">
+                <p>The challenge isn't adding features—it's adding them without making the app feel bloated.</p>
+            </blockquote>
+            <h3>What I Learned</h3>
+            <p>This project taught me a lot about animation and polish. Getting the drawer to feel natural—the spring as it opens, the morph as the collapsed toolbar swaps in new controls, the snap back to default—took real time with timing curves and visual weight. The board transitions had to be smooth and deliberate, not jarring. These details take time, but they're what separate a functional app from an enjoyable one.</p>
+            <p>It was also my first time deploying a React app alongside a backend service. I learned to deploy the frontend on AWS Amplify and the Python backend on Google Cloud Run—both effectively free for this scale. And working with Stockfish gave me my first exposure to chess engines, FEN notation, and wrapping a C++ binary in a REST API.</p>
+        </article>
 
+        <section class="medium-width space-before-l">
+            <div class="try-it">
+                <div>
+                    <h2>Try Chess</h2>
+                    <p>Play a quick game against the Stockfish engine in this fast-loading, responsive chess web app.</p>
+                </div>
+                <div class="button-row">
+                    <a href="https://webchess.app" class="button button-primary" target="_blank" rel="noopener noreferrer">Visit Chess ↗</a>
+                    <a href="https://github.com/johntchampion/chess-pwa" class="button button-on-soft" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="more-posts page-width space-before-xl" aria-label="More posts">
+            <div class="section-rule">
+                <span class="section-rule-title">More posts</span>
+                <a href="../index.html#posts" class="section-rule-note">All posts →</a>
+            </div>
+            <div class="post-card-grid">
+                <a href="daily-story.html" class="post-card">
+                    <div class="post-card-image browser-stage" style="--stage-color: #EFE2C6">
+                        <div class="browser-window browser-window-tiny">
+                            <div class="browser-toolbar"><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span></div>
+                            <img src="../images/daily-story/daily-story-thumbnail.png" alt="Daily Story interface">
+                        </div>
+                    </div>
+                    <div>
+                        <span class="eyebrow">PROJECT</span>
+                        <h3>Teaching an AI to write me a new story every day</h3>
+                        <p>Fresh reading practice in eight languages, calibrated to your level.</p>
+                    </div>
+                </a>
+                <a href="onetimechat.html" class="post-card">
+                    <div class="post-card-image browser-stage" style="--stage-color: #D9E1EA">
+                        <div class="browser-window browser-window-tiny">
+                            <div class="browser-toolbar"><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span></div>
+                            <img src="../images/onetimechat/chat.png" alt="OneTimeChat interface">
+                        </div>
+                    </div>
+                    <div>
+                        <span class="eyebrow">PROJECT</span>
+                        <h3>OneTimeChat: conversations without sign-ups</h3>
+                        <p>Link-based messaging with no accounts and no friction.</p>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <section id="contact" class="contact-section page-width">
+        <div class="contact-panel">
             <div>
-                <div class="diagram max-width">
-                    <div class="diagram-grid cols-3">
-                        <!-- Frontend -->
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">React Frontend</div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">UI Components</div>
-                                <div class="diagram-item">react-chessboard</div>
-                                <div class="diagram-item">Custom animations</div>
-                                <div class="diagram-item">PWA manifest</div>
-                            </div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Game Logic</div>
-                                <div class="diagram-item">chess.js</div>
-                                <div class="diagram-item">useGame hook</div>
-                            </div>
-                        </div>
-
-                        <!-- Connection -->
-                        <div class="diagram-connection">
-                            <div class="diagram-connection-line">
-                                <div class="diagram-label">Game state</div>
-                                <div class="diagram-arrow horizontal right"></div>
-                            </div>
-                            <div class="diagram-connection-line">
-                                <div class="diagram-label">Move response</div>
-                                <div class="diagram-arrow horizontal left"></div>
-                            </div>
-                        </div>
-
-                        <!-- Backend -->
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">Python Backend</div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">API Layer</div>
-                                <div class="diagram-item">FastAPI</div>
-                                <div class="diagram-item">Single endpoint</div>
-                            </div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Chess Engine</div>
-                                <div class="diagram-item">Stockfish</div>
-                                <div class="diagram-item">Difficulty tuning</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <p class="image-caption">
-                    Frontend handles all game logic and UI, backend wraps Stockfish to provide engine analysis
-                </p>
+                <h2 class="contact-title">Let's talk.</h2>
+                <p class="contact-text">Open to new roles, projects, or a chat about code and flying.</p>
             </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h3 class="section-heading-spacing">The Stockfish Backend</h3>
-                <p>
-                    Stockfish is the most powerful open-source chess engine in the world. It's written in C++, which means it can't run directly in a browser without compiling to WebAssembly—a path that felt overly complex for this project. Instead, I built a small Python service using FastAPI to act as a bridge between the browser and Stockfish.
-                </p>
-                <p>
-                    The API has just one endpoint. The frontend sends the current game state in FEN notation—a compact text format that encodes the entire board position. The backend passes that to Stockfish, waits for it to calculate the best move, and returns the result. The engine is tuned to play at my level, which means I win about half the time.
-                </p>
-
-                <blockquote class="pullquote">
-                    <p>Stockfish plays at exactly my skill level—challenging enough to keep me engaged, beatable enough to stay fun.</p>
-                </blockquote>
-
-                <h3 class="section-heading-spacing">Progressive Web App</h3>
-                <p>
-                    The app is a PWA, which means it can be installed on your home screen and feels like a native app. The board and game logic work offline since <code>chess.js</code> runs entirely in the browser. The only time you need a connection is when requesting a move from the Stockfish backend.
-                </p>
-
-                <h3 class="section-heading-spacing">Tech Stack</h3>
-                <div class="tech-stack-tags">
-                    <span class="tag">React</span>
-                    <span class="tag">chess.js</span>
-                    <span class="tag">react-chessboard</span>
-                    <span class="tag">Python</span>
-                    <span class="tag">FastAPI</span>
-                    <span class="tag">Stockfish</span>
-                </div>
+            <div class="button-row">
+                <a href="mailto:sate.falcons-7t@icloud.com" class="button"><span class="monochrome-icon"><img src="../images/email-icon.svg" alt=""></span>Email</a>
+                <a href="https://github.com/johntchampion" class="button" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/github-icon.svg" alt=""></span>GitHub</a>
+                <a href="https://www.linkedin.com/in/john-champion-108ba8141/" class="button" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/linkedin-icon.png" alt=""></span>LinkedIn</a>
             </div>
         </div>
+        <footer class="site-footer">
+            <span>© 2026 John Champion</span>
+            <a href="../index.html#open-terminal" class="terminal-hint" data-terminal-trigger>press ~ for a terminal</a>
+        </footer>
     </section>
-
-    <!-- What's Next Section -->
-    <section class="section">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2>What's Next</h2>
-                <p>
-                    The app already covers the basics you'd want in a casual chess game—viewing move history, asking for a hint, changing difficulty, swapping sides. But there are more bells and whistles that could make it even more delightful, like setting up custom board positions to play out a specific scenario.
-                </p>
-                <p>
-                    Eventually, it would be interesting to add multiplayer—playing real people instead of just the engine. The challenge isn't adding functionality; it's doing so in a way that preserves the elegant, uncluttered feel of the current design.
-                </p>
-
-                <blockquote class="pullquote">
-                    <p>The challenge isn't adding features—it's adding them without making the app feel bloated.</p>
-                </blockquote>
-
-                <h3 class="section-heading-spacing">What I Learned</h3>
-                <p>
-                    This project taught me a lot about animation and polish. Getting the drawer to feel natural—the spring as it opens, the morph as the collapsed toolbar swaps in new controls, the snap back to default—took real time with timing curves and visual weight. The board transitions had to be smooth and deliberate, not jarring. These details take time, but they're what separate a functional app from an enjoyable one.
-                </p>
-                <p>
-                    It was also my first time deploying a React app alongside a backend service. I learned to deploy the frontend on AWS Amplify and the Python backend on Google Cloud Run—both effectively free for this scale. And working with Stockfish gave me my first exposure to chess engines, FEN notation, and wrapping a C++ binary in a REST API.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Try Chess</h2>
-                <p>
-                    Play a quick game against the Stockfish engine in this fast-loading, responsive chess web app.
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://webchess.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit Chess</a>
-                    <a href="https://github.com/johntchampion/chess-pwa" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Projects Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center mb-12">Other Projects</h2>
-
-            <div class="related-projects-grid">
-                <!-- Project Card 1 -->
-                <div class="card card-project">
-                    <div class="card-project-image">
-                        <img src="../images/daily-story/daily-story-thumbnail.png" alt="Daily Story interface">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">Daily Story</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Read a new story every day in the language you're learning, at your skill level.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="daily-story.html" class="btn btn-sm btn-primary">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="card card-project">
-                    <div class="card-project-image">
-                        <img src="../images/onetimechat/onetimechat-thumbnail.png" alt="OneTimeChat interface">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">OneTimeChat</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>A messaging web application that enables seamless, link-based conversations.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="onetimechat.html" class="btn btn-sm btn-primary">View Project</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="related-projects-cta">
-                <a href="../index.html#work" class="btn btn-outline">View All Projects</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 John Champion. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Simple scroll behavior script -->
-    <script>
-        // Add shadow to header on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
 </html>

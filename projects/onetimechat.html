@@ -3,521 +3,369 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="OneTimeChat - A chat platform that allows users to have a conversation with an AI assistant, then deletes the conversation after it's finished.">
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
-    <link rel="apple-touch-icon" href="../images/icon.png" />
+    <meta name="description" content="OneTimeChat - Real-time, link-based messaging that requires no download and no account.">
     <meta name="author" content="John Champion">
     <title>OneTimeChat - John Champion</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/icon.png">
 
-    <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://johnchampion.dev/projects/onetimechat.html">
-    <meta property="og:title" content="OneTimeChat - Link-Based Messaging Platform">
+    <meta property="og:title" content="OneTimeChat: conversations without sign-ups">
     <meta property="og:description" content="Real-time messaging that requires no download and no account. Just click a link and start chatting. Perfect for temporary group coordination.">
     <meta property="og:image" content="https://johnchampion.dev/images/onetimechat/interface.png">
     <meta property="og:site_name" content="John Champion">
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/project-page.css">
-    <link rel="stylesheet" href="../css/diagram.css">
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Crimson+Pro:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/site.css">
+    <link rel="stylesheet" href="../css/device-frames.css">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="stylesheet" href="../css/diagram.css">
+
+    <script src="../js/terminal-shortcut.js" defer></script>
 </head>
 <body>
-    <!-- Navigation Header -->
-    <header id="header" class="site-header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../index.html" class="logo">JC</a>
-                <nav>
-                    <ul class="nav">
-                        <li><a href="../index.html#about" class="nav-link">About</a></li>
-                        <li><a href="../index.html#work" class="nav-link">Work</a></li>
-                        <li><a href="../index.html#interests" class="nav-link">Interests</a></li>
-                        <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <header class="site-header page-width">
+        <a href="../index.html" class="site-brand">
+            <span class="site-brand-name">John Champion</span>
+            <span class="site-brand-path">~/field-notes</span>
+        </a>
+        <nav class="site-nav" aria-label="Main">
+            <a href="../index.html#posts">Posts</a>
+            <a href="../index.html#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Project Hero Section -->
-    <section class="hero project-hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-layout">
-                    <!-- Left: Text Content -->
-                    <div class="hero-text-content">
-                        <!-- Breadcrumb -->
-                        <div class="breadcrumb">
-                            <a href="../index.html#work">← Back to Projects</a>
-                        </div>
-
-                        <!-- Project Title -->
-                        <h1>OneTimeChat</h1>
-
-                        <!-- Project Tagline -->
-                        <p class="hero-tagline">
-                            Link-based messaging that requires no download and no account. Just click a link and start chatting.
-                        </p>
-
-                        <!-- Tech Stack Tags -->
-                        <div class="tech-tags">
-                            <span class="badge">React</span>
-                            <span class="badge">Node.js</span>
-                            <span class="badge">Postgres</span>
-                        </div>
-
-                        <!-- Project Links -->
-                        <div class="hero-cta">
-                            <a href="https://onetimechat.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">View Live Site</a>
-                            <a href="https://github.com/johntchampion/web-messages" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">GitHub Repository</a>
-                        </div>
-                    </div>
-
-                    <!-- Right: Floating Image -->
-                    <div class="hero-image-float">
-                        <img src="../images/onetimechat/chat.png" alt="OneTimeChat interface preview">
-                    </div>
+    <main>
+        <div class="post-intro page-width">
+            <a href="../index.html#posts" class="back-link">← All posts</a>
+            <div class="post-kind">
+                <span class="eyebrow">PROJECT</span>
+                <span class="post-topics">Real-Time Communication · Web Development · DevOps</span>
+            </div>
+            <h1 class="post-title">OneTimeChat: conversations without sign-ups</h1>
+            <p class="post-dek">How a flying club's reply-all problem became a link-based messaging app—and my first full-stack deploy to a server of my own.</p>
+            <div class="post-facts">
+                <div class="post-fact-list">
+                    <span><span class="post-fact-label">stack </span>React · Node.js · Postgres</span>
+                    <span><span class="post-fact-label">status </span>live</span>
+                </div>
+                <div class="button-row">
+                    <a href="https://onetimechat.app" class="button button-compact" target="_blank" rel="noopener noreferrer">View Live Site ↗</a>
+                    <a href="https://github.com/johntchampion/web-messages" class="button button-compact" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/github-icon.svg" alt=""></span>GitHub Repository</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Project Overview Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-content-wide">
-                <div class="section-content">
-                    <!-- Article Metadata -->
-                    <div class="article-meta">
-                        <div class="article-tags">
-                            <span class="tag">Real-Time Communication</span>
-                            <span class="tag">Web Development</span>
-                            <span class="tag">DevOps</span>
-                        </div>
+        <div class="wide-width">
+            <div class="post-hero browser-stage browser-stage-fixed-image" style="--stage-color: #D9E1EA">
+                <div class="browser-window">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">onetimechat.app/ae1b12b9…</span>
                     </div>
-
-                    <h2>From Flying Club Frustration to Link-Based Messaging</h2>
-                    <p>
-                        OneTimeChat is a messaging app that requires no download and no account. Just click a link and start sending messages right in the browser. Thirty days after the last message is sent, the conversation disappears. It's made for temporary group coordination where getting everyone to download an app is too cumbersome.
-                    </p>
-                    <p>
-                        The idea came to me when I was trying to start a flying club. We had about ten people come together to start a non-profit where we would own and share an airplane together. At first, I was emailing the whole group, and for everyone to send replies meant people would have to reply-all to keep everyone in the loop. We needed a messaging app, but picking one proved difficult with a sizable group. Everyone would have to agree to download an app, create an account, and then we'd have to get everyone in the same chat together.
-                    </p>
-
-                    <blockquote class="pullquote">
-                        <p>It would be so much easier to just email a link to a chat. And thus, the idea was born.</p>
-                    </blockquote>
+                    <img src="../images/onetimechat/chat.png" alt="OneTimeChat interface preview">
                 </div>
+            </div>
+        </div>
 
-                <!-- Main interface screenshot -->
-                <div class="screenshot-single">
-                    <!-- PLACEHOLDER: Screenshot of OneTimeChat main interface showing a conversation -->
+        <article class="prose space-before-l">
+            <h2>From Flying Club Frustration to Link-Based Messaging</h2>
+            <p>OneTimeChat is a messaging app that requires no download and no account. Just click a link and start sending messages right in the browser. Thirty days after the last message is sent, the conversation disappears. It's made for temporary group coordination where getting everyone to download an app is too cumbersome.</p>
+            <p>The idea came to me when I was trying to start a flying club. We had about ten people come together to start a non-profit where we would own and share an airplane together. At first, I was emailing the whole group, and for everyone to send replies meant people would have to reply-all to keep everyone in the loop. We needed a messaging app, but picking one proved difficult with a sizable group. Everyone would have to agree to download an app, create an account, and then we'd have to get everyone in the same chat together.</p>
+            <blockquote class="pull-quote">
+                <p>It would be so much easier to just email a link to a chat. And thus, the idea was born.</p>
+            </blockquote>
+        </article>
+
+        <figure class="medium-width space-before-s">
+            <div class="soft-panel">
+                <div class="browser-window">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">onetimechat.app</span>
+                    </div>
                     <img src="../images/onetimechat/interface.png" alt="OneTimeChat main conversation interface">
-                    <p class="image-caption">
-                        Clean, responsive interface that works seamlessly on desktop and mobile
-                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+            <figcaption class="figure-caption">Clean, responsive interface that works seamlessly on desktop and mobile</figcaption>
+        </figure>
 
-    <!-- How It Works Section -->
-    <section class="section section-bg-neutral">
-        <div class="container">
-            <div class="section-content-wide">
-                <div class="section-content">
-                    <h2>No Barriers, Just Conversation</h2>
-                    <p>
-                        When you receive a link, you can open the chat in the browser and see the conversation immediately—no questions asked. To send messages, just set a name and an avatar icon, and you can start chatting right in the browser.
-                    </p>
-                    <p>
-                        If you have an account, all messages stay tied to your identity. Change your name or icon, and it updates across all conversations you're in. To create a new conversation, you'll need an account, and you can delete any conversation you create at any time—waiting the 30 days for the conversation to go stale isn't a requirement.
-                    </p>
-                    <p>
-                        Anyone who has access to the chat can share the link, and anyone with the link can view it, so there's truly no sign-in barrier. It works on both desktop and mobile devices, and if you're on desktop, you can leave the tab open and receive push notifications while the tab is in the background.
-                    </p>
-                </div>
+        <article class="prose space-before-l">
+            <h2>No Barriers, Just Conversation</h2>
+            <p>When you receive a link, you can open the chat in the browser and see the conversation immediately—no questions asked. To send messages, just set a name and an avatar icon, and you can start chatting right in the browser.</p>
+            <p>If you have an account, all messages stay tied to your identity. Change your name or icon, and it updates across all conversations you're in. To create a new conversation, you'll need an account, and you can delete any conversation you create at any time—waiting the 30 days for the conversation to go stale isn't a requirement.</p>
+            <p>Anyone who has access to the chat can share the link, and anyone with the link can view it, so there's truly no sign-in barrier. It works on both desktop and mobile devices, and if you're on desktop, you can leave the tab open and receive push notifications while the tab is in the background.</p>
+        </article>
 
-                <!-- Feature showcase screenshots -->
-                <div class="screenshot-single">
-                    <!-- PLACEHOLDER: Side-by-side showing guest vs logged-in user experience -->
+        <figure class="medium-width space-before-s">
+            <div class="soft-panel soft-panel-blue">
+                <div class="browser-window">
+                    <div class="browser-toolbar">
+                        <span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span><span class="browser-toolbar-dot"></span>
+                        <span class="browser-address">onetimechat.app</span>
+                    </div>
                     <img src="../images/onetimechat/anonymous-chat.png" alt="Comparison of guest and account user experience">
-                    <p class="image-caption">
-                        Guest users can jump right in, while account holders get persistent identity across conversations
-                    </p>
                 </div>
             </div>
-        </div>
-    </section>
+            <figcaption class="figure-caption">Guest users can jump right in, while account holders get persistent identity across conversations</figcaption>
+        </figure>
 
-    <!-- Key Features Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-content-wide">
-                <h2 class="text-center mb-12">Key Features</h2>
-
-                <p class="section-intro">
-                    OneTimeChat focuses on removing friction from temporary group coordination:
-                </p>
-
-                <div class="features-grid">
-                    <!-- Feature 1 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Instant Access</h3>
-                            <p>
-                                Click a link and you're in. No app downloads, no account creation, no permission requests. Just immediate access to the conversation.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Real-Time Messaging</h3>
-                            <p>
-                                Messages appear instantly through WebSocket connections. Desktop users get push notifications even when the tab is in the background.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Feature 3 -->
-                    <div class="card feature-card">
-                        <div class="card-body">
-                            <h3>Auto-Cleanup</h3>
-                            <p>
-                                Conversations automatically delete 30 days after the last message, keeping your data minimal and temporary chats truly temporary.
-                            </p>
-                        </div>
-                    </div>
+        <section class="medium-width space-before-xl">
+            <h2 class="section-heading">Key Features</h2>
+            <p class="section-lead">OneTimeChat focuses on removing friction from temporary group coordination:</p>
+            <div class="feature-grid">
+                <div class="feature">
+                    <h3>Instant Access</h3>
+                    <p>Click a link and you're in. No app downloads, no account creation, no permission requests. Just immediate access to the conversation.</p>
+                </div>
+                <div class="feature">
+                    <h3>Real-Time Messaging</h3>
+                    <p>Messages appear instantly through WebSocket connections. Desktop users get push notifications even when the tab is in the background.</p>
+                </div>
+                <div class="feature">
+                    <h3>Auto-Cleanup</h3>
+                    <p>Conversations automatically delete 30 days after the last message, keeping your data minimal and temporary chats truly temporary.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Technical Architecture Section -->
-    <section class="section section-bg-neutral">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2>Building for Real-Time</h2>
-                <p>
-                    The app is composed of three components: a Postgres database, a Node.js backend, and a React frontend. The architecture prioritizes real-time communication while maintaining a clean separation of concerns.
-                </p>
-            </div>
+        <article class="prose space-before-xl">
+            <h2>Building for Real-Time</h2>
+            <p>The app is composed of three components: a Postgres database, a Node.js backend, and a React frontend. The architecture prioritizes real-time communication while maintaining a clean separation of concerns.</p>
+        </article>
 
-            <div>
-                <div class="diagram max-width">
-                    <div class="diagram-grid cols-5">
-                        <!-- Frontend -->
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">React Frontend</div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">UI Framework</div>
-                                <div class="diagram-item">React + TypeScript</div>
-                                <div class="diagram-item">React Router</div>
-                                <div class="diagram-item">Redux (auth)</div>
-                                <div class="diagram-item">Vite</div>
-                            </div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Communication</div>
-                                <div class="diagram-item">Axios (HTTP)</div>
-                                <div class="diagram-item">Socket.IO Client</div>
-                            </div>
+        <figure class="page-width space-before-s">
+            <div class="diagram">
+                <div class="diagram-flow" style="--diagram-flow-columns: minmax(0, 1fr) 128px minmax(0, 1fr) 112px minmax(0, 1fr)">
+                    <div class="diagram-node diagram-node-stacked">
+                        <p class="diagram-node-title">React Frontend</p>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">UI Framework</p>
+                            <p>React + TypeScript</p>
+                            <p>React Router</p>
+                            <p>Redux (auth)</p>
+                            <p>Vite</p>
                         </div>
-
-                        <!-- Connection 1 -->
-                        <div class="diagram-connection">
-                            <div class="diagram-connection-line">
-                                <div class="diagram-label">WebSocket</div>
-                                <div class="diagram-arrow horizontal right"></div>
-                                <div class="diagram-label">Real-time</div>
-                            </div>
-                            <div class="diagram-connection-line">
-                                <div class="diagram-label">REST API</div>
-                                <div class="diagram-arrow horizontal left"></div>
-                                <div class="diagram-label">Auth/CRUD</div>
-                            </div>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Communication</p>
+                            <p class="diagram-node-section-highlight">Axios (HTTP)</p>
+                            <p class="diagram-node-section-highlight">Socket.IO Client</p>
                         </div>
-
-                        <!-- Backend -->
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">Node.js Backend</div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">HTTP Layer</div>
-                                <div class="diagram-item">Express.js</div>
-                                <div class="diagram-item">REST endpoints</div>
-                                <div class="diagram-item">JWT auth</div>
-                            </div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Real-time</div>
-                                <div class="diagram-item">Socket.IO Server</div>
-                                <div class="diagram-item">WebSocket rooms</div>
-                            </div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Cron Jobs</div>
-                                <div class="diagram-item">Delete Stale Chats</div>
-                            </div>
+                    </div>
+                    <div class="diagram-connector-pair">
+                        <div class="diagram-connector-group">
+                            <span>WebSocket</span>
+                            <span class="diagram-connector"></span>
+                            <span class="diagram-connector-note">Real-time</span>
                         </div>
-
-                        <!-- Connection 2 -->
-                        <div class="diagram-connection">
-                            <div class="diagram-connection-line">
-                                <div class="diagram-label">Queries</div>
-                                <div class="diagram-arrow horizontal right"></div>
-                            </div>
-                            <div class="diagram-connection-line">
-                                <div class="diagram-label">Results</div>
-                                <div class="diagram-arrow horizontal left"></div>
-                            </div>
+                        <div class="diagram-connector-group">
+                            <span>REST API</span>
+                            <span class="diagram-connector diagram-connector-backward"></span>
+                            <span class="diagram-connector-note">Auth/CRUD</span>
                         </div>
-
-                        <!-- Database -->
-                        <div class="diagram-box center-text">
-                            <div class="diagram-title">PostgreSQL</div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Tables</div>
-                                <div class="diagram-item">users</div>
-                                <div class="diagram-item">conversations</div>
-                                <div class="diagram-item">messages</div>
-                            </div>
-                            <div class="diagram-section">
-                                <div class="diagram-section-title">Features</div>
-                                <div class="diagram-item">Timestamp triggers</div>
-                                <div class="diagram-item">Auto-updates</div>
-                            </div>
+                    </div>
+                    <div class="diagram-node diagram-node-stacked">
+                        <p class="diagram-node-title">Node.js Backend</p>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">HTTP Layer</p>
+                            <p>Express.js</p>
+                            <p>REST endpoints</p>
+                            <p>JWT auth</p>
+                        </div>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Real-Time</p>
+                            <p class="diagram-node-section-highlight">Socket.IO Server</p>
+                            <p class="diagram-node-section-highlight">WebSocket rooms</p>
+                        </div>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Cron Jobs</p>
+                            <p>Delete Stale Chats</p>
+                        </div>
+                    </div>
+                    <div class="diagram-connector-pair">
+                        <div class="diagram-connector-group">
+                            <span>Queries</span>
+                            <span class="diagram-connector"></span>
+                        </div>
+                        <div class="diagram-connector-group">
+                            <span class="diagram-connector diagram-connector-backward"></span>
+                            <span>Results</span>
+                        </div>
+                    </div>
+                    <div class="diagram-node diagram-node-stacked">
+                        <p class="diagram-node-title">PostgreSQL</p>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Tables</p>
+                            <p class="diagram-node-section-code">users</p>
+                            <p class="diagram-node-section-code">conversations</p>
+                            <p class="diagram-node-section-code">messages</p>
+                        </div>
+                        <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Features</p>
+                            <p>Timestamp triggers</p>
+                            <p>Auto-updates</p>
                         </div>
                     </div>
                 </div>
-
-                <p class="image-caption">
-                    System architecture showing REST API for authentication and Socket.IO for real-time messaging
-                </p>
             </div>
+            <figcaption class="figure-label">Fig. 1 — System architecture showing REST API for authentication and Socket.IO for real-time messaging</figcaption>
+        </figure>
 
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h3 class="section-heading-spacing">Backend Architecture</h3>
-                <p>
-                    The backend service is a Node.js app using the Express framework. It serves a REST API that handles all CRUD operations for conversations and messages, as well as user accounts, authentication, and authorization.
-                </p>
-                <p>
-                    In addition to the REST API, the service delivers real-time data over WebSocket connections through Socket.IO. This dual approach means authentication and session management happen through traditional HTTP requests, while all message delivery happens over persistent WebSocket connections.
-                </p>
-                <p>
-                    The service also runs a cron job that deletes stale conversations and messages. Postgres triggers automatically update timestamp data, keeping the deletion logic simple and reliable.
-                </p>
+        <article class="prose space-before-l">
+            <h3>Backend Architecture</h3>
+            <p>The backend service is a Node.js app using the Express framework. It serves a REST API that handles all CRUD operations for conversations and messages, as well as user accounts, authentication, and authorization.</p>
+            <p>In addition to the REST API, the service delivers real-time data over WebSocket connections through Socket.IO. This dual approach means authentication and session management happen through traditional HTTP requests, while all message delivery happens over persistent WebSocket connections.</p>
+            <p>The service also runs a cron job that deletes stale conversations and messages. Postgres triggers automatically update timestamp data, keeping the deletion logic simple and reliable.</p>
+            <h3>Frontend Implementation</h3>
+            <p>The frontend is a React app built with TypeScript and Vite. Redux handles authentication state, while React Router manages navigation. The app handles login, signup, and session refresh through the REST API, but everything else—messaging, presence updates, profile changes—happens through the Socket.IO client.</p>
+            <p>This means all messages sent are received almost instantaneously by other members of conversations. Profile updates from logged-in users propagate in real-time to everyone in their conversations.</p>
+            <blockquote class="pull-quote">
+                <p>Messages appear instantly through WebSocket connections—no polling, no delay, no refresh required.</p>
+            </blockquote>
+            <h3>Tech Stack</h3>
+            <div class="tag-list">
+                <span class="tag">React</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Redux</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Express</span>
+                <span class="tag">Socket.IO</span>
+                <span class="tag">PostgreSQL</span>
             </div>
+            <h2>Learning to Deploy Beyond Managed Services</h2>
+            <p>Neither the backend nor the frontend were particularly difficult to build. The backend follows standard REST API patterns and benefits from Postgres triggers for automatic timestamp updates. The frontend uses familiar patterns—Redux for auth, React Router for navigation, the Notifications API for background alerts.</p>
+            <p>The real challenge for me was deployment. Up until this point, I'd been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that runs on Cloud Run with no state to manage. But OneTimeChat requires a frontend, backend, and a Postgres database—a setup that demands more than just deploying to a managed platform.</p>
+            <blockquote class="pull-quote">
+                <p>The best way to deploy this was to set up a server myself with production builds of each component.</p>
+            </blockquote>
+            <p>It was my first time deploying a full-stack application to a self-managed server. I had to think about:</p>
+            <ol class="numbered-list">
+                <li>Building production versions of both the React app and Node.js backend</li>
+                <li>Setting up and configuring a Postgres database</li>
+                <li>Configuring Nginx as a reverse proxy to route requests to the right services</li>
+                <li>Managing environment variables and secrets across different processes</li>
+                <li>Setting up SSL certificates for secure WebSocket connections</li>
+                <li>Ensuring the Node.js service restarts automatically if it crashes</li>
+            </ol>
+            <p>It was a great experience to step out of the managed world and take more responsibility for how the app runs in production. Understanding the deployment process—from build pipelines to process management to reverse proxies—gave me a much deeper appreciation for what managed services abstract away.</p>
+        </article>
 
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h3 class="section-heading-spacing">Frontend Implementation</h3>
-                <p>
-                    The frontend is a React app built with TypeScript and Vite. Redux handles authentication state, while React Router manages navigation. The app handles login, signup, and session refresh through the REST API, but everything else—messaging, presence updates, profile changes—happens through the Socket.IO client.
-                </p>
-                <p>
-                    This means all messages sent are received almost instantaneously by other members of conversations. Profile updates from logged-in users propagate in real-time to everyone in their conversations.
-                </p>
-
-                <blockquote class="pullquote">
-                    <p>Messages appear instantly through WebSocket connections—no polling, no delay, no refresh required.</p>
-                </blockquote>
-
-                <h3 class="section-heading-spacing">Tech Stack</h3>
-                <div class="tech-stack-tags">
-                    <span class="tag">React</span>
-                    <span class="tag">TypeScript</span>
-                    <span class="tag">Redux</span>
-                    <span class="tag">Node.js</span>
-                    <span class="tag">Express</span>
-                    <span class="tag">Socket.IO</span>
-                    <span class="tag">PostgreSQL</span>
+        <figure class="medium-width space-before-s">
+            <div class="diagram diagram-column">
+                <div class="diagram-node diagram-node-narrow">
+                    <p class="diagram-node-title">Internet Traffic</p>
+                    <p class="diagram-node-subtitle">onetimechat.app</p>
+                    <p class="diagram-node-detail">SSL/TLS Certificate</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Deployment Challenge Section -->
-    <section class="section">
-        <div class="container">
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h2>Learning to Deploy Beyond Managed Services</h2>
-                <p>
-                    Neither the backend nor the frontend were particularly difficult to build. The backend follows standard REST API patterns and benefits from Postgres triggers for automatic timestamp updates. The frontend uses familiar patterns—Redux for auth, React Router for navigation, the Notifications API for background alerts.
-                </p>
-                <p>
-                    The real challenge for me was deployment. Up until this point, I'd been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that runs on Cloud Run with no state to manage. But OneTimeChat requires a frontend, backend, and a Postgres database—a setup that demands more than just deploying to a managed platform.
-                </p>
-
-                <blockquote class="pullquote">
-                    <p>The best way to deploy this was to set up a server myself with production builds of each component.</p>
-                </blockquote>
-
-                <p>
-                    It was my first time deploying a full-stack application to a self-managed server. I had to think about:
-                </p>
-                <ul>
-                    <li>Building production versions of both the React app and Node.js backend</li>
-                    <li>Setting up and configuring a Postgres database</li>
-                    <li>Configuring Nginx as a reverse proxy to route requests to the right services</li>
-                    <li>Managing environment variables and secrets across different processes</li>
-                    <li>Setting up SSL certificates for secure WebSocket connections</li>
-                    <li>Ensuring the Node.js service restarts automatically if it crashes</li>
-                </ul>
-                <p>
-                    It was a great experience to step out of the managed world and take more responsibility for how the app runs in production. Understanding the deployment process—from build pipelines to process management to reverse proxies—gave me a much deeper appreciation for what managed services abstract away.
-                </p>
-            </div>
-
-            <div>
-                <div class="diagram max-width">
-                        <div class="diagram-flow">
-                            <!-- Internet Traffic -->
-                            <div class="diagram-box center-text">
-                                <div class="diagram-title">Internet Traffic</div>
-                                <div class="diagram-subtitle">onetimechat.app</div>
-                                <div class="diagram-accent">SSL/TLS Certificate</div>
-                            </div>
-
-                            <div class="diagram-arrow vertical down"></div>
-
-                            <!-- Server -->
-                            <div class="diagram-box diagram-container">
-                                <div class="diagram-container-label">VPS Server</div>
-                                <!-- Nginx -->
-                                <div class="diagram-box center-text">
-                                    <div class="diagram-title">Nginx</div>
-                                    <div class="diagram-subtitle">Reverse Proxy</div>
-                                    <div class="diagram-accent">Port 80/443</div>
+                <div class="diagram-connector diagram-connector-down"></div>
+                <div class="diagram-group diagram-group-centered">
+                    <span class="diagram-group-label">VPS Server</span>
+                    <div class="diagram-node diagram-node-narrow">
+                        <p class="diagram-node-title">Nginx</p>
+                        <p class="diagram-node-subtitle">Reverse Proxy</p>
+                        <p class="diagram-node-detail">Port 80/443</p>
+                    </div>
+                    <div class="diagram-connector diagram-connector-down"></div>
+                    <div class="diagram-columns diagram-columns-wide-first">
+                        <div class="diagram-group diagram-group-dashed">
+                            <span class="diagram-group-label">Docker</span>
+                            <div class="diagram-columns" style="--diagram-columns: 2">
+                                <div class="diagram-node diagram-node-quiet">
+                                    <p class="diagram-node-title">Node.js</p>
+                                    <p class="diagram-node-subtitle">Backend API</p>
+                                    <p class="diagram-node-detail">:3000</p>
                                 </div>
-                                <div class="diagram-arrow vertical down" style="margin: 24px auto;"></div>
-                                <div class="diagram-grid" style="grid-template-columns: 2fr 1fr; gap: 12px;">
-                                    <!-- Docker Container -->
-                                    <div class="diagram-box diagram-container" style="border-style: dashed;">
-                                        <div class="diagram-container-label">Docker</div>
-                                        <div class="diagram-grid" style="grid-template-columns: 1fr 1fr; gap: 12px;">
-                                            <div class="diagram-box small">
-                                                <div class="diagram-title small">Node.js</div>
-                                                <div class="diagram-subtitle small">Backend API</div>
-                                                <div class="diagram-accent small">:3000</div>
-                                            </div>
-                                            <div class="diagram-box small">
-                                                <div class="diagram-title small">PostgreSQL</div>
-                                                <div class="diagram-subtitle small">Database</div>
-                                                <div class="diagram-accent small">:5432</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- React App (outside Docker) -->
-                                    <div class="diagram-box small">
-                                        <div class="diagram-title small">React</div>
-                                        <div class="diagram-subtitle small">Static Build</div>
-                                        <div class="diagram-accent small">/var/www</div>
-                                    </div>
+                                <div class="diagram-node diagram-node-quiet">
+                                    <p class="diagram-node-title">PostgreSQL</p>
+                                    <p class="diagram-node-subtitle">Database</p>
+                                    <p class="diagram-node-detail">:5432</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                <p class="image-caption">
-                    Moving from managed services to self-hosted deployment taught valuable lessons in infrastructure management
-                </p>
-            </div>
-
-            <div style="max-width: 800px; margin: 0 auto;">
-                <h3 class="section-heading-spacing">What I Learned</h3>
-                <p>
-                    This project was an exercise in using a wide variety of skills. The Notifications API for background alerts, CSS to get a message thread that looked precisely right, Socket.IO for real-time communication, and Redux for state management all came together to create a cohesive experience.
-                </p>
-                <p>
-                    But the most valuable lesson came from deployment. Managed services are powerful, but understanding what happens underneath—how processes are managed, how routing works, how databases connect to applications—makes you a better developer regardless of what platform you ultimately deploy to.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="section cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Try OneTimeChat</h2>
-                <p>
-                    Start temporary conversations with anyone just by sending a link. Start your chat today!
-                </p>
-                <div class="cta-buttons">
-                    <a href="https://onetimechat.app" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Visit OneTimeChat</a>
-                    <a href="https://github.com/johntchampion/web-messages" class="btn btn-outline-light" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Projects Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center mb-12">Other Projects</h2>
-
-            <div class="related-projects-grid">
-                <!-- Project Card 1 -->
-                <div class="card card-project">
-                    <div class="card-project-image">
-                        <img src="../images/daily-story/daily-story-thumbnail.png" alt="Daily Story interface">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">Daily Story</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>Read a new story every day in the language you're learning, at your skill level.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="daily-story.html" class="btn btn-sm btn-primary">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project Card 2 -->
-                <div class="card card-project">
-                    <div class="card-project-image" style="background: #f5f0e6;">
-                        <img src="../images/chess/chess-thumbnail.png" style="background: transparent;" alt="Chess PWA interface">
-                    </div>
-                    <div class="card-header">
-                        <h3 class="card-title">Chess</h3>
-                    </div>
-                    <div class="card-body">
-                        <p>A clean, responsive Progressive Web App for playing chess with Stockfish engine.</p>
-                    </div>
-                    <div class="card-footer">
-                        <a href="chess.html" class="btn btn-sm btn-primary">View Project</a>
+                        <div class="diagram-node diagram-node-quiet diagram-node-centered">
+                            <p class="diagram-node-title">React</p>
+                            <p class="diagram-node-subtitle">Static Build</p>
+                            <p class="diagram-node-detail">/var/www</p>
+                        </div>
                     </div>
                 </div>
             </div>
+            <figcaption class="figure-label">Fig. 2 — Moving from managed services to self-hosted deployment taught valuable lessons in infrastructure management</figcaption>
+        </figure>
 
-            <div class="related-projects-cta">
-                <a href="../index.html#work" class="btn btn-outline">View All Projects</a>
+        <article class="prose space-before-l">
+            <h3>What I Learned</h3>
+            <p>This project was an exercise in using a wide variety of skills. The Notifications API for background alerts, CSS to get a message thread that looked precisely right, Socket.IO for real-time communication, and Redux for state management all came together to create a cohesive experience.</p>
+            <p>But the most valuable lesson came from deployment. Managed services are powerful, but understanding what happens underneath—how processes are managed, how routing works, how databases connect to applications—makes you a better developer regardless of what platform you ultimately deploy to.</p>
+        </article>
+
+        <section class="medium-width space-before-l">
+            <div class="try-it">
+                <div>
+                    <h2>Try OneTimeChat</h2>
+                    <p>Start temporary conversations with anyone just by sending a link. Start your chat today!</p>
+                </div>
+                <div class="button-row">
+                    <a href="https://onetimechat.app" class="button button-primary" target="_blank" rel="noopener noreferrer">Visit OneTimeChat ↗</a>
+                    <a href="https://github.com/johntchampion/web-messages" class="button button-on-soft" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                </div>
+            </div>
+        </section>
+
+        <nav class="more-posts page-width space-before-xl" aria-label="More posts">
+            <div class="section-rule">
+                <span class="section-rule-title">More posts</span>
+                <a href="../index.html#posts" class="section-rule-note">All posts →</a>
+            </div>
+            <div class="post-card-grid">
+                <a href="../interests/aviation.html" class="post-card">
+                    <div class="post-card-image photo-frame"><img src="../images/aviation/cockpit-cruising.jpeg" alt="Cockpit in cruise"></div>
+                    <div>
+                        <span class="eyebrow">EXPERIENCE</span>
+                        <h3>Flying, from the ground up</h3>
+                        <p>What earning a private pilot license taught me about checklists, weather, and humility.</p>
+                    </div>
+                </a>
+                <a href="chess.html" class="post-card">
+                    <div class="post-card-image phone-stage" style="--stage-color: #E6E0CF">
+                        <div class="phone-frame phone-frame-small">
+                            <picture>
+                                <source media="(prefers-color-scheme: dark)" srcset="../images/chess/existing-game-dark.png">
+                                <img src="../images/chess/existing-game-light.png" alt="Chess interface">
+                            </picture>
+                        </div>
+                    </div>
+                    <div>
+                        <span class="eyebrow">PROJECT</span>
+                        <h3>Chess, without the metrics</h3>
+                        <p>No ratings, no streaks—just a quiet board.</p>
+                    </div>
+                </a>
+            </div>
+        </nav>
+    </main>
+
+    <section id="contact" class="contact-section page-width">
+        <div class="contact-panel">
+            <div>
+                <h2 class="contact-title">Let's talk.</h2>
+                <p class="contact-text">Open to new roles, projects, or a chat about code and flying.</p>
+            </div>
+            <div class="button-row">
+                <a href="mailto:sate.falcons-7t@icloud.com" class="button"><span class="monochrome-icon"><img src="../images/email-icon.svg" alt=""></span>Email</a>
+                <a href="https://github.com/johntchampion" class="button" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/github-icon.svg" alt=""></span>GitHub</a>
+                <a href="https://www.linkedin.com/in/john-champion-108ba8141/" class="button" target="_blank" rel="noopener noreferrer"><span class="monochrome-icon"><img src="../images/linkedin-icon.png" alt=""></span>LinkedIn</a>
             </div>
         </div>
+        <footer class="site-footer">
+            <span>© 2026 John Champion</span>
+            <a href="../index.html#open-terminal" class="terminal-hint" data-terminal-trigger>press ~ for a terminal</a>
+        </footer>
     </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 John Champion. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <!-- Simple scroll behavior script -->
-    <script>
-        // Add shadow to header on scroll
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 20) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    </script>
 </body>
 </html>
