@@ -67,12 +67,6 @@
   border-radius: 8px 0 0 0;
 }
 
-.browser-window-micro {
-  --toolbar-height: 12px;
-  --dot-size: 4px;
-  border-radius: 5px 0 0 0;
-}
-
 /* The window bleeds off the bottom-right edge of a colored stage, cropped by overflow. */
 .browser-stage {
   position: relative;
