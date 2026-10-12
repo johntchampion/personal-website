@@ -51,7 +51,7 @@
             <p class="post-dek">How a flying club's reply-all problem became a link-based messaging app—and my first full-stack deploy to a server of my own.</p>
             <div class="post-facts">
                 <div class="post-fact-list">
-                    <span><span class="post-fact-label">stack </span>React · Node.js · Postgres</span>
+                    <span><span class="post-fact-label">stack </span>React · Node.js · SQLite</span>
                     <span><span class="post-fact-label">status </span>live</span>
                 </div>
                 <div class="button-row">
@@ -99,7 +99,7 @@
             <h2>No Barriers, Just Conversation</h2>
             <p>When you receive a link, you can open the chat in the browser and see the conversation immediately—no questions asked. To send messages, just set a name and an avatar icon, and you can start chatting right in the browser.</p>
             <p>If you have an account, all messages stay tied to your identity. Change your name or icon, and it updates across all conversations you're in. To create a new conversation, you'll need an account, and you can delete any conversation you create at any time—waiting the 30 days for the conversation to go stale isn't a requirement.</p>
-            <p>Anyone who has access to the chat can share the link, and anyone with the link can view it, so there's truly no sign-in barrier. It works on both desktop and mobile devices, and if you're on desktop, you can leave the tab open and receive push notifications while the tab is in the background.</p>
+            <p>Anyone who has access to the chat can share the link, and anyone with the link can view it, so there's truly no sign-in barrier. It works on both desktop and mobile devices, and every chat has its own notification toggle. If you've taken part in a conversation, signed in or not, you can switch on push notifications for it and hear about new messages even after you've closed the tab.</p>
         </article>
 
         <figure class="medium-width space-before-s">
@@ -125,7 +125,7 @@
                 </div>
                 <div class="feature">
                     <h3>Real-Time Messaging</h3>
-                    <p>Messages appear instantly through WebSocket connections. Desktop users get push notifications even when the tab is in the background.</p>
+                    <p>Messages appear instantly through WebSocket connections, and per-chat Web Push notifications reach you even after the tab is closed.</p>
                 </div>
                 <div class="feature">
                     <h3>Auto-Cleanup</h3>
@@ -136,7 +136,7 @@
 
         <article class="prose space-before-xl">
             <h2>Building for Real-Time</h2>
-            <p>The app is composed of three components: a Postgres database, a Node.js backend, and a React frontend. The architecture prioritizes real-time communication while maintaining a clean separation of concerns.</p>
+            <p>The app is composed of three components: a SQLite database, a Node.js backend, and a React frontend. The architecture prioritizes real-time communication while maintaining a clean separation of concerns.</p>
         </article>
 
         <figure class="page-width space-before-s">
@@ -155,6 +155,7 @@
                             <p class="diagram-node-section-label">Communication</p>
                             <p class="diagram-node-section-highlight">Axios (HTTP)</p>
                             <p class="diagram-node-section-highlight">Socket.IO Client</p>
+                            <p>Service Worker (push)</p>
                         </div>
                     </div>
                     <div class="diagram-connector-pair">
@@ -183,6 +184,10 @@
                             <p class="diagram-node-section-highlight">WebSocket rooms</p>
                         </div>
                         <div class="diagram-node-section">
+                            <p class="diagram-node-section-label">Notifications</p>
+                            <p>Web Push (VAPID)</p>
+                        </div>
+                        <div class="diagram-node-section">
                             <p class="diagram-node-section-label">Cron Jobs</p>
                             <p>Delete Stale Chats</p>
                         </div>
@@ -198,35 +203,39 @@
                         </div>
                     </div>
                     <div class="diagram-node diagram-node-stacked">
-                        <p class="diagram-node-title">PostgreSQL</p>
+                        <p class="diagram-node-title">SQLite</p>
                         <div class="diagram-node-section">
                             <p class="diagram-node-section-label">Tables</p>
                             <p class="diagram-node-section-code">users</p>
                             <p class="diagram-node-section-code">conversations</p>
                             <p class="diagram-node-section-code">messages</p>
+                            <p class="diagram-node-section-code">push_subscriptions</p>
                         </div>
                         <div class="diagram-node-section">
                             <p class="diagram-node-section-label">Features</p>
                             <p>Timestamp triggers</p>
-                            <p>Auto-updates</p>
+                            <p>Single file on disk</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <figcaption class="figure-label">Fig. 1 — System architecture showing REST API for authentication and Socket.IO for real-time messaging</figcaption>
+            <figcaption class="figure-label">Fig. 1 — System architecture showing REST API for authentication, Socket.IO for real-time messaging, and Web Push for notifications</figcaption>
         </figure>
 
         <article class="prose space-before-l">
             <h3>Backend Architecture</h3>
             <p>The backend service is a Node.js app using the Express framework. It serves a REST API that handles all CRUD operations for conversations and messages, as well as user accounts, authentication, and authorization.</p>
             <p>In addition to the REST API, the service delivers real-time data over WebSocket connections through Socket.IO. This dual approach means authentication and session management happen through traditional HTTP requests, while all message delivery happens over persistent WebSocket connections.</p>
-            <p>The service also runs a cron job that deletes stale conversations and messages. Postgres triggers automatically update timestamp data, keeping the deletion logic simple and reliable.</p>
+            <p>The service also runs a cron job that deletes stale conversations and messages. SQLite triggers bump a conversation's timestamp whenever its messages change, keeping the deletion logic simple and reliable.</p>
             <h3>Frontend Implementation</h3>
             <p>The frontend is a React app built with TypeScript and Vite. Redux handles authentication state, while React Router manages navigation. The app handles login, signup, and session refresh through the REST API, but everything else—messaging, presence updates, profile changes—happens through the Socket.IO client.</p>
             <p>This means all messages sent are received almost instantaneously by other members of conversations. Profile updates from logged-in users propagate in real-time to everyone in their conversations.</p>
             <blockquote class="pull-quote">
                 <p>Messages appear instantly through WebSocket connections—no polling, no delay, no refresh required.</p>
             </blockquote>
+            <h3>Notifications for Every Chat</h3>
+            <p>Each chat has its own notification toggle. When you switch it on, the browser creates a Web Push subscription and the backend records that this device wants to hear about that conversation. No account is required, so guests get notifications just like everyone else. If you're signed in, the subscription is also linked to your account, so turning a chat's notifications off mutes it on every device.</p>
+            <p>When a new message arrives, the backend finds every subscription following the conversation, skips the sender and anyone already viewing the chat, and sends the notification through the <code>web-push</code> library, signed with VAPID keys. If the push service reports that a subscription has expired, the backend deletes it. On the frontend, a service worker receives each push and shows the notification, even if no OneTimeChat tab is open.</p>
             <h3>Tech Stack</h3>
             <div class="tag-list">
                 <span class="tag">React</span>
@@ -235,11 +244,12 @@
                 <span class="tag">Node.js</span>
                 <span class="tag">Express</span>
                 <span class="tag">Socket.IO</span>
-                <span class="tag">PostgreSQL</span>
+                <span class="tag">SQLite</span>
+                <span class="tag">Web Push</span>
             </div>
             <h2>Learning to Deploy Beyond Managed Services</h2>
-            <p>Neither the backend nor the frontend were particularly difficult to build. The backend follows standard REST API patterns and benefits from Postgres triggers for automatic timestamp updates. The frontend uses familiar patterns—Redux for auth, React Router for navigation, the Notifications API for background alerts.</p>
-            <p>The real challenge for me was deployment. Up until this point, I'd been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that runs on Cloud Run with no state to manage. But OneTimeChat requires a frontend, backend, and a Postgres database—a setup that demands more than just deploying to a managed platform.</p>
+            <p>Neither the backend nor the frontend were particularly difficult to build. The backend follows standard REST API patterns and relies on database triggers for automatic timestamp updates. The frontend uses familiar patterns—Redux for auth, React Router for navigation, a service worker for push notifications.</p>
+            <p>The real challenge for me was deployment. Up until this point, I'd been able to use managed services to deploy apps. Daily Story, for instance, is a single Node.js app that runs on Cloud Run with no state to manage. But OneTimeChat originally required a frontend, a backend, and a Postgres database—a setup that demands more than just deploying to a managed platform.</p>
             <blockquote class="pull-quote">
                 <p>The best way to deploy this was to set up a server myself with production builds of each component.</p>
             </blockquote>
@@ -253,6 +263,9 @@
                 <li>Ensuring the Node.js service restarts automatically if it crashes</li>
             </ol>
             <p>It was a great experience to step out of the managed world and take more responsibility for how the app runs in production. Understanding the deployment process—from build pipelines to process management to reverse proxies—gave me a much deeper appreciation for what managed services abstract away.</p>
+            <h2>Trading Postgres for SQLite</h2>
+            <p>OneTimeChat started out with Postgres running in its own container next to the backend. It worked, but for a lightly used app it was more machinery than the job needed. That meant a second container to run, a network connection and credentials to manage, and a separate service to keep healthy and back up.</p>
+            <p>So I replaced it with SQLite. The database is now a single file on a mounted volume, opened directly by the Node.js process through Node's built-in <code>node:sqlite</code> module. There's no database server and no extra dependency. Write-ahead logging means readers don't block the writer, and the timestamp triggers carried over with only small changes. If the app ever outgrows a single file, moving back to Postgres is still possible. For now, the simpler setup is the better fit.</p>
         </article>
 
         <figure class="medium-width space-before-s">
@@ -281,9 +294,9 @@
                                     <p class="diagram-node-detail">:3000</p>
                                 </div>
                                 <div class="diagram-node diagram-node-quiet">
-                                    <p class="diagram-node-title">PostgreSQL</p>
-                                    <p class="diagram-node-subtitle">Database</p>
-                                    <p class="diagram-node-detail">:5432</p>
+                                    <p class="diagram-node-title">SQLite</p>
+                                    <p class="diagram-node-subtitle">Database File</p>
+                                    <p class="diagram-node-detail">/app/data</p>
                                 </div>
                             </div>
                         </div>
@@ -295,12 +308,12 @@
                     </div>
                 </div>
             </div>
-            <figcaption class="figure-label">Fig. 2 — Moving from managed services to self-hosted deployment taught valuable lessons in infrastructure management</figcaption>
+            <figcaption class="figure-label">Fig. 2 — The self-hosted deployment, with the SQLite database file persisted on a volume alongside the backend</figcaption>
         </figure>
 
         <article class="prose space-before-l">
             <h3>What I Learned</h3>
-            <p>This project was an exercise in using a wide variety of skills. The Notifications API for background alerts, CSS to get a message thread that looked precisely right, Socket.IO for real-time communication, and Redux for state management all came together to create a cohesive experience.</p>
+            <p>This project was an exercise in using a wide variety of skills. Web Push and service workers for notifications, CSS to get a message thread that looked precisely right, Socket.IO for real-time communication, and Redux for state management all came together to create a cohesive experience.</p>
             <p>But the most valuable lesson came from deployment. Managed services are powerful, but understanding what happens underneath—how processes are managed, how routing works, how databases connect to applications—makes you a better developer regardless of what platform you ultimately deploy to.</p>
         </article>
 
