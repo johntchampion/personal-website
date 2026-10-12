@@ -819,18 +819,28 @@
     flex-direction: column;
     align-items: center;
     flex-wrap: nowrap;
-    gap: 24px;
     min-height: 0;
     margin-bottom: 0;
   }
 
   .screenshot-fan .browser-window {
-    width: min(450px, 100%);
+    width: min(450px, 88%);
   }
 
   .screenshot-fan .browser-window:nth-child(n) {
-    transform: none;
+    margin-top: -36px;
+  }
+
+  .screenshot-fan .browser-window:first-child {
     margin-top: 0;
+  }
+
+  .screenshot-fan .browser-window:nth-child(odd) {
+    transform: rotate(-2deg) translateX(-4%);
+  }
+
+  .screenshot-fan .browser-window:nth-child(even) {
+    transform: rotate(2deg) translateX(4%);
   }
 
   .phone-fan {
@@ -873,12 +883,18 @@
     border-radius: 26px;
   }
 
+  .post-hero.browser-stage:has(> .post-hero-browser) {
+    height: auto;
+  }
+
   .post-hero-browser.browser-window {
-    top: 32px;
-    left: 24px;
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
     width: auto;
-    right: 24px;
-    margin-left: 0;
+    height: auto;
+    margin: 32px 24px 0;
   }
 
   .post-hero-browser-contained.browser-window {
