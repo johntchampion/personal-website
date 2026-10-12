@@ -64,10 +64,10 @@
 .browser-window-tiny {
   --toolbar-height: 24px;
   --dot-size: 7px;
-  border-radius: 8px 0 0 0;
+  border-radius: 8px 8px 0 0;
 }
 
-/* The window bleeds off the bottom-right edge of a colored stage, cropped by overflow. */
+/* The window bleeds off the bottom edge of a colored stage, cropped by overflow. */
 .browser-stage {
   position: relative;
   overflow: hidden;
@@ -78,11 +78,11 @@
 .browser-stage .browser-window {
   position: absolute;
   left: var(--window-left, 8%);
+  right: var(--window-left, 8%);
   top: var(--window-top, 10%);
-  width: 100%;
   height: 100%;
   border: none;
-  border-radius: 10px 0 0 0;
+  border-radius: 10px 10px 0 0;
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
@@ -90,21 +90,7 @@
 }
 
 .browser-stage .browser-window img {
-  flex: 1;
-  min-height: 0;
-  object-fit: cover;
-  object-position: top left;
-}
-
-.browser-stage-fixed-image .browser-window {
-  background: #F6F5F2;
-}
-
-.browser-stage-fixed-image .browser-window img {
   flex: none;
-  width: 820px;
-  max-width: none;
-  height: auto;
 }
 
 .phone-frame {

@@ -101,6 +101,31 @@
   border-radius: 35px;
 }
 
+.post-hero-browser.browser-window {
+  left: 50%;
+  right: auto;
+  top: 64px;
+  width: 640px;
+  margin-left: -320px;
+}
+
+.post-hero-browser-contained.browser-window {
+  --hero-image-height: 392px;
+  left: 50%;
+  right: auto;
+  top: 50%;
+  width: calc(var(--hero-image-height) * 1.25);
+  max-width: calc(100% - 48px);
+  height: auto;
+  border-radius: 10px;
+  transform: translate(-50%, -50%);
+}
+
+.post-hero-browser-contained.browser-window img {
+  aspect-ratio: 10 / 8;
+  object-fit: contain;
+}
+
 .wide-photo {
   height: 480px;
 }
@@ -846,6 +871,18 @@
 
   .post-hero-phone img {
     border-radius: 26px;
+  }
+
+  .post-hero-browser.browser-window {
+    top: 32px;
+    left: 24px;
+    width: auto;
+    right: 24px;
+    margin-left: 0;
+  }
+
+  .post-hero-browser-contained.browser-window {
+    --hero-image-height: 236px;
   }
 
   .wide-photo,
