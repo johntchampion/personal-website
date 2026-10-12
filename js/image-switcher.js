@@ -18,10 +18,12 @@ function showSwitcherOption(switcher, options, selectedIndex) {
   const image = switcher.querySelector('[data-switcher-image]')
   const caption = switcher.querySelector('[data-switcher-caption]')
   const counter = switcher.querySelector('[data-switcher-counter]')
+  const address = switcher.querySelector('[data-switcher-address]')
 
   image.src = selected.dataset.image
   image.alt = selected.dataset.alt || ''
   if (caption) renderSwitcherCaption(caption, selected)
+  if (address && selected.dataset.address) address.textContent = selected.dataset.address
   if (counter) {
     counter.textContent = `${padToTwoDigits(selectedIndex + 1)} / ${padToTwoDigits(options.length)}`
   }
