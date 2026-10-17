@@ -14,7 +14,7 @@ const TERMINAL_RESPONSES = {
   ls: () => 'posts/  about/  contact/',
   pwd: () => '/home/johnchampion.dev',
   projects: () =>
-    'daily-story   dailystory.page\nonetimechat   onetimechat.app\nchess         webchess.app',
+    'daily-verses  verses.johnchampion.dev\ndaily-story   dailystory.page\nonetimechat   onetimechat.app\nchess         webchess.app',
   cd: changeSection,
   faith: () =>
     randomItem([

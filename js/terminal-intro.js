@@ -4,7 +4,7 @@ const TERMINAL_INTRO_SCRIPT = [
   { command: 'cat traits.txt' },
   { output: 'builds  ·  curious  ·  ships', accent: true },
   { command: 'ls posts/ --latest' },
-  { output: 'daily-story.md\nflying-from-the-ground-up.md\nonetimechat.md' },
+  { output: 'daily-verses.md\ndaily-story.md\nflying-from-the-ground-up.md' },
 ]
 
 const INTRO_KEYSTROKE_MS = 55

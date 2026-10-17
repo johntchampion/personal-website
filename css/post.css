@@ -465,12 +465,12 @@
 }
 
 .text-with-phone .phone-frame {
-  border-radius: 22px;
-  padding: 5px;
+  border-radius: 34px;
+  padding: 7px;
 }
 
 .text-with-phone .phone-frame img {
-  border-radius: 17px;
+  border-radius: 27px;
 }
 
 .text-with-phone figcaption {
@@ -582,6 +582,11 @@
 
 .level-switcher strong {
   color: var(--color-ink);
+}
+
+.level-switcher .phone-frame {
+  width: 280px;
+  margin: 0 auto;
 }
 
 .screenshot-picker {
@@ -937,6 +942,10 @@
 
   .level-switcher .section-rule {
     flex-wrap: wrap;
+  }
+
+  .level-switcher .phone-frame {
+    width: 220px;
   }
 
   .feature-grid,

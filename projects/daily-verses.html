@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Daily Verses - A scripture memorization app that walks you through each verse one blank at a time."
+    />
+    <meta name="author" content="John Champion" />
+    <title>Daily Verses - John Champion</title>
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="apple-touch-icon" href="../images/icon.png" />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:url"
+      content="https://johnchampion.dev/projects/daily-verses.html"
+    />
+    <meta
+      property="og:title"
+      content="Memorizing scripture, one blank at a time"
+    />
+    <meta
+      property="og:description"
+      content="How I built Daily Verses—a scripture memorization app that holds your hand through every verse—in a day, and polished it over the weeks that followed."
+    />
+    <meta
+      property="og:image"
+      content="https://johnchampion.dev/images/daily-verses/path-not-started.png"
+    />
+    <meta property="og:site_name" content="John Champion" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="../css/site.css" />
+    <link rel="stylesheet" href="../css/device-frames.css" />
+    <link rel="stylesheet" href="../css/post.css" />
+
+    <script src="../js/terminal-shortcut.js" defer></script>
+    <script src="../js/image-switcher.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header page-width">
+      <a href="../index.html" class="site-brand">
+        <span class="site-brand-name">John Champion</span>
+        <span class="site-brand-path">~/field-notes</span>
+      </a>
+      <nav class="site-nav" aria-label="Main">
+        <a href="../index.html#posts">Posts</a>
+        <a href="../index.html#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="post-intro page-width">
+        <a href="../index.html#posts" class="back-link">← All posts</a>
+        <div class="post-kind">
+          <span class="eyebrow">PROJECT</span>
+          <span class="post-topics"
+            >Scripture Memory · PWA · AI-Assisted Development</span
+          >
+        </div>
+        <h1 class="post-title">Memorizing scripture, one blank at a time</h1>
+        <p class="post-dek">
+          How I built Daily Verses—an app that walks you through each verse
+          until you know it by heart—in a single day, and what it taught me
+          about building software with AI.
+        </p>
+        <div class="post-facts">
+          <div class="post-fact-list">
+            <span
+              ><span class="post-fact-label">built with </span>Claude Code ·
+              Claude Design</span
+            >
+            <span><span class="post-fact-label">status </span>live</span>
+          </div>
+          <div class="button-row">
+            <a
+              href="https://verses.johnchampion.dev/welcome"
+              class="button button-compact"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View Live Site ↗</a
+            >
+            <a
+              href="https://github.com/johntchampion/daily-verses"
+              class="button button-compact"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><span class="monochrome-icon"
+                ><img src="../images/github-icon.svg" alt="" /></span
+              >GitHub Repository</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="wide-width">
+        <div class="post-hero phone-stage" style="--stage-color: #eadccb">
+          <div class="post-hero-phone phone-frame">
+            <img
+              src="../images/daily-verses/path-not-started.png"
+              alt="Today's path in Daily Verses, with nineteen verses queued for review."
+            />
+          </div>
+        </div>
+      </div>
+
+      <article class="prose space-before-l">
+        <h2>A Goal I Kept Falling Off Of</h2>
+        <p>
+          It's been a goal of mine for a while to build a habit of memorizing
+          Bible verses. Not just for the sake of doing it, but to remind myself
+          of what Scripture says. I believe the Bible is the perfect and
+          inerrant word of God, and it's the root of what I believe as truth. So
+          for everything theological that I believe, there's a passage of
+          Scripture I should be able to point to.
+        </p>
+        <blockquote class="pull-quote">
+          <p>
+            If I'm ever asked about what I believe, I want to recite the passage
+            behind it—word for word, chapter and verse.
+          </p>
+        </blockquote>
+        <p>
+          I started earlier this year by putting together 100 references I
+          wanted to memorize, specifically related to core Christian doctrine.
+          They covered a variety of themes, like the nature of God, the Trinity,
+          and salvation by grace through faith. I started with the first verse,
+          Genesis 1:1, then the second, Exodus 3:14–15—and then I fell off.
+        </p>
+        <h3>Why Memorization Is Hard</h3>
+        <p>
+          Scripture memorization is hard, especially when you're constantly
+          memorizing new verses. And there are a lot of pain points that make it
+          even more difficult than it needs to be. It takes time to find the
+          verse in the Bible several times a day, and even more if you're
+          working on several at once—constantly flipping between pages and
+          screens. Flashcards help some, but it isn't convenient to carry them,
+          store them, and keep them organized. A flashcard app is even worse;
+          just typing in each verse is tedious and doesn't feel productive.
+        </p>
+      </article>
+
+      <article class="prose space-before-l">
+        <h2>An Idea at the Coffee Shop</h2>
+        <p>
+          Then one morning before work, at the coffee shop, I had an idea: an
+          app that would hold my hand and guide me through each and every verse.
+        </p>
+        <p>
+          The app would present one verse at a time, with a couple of words
+          swapped for blanks. A word bank below would let me tap the right word
+          for each blank. Over time, the number of blanks would grow until the
+          entire verse was blank. I'd only focus on three verses at a time, and
+          every day I'd still review the verses I had already memorized.
+        </p>
+      </article>
+
+      <section
+        class="level-switcher medium-width space-before-l"
+        data-image-switcher
+      >
+        <div class="section-rule">
+          <h3 class="level-switcher-heading">In Practice: Half Blank</h3>
+          <div
+            class="segmented-control"
+            role="group"
+            aria-label="Practice exercise step"
+          >
+            <button
+              type="button"
+              data-switcher-option
+              aria-pressed="true"
+              data-image="../images/daily-verses/acts-2-38-not-started.png"
+              data-alt="Acts 2:38 at Medium difficulty, with half its words blank"
+              data-caption-title="Blanks"
+              data-caption="At Medium, half the words are blank. The ones left on the page act as anchors, and the word bank mixes in decoys like “remission” for “forgiveness.”"
+            >
+              Blanks
+            </button>
+            <button
+              type="button"
+              data-switcher-option
+              aria-pressed="false"
+              data-image="../images/daily-verses/acts-2-38-partial.png"
+              data-alt="Acts 2:38 partially filled in"
+              data-caption-title="Filling In"
+              data-caption="Tap the words in order and the verse rebuilds itself. The tracker above the card counts today’s rounds: two more, then it moves up to Hard."
+            >
+              Filling In
+            </button>
+            <button
+              type="button"
+              data-switcher-option
+              aria-pressed="false"
+              data-image="../images/daily-verses/acts-2-38-complete.png"
+              data-alt="Acts 2:38 complete, asking for the verse number"
+              data-caption-title="Reference"
+              data-caption="Knowing the words isn’t enough. Each round finishes by tapping the chapter and verse."
+            >
+              Reference
+            </button>
+          </div>
+        </div>
+        <div class="soft-panel">
+          <div class="phone-frame">
+            <img
+              src="../images/daily-verses/acts-2-38-not-started.png"
+              alt="Acts 2:38 at Medium difficulty, with half its words blank"
+              data-switcher-image
+            />
+          </div>
+        </div>
+        <p class="figure-caption" data-switcher-caption aria-live="polite">
+          <strong>Blanks:</strong> At Medium, half the words are blank. The ones left on the page act as anchors, and the word bank mixes in decoys like “remission” for “forgiveness.”
+        </p>
+      </section>
+
+      <article class="prose space-before-l">
+        <p>
+          As a verse climbs from Easy to Medium to Hard, fewer words stay on the
+          page to lean on. Once it graduates, nothing is left: every review
+          starts from a completely blank verse.
+        </p>
+      </article>
+
+      <section
+        class="level-switcher medium-width space-before-m"
+        data-image-switcher
+      >
+        <div class="section-rule">
+          <h3 class="level-switcher-heading">In Review: Fully Blank</h3>
+          <div
+            class="segmented-control"
+            role="group"
+            aria-label="Review exercise step"
+          >
+            <button
+              type="button"
+              data-switcher-option
+              aria-pressed="true"
+              data-image="../images/daily-verses/verse-genesis-1-1-not-started.png"
+              data-alt="Genesis 1:1 with every word blank and a word bank below"
+              data-caption-title="Blanks"
+              data-caption="A memorized verse comes back with every word blank—no anchors at all. Decoys like “universe” and “void” keep you from guessing."
+            >
+              Blanks
+            </button>
+            <button
+              type="button"
+              data-switcher-option
+              aria-pressed="false"
+              data-image="../images/daily-verses/verse-genesis-1-1-partial.png"
+              data-alt="Genesis 1:1 partially filled in"
+              data-caption-title="Filling In"
+              data-caption="With nothing on the page to lean on, the verse has to come from memory, one word at a time."
+            >
+              Filling In
+            </button>
+            <button
+              type="button"
+              data-switcher-option
+              aria-pressed="false"
+              data-image="../images/daily-verses/verse-genesis-1-1-complete.png"
+              data-alt="Genesis 1:1 complete, asking for the verse number"
+              data-caption-title="Reference"
+              data-caption="The reference still comes last, so the address sticks along with the words."
+            >
+              Reference
+            </button>
+          </div>
+        </div>
+        <div class="soft-panel">
+          <div class="phone-frame">
+            <img
+              src="../images/daily-verses/verse-genesis-1-1-not-started.png"
+              alt="Genesis 1:1 with every word blank and a word bank below"
+              data-switcher-image
+            />
+          </div>
+        </div>
+        <p class="figure-caption" data-switcher-caption aria-live="polite">
+          <strong>Blanks:</strong> A memorized verse comes back with every word blank—no anchors at all. Decoys like “universe” and “void” keep you from guessing.
+        </p>
+      </section>
+
+      <section class="medium-width space-before-xl">
+        <h2 class="section-heading">Key Features</h2>
+        <p class="section-lead">
+          Daily Verses takes the friction out of memorization so the only thing
+          left is the practice itself:
+        </p>
+        <div class="feature-grid">
+          <div class="feature">
+            <h3>Guided, Word by Word</h3>
+            <p>
+              Each verse starts with a few blanks and gradually loses
+              words—Easy, Medium, Hard—until you're reciting the whole thing
+              from memory.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Three at a Time</h3>
+            <p>
+              Only three verses are ever in practice. Go through one three times
+              in a day and it moves up a tier; three days of that and it
+              graduates.
+            </p>
+          </div>
+          <div class="feature">
+            <h3>Nothing Forgotten</h3>
+            <p>
+              Memorized verses come back on a widening schedule, so each day's
+              path mixes new practice with review of everything you already
+              know.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <figure class="wide-width space-before-l">
+        <div class="phone-fan">
+          <div class="phone-frame">
+            <img
+              src="../images/daily-verses/in-practice.png"
+              alt="The three verses currently in practice."
+            />
+          </div>
+          <div class="phone-frame">
+            <img
+              src="../images/daily-verses/path-in-progress.png"
+              alt="Today's path, two verses in."
+            />
+          </div>
+          <div class="phone-frame">
+            <img
+              src="../images/daily-verses/library-tab.png"
+              alt="The library of all 100 verses in canon order."
+            />
+          </div>
+        </div>
+        <figcaption class="figure-caption figure-caption-centered">
+          Three tabs: today's path, the three verses in practice, and the full
+          library of 100 verses.
+        </figcaption>
+      </figure>
+
+      <article class="prose space-before-l">
+        <h2>A Prototype in a Day</h2>
+        <p>
+          As soon as I had the idea, I opened a new Claude chat and started
+          free-writing. I went back and forth with the model to organize my
+          thoughts into a cohesive spec for a prototype, then had it generate a
+          plan for a PWA and a backend. From there, I started a Claude Code
+          session with Fable 5 and had it build both.
+        </p>
+        <blockquote class="pull-quote">
+          <p>That same day, I had a working prototype.</p>
+        </blockquote>
+        <p>
+          It was rough around the edges as far as UX goes, but it worked, and I
+          could see the potential as I poked around. There were plenty of
+          usability issues:
+        </p>
+        <ol class="numbered-list">
+          <li>
+            You had to constantly scroll up and down to see both the verse and
+            the word bank.
+          </li>
+          <li>
+            There was no way to pause a session midway through—you had to finish
+            or start over.
+          </li>
+          <li>
+            It wasn't clear to a new user how the progression system worked.
+          </li>
+          <li>There was only one translation, the World English Bible.</li>
+          <li>
+            Features meant for quality of life ended up being confusing, like
+            showing the first letter of each word in its blank.
+          </li>
+        </ol>
+        <p>
+          But the app worked surprisingly well for something developed so
+          rapidly.
+        </p>
+
+        <h2>Polished Through Daily Use</h2>
+        <p>
+          Over the next couple of weeks, I spent time polishing. The app was
+          installed on my iPhone, I was using it heavily every day, and I kept
+          noticing things to fix. Each day I'd make those tweaks, redeploy, and
+          see what I thought.
+        </p>
+        <p>
+          A small group of people used it alongside me. For the most part, their
+          feedback matched mine, but they had several ideas I'd never thought
+          of—like a translation preference, or the ability to rearrange the
+          verse queue.
+        </p>
+      </article>
+
+      <figure class="medium-width space-before-m">
+        <div class="drawer-comparison soft-panel">
+          <div class="drawer-comparison-state">
+            <span class="mono-note">up next</span>
+            <div class="phone-frame">
+              <img
+                src="../images/daily-verses/up-next-view.png"
+                alt="The Up Next queue with verses waiting in line."
+              />
+            </div>
+          </div>
+          <span class="drawer-comparison-gesture" aria-hidden="true"
+            >tap →</span
+          >
+          <div class="drawer-comparison-state">
+            <span class="mono-note">theme drawer</span>
+            <div class="phone-frame">
+              <img
+                src="../images/daily-verses/theme-drawer.png"
+                alt="A drawer for bringing a theme to the front of the queue."
+              />
+            </div>
+          </div>
+        </div>
+        <figcaption class="figure-caption">
+          Feedback from early users: nudge single verses up the queue, or bring
+          a whole theme to the front.
+        </figcaption>
+      </figure>
+
+      <article class="prose space-before-l">
+        <div class="text-with-phone">
+          <p>
+            At a certain point, the changes I was making got smaller and
+            smaller, and it became clear the project was maturing. The app was
+            done, and anything further would be an update. Today, Genesis
+            1:1—the first verse I tried and failed to keep going past—sits in my
+            library as memorized, coming back for review every two weeks.
+          </p>
+          <figure>
+            <div class="phone-frame">
+              <img
+                src="../images/daily-verses/verse-view.png"
+                alt="Genesis 1:1 detail view showing it as memorized"
+              />
+            </div>
+            <figcaption>Genesis 1:1</figcaption>
+          </figure>
+        </div>
+
+        <h2>How AI Changed the Way I Build</h2>
+        <p>
+          Between this project and my last one, AI agents have gotten really,
+          really good. They were capable enough that I could completely change
+          my development flow to take full advantage of them, and the result was
+          a product made faster, with fewer issues, and with better UX by
+          several factors.
+        </p>
+        <p>
+          Without AI, I'd have to be far more intentional about where my effort
+          went. Prototyping an idea was a huge investment, and if it turned out
+          sub-par or a dead end, that time was largely wasted. With AI tools, an
+          idea can be prototyped in minutes. Several prototypes can be made.
+          Iteration happens in minutes, not weeks—and this app took several
+          iterations before it became effective.
+        </p>
+        <p>
+          Prototypes are also where bugs love to creep in, but frontier models
+          rarely generate buggy code these days. When they do, the agents
+          themselves have the resources to take a bug report, debug it, test it,
+          and fix it.
+        </p>
+        <h3>Claude Design</h3>
+        <p>
+          Claude Design may have been the biggest game changer. Design is
+          tedious by hand—not just developing layout, navigation, and hierarchy,
+          but basic groundwork like building a design system. Claude Design let
+          me visualize several ideas at once instead of spending a full weekend
+          developing one concept. It fixed UX issues in minutes and updated
+          mockups across devices.
+        </p>
+        <blockquote class="pull-quote">
+          <p>
+            It let me focus on what the product is and how people use it, rather
+            than the minute details that matter less in a first version.
+          </p>
+        </blockquote>
+
+        <h2>What Is a Developer For?</h2>
+        <p>
+          This raises the question: what is a software developer good for if AI
+          can do all the work? For me, it frees me to do what I enjoy
+          most—creating something useful as best I can.
+        </p>
+        <p>
+          AI doesn't know what to create or who the customers are—that's up to
+          me. It doesn't know the future of the product or what we need to do to
+          prepare for it. It's up to me to make sure we build with that future
+          in mind, so we don't engineer ourselves into a corner.
+        </p>
+        <p>
+          Developers will need a broad understanding of the whole stack in the
+          coming years. Minute code details will matter less. Readability will
+          always be important, but soon developers will hardly be modifying code
+          by hand.
+        </p>
+        <h3>Built With</h3>
+        <div class="tag-list">
+          <span class="tag">Progressive Web App</span>
+          <span class="tag">Claude</span>
+          <span class="tag">Claude Code</span>
+          <span class="tag">Claude Design</span>
+        </div>
+      </article>
+
+      <section class="medium-width space-before-l">
+        <div class="try-it">
+          <div>
+            <h2>Try Daily Verses</h2>
+            <p>Start hiding Scripture in your heart, three verses at a time.</p>
+          </div>
+          <div class="button-row">
+            <a
+              href="https://verses.johnchampion.dev/welcome"
+              class="button button-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Visit Daily Verses ↗</a
+            >
+            <a
+              href="https://github.com/johntchampion/daily-verses"
+              class="button button-on-soft"
+              target="_blank"
+              rel="noopener noreferrer"
+              >View on GitHub</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <nav
+        class="more-posts page-width space-before-xl"
+        aria-label="More posts"
+      >
+        <div class="section-rule">
+          <span class="section-rule-title">More posts</span>
+          <a href="../index.html#posts" class="section-rule-note"
+            >All posts →</a
+          >
+        </div>
+        <div class="post-card-grid">
+          <a href="daily-story.html" class="post-card">
+            <div
+              class="post-card-image browser-stage"
+              style="--stage-color: #efe2c6"
+            >
+              <div class="browser-window browser-window-tiny">
+                <div class="browser-toolbar">
+                  <span class="browser-toolbar-dot"></span
+                  ><span class="browser-toolbar-dot"></span
+                  ><span class="browser-toolbar-dot"></span>
+                </div>
+                <img
+                  src="../images/daily-story/german-a2.png"
+                  alt="Daily Story interface"
+                />
+              </div>
+            </div>
+            <div>
+              <span class="eyebrow">PROJECT</span>
+              <h3>Teaching AI to write me a new story every day</h3>
+              <p>
+                Fresh reading practice in eight languages, calibrated to your
+                level.
+              </p>
+            </div>
+          </a>
+          <a href="chess.html" class="post-card">
+            <div
+              class="post-card-image phone-stage"
+              style="--stage-color: #e3d8c4"
+            >
+              <div class="phone-frame phone-frame-small">
+                <picture>
+                  <source
+                    media="(prefers-color-scheme: dark)"
+                    srcset="../images/chess/new-game-dark.png"
+                  />
+                  <img
+                    src="../images/chess/new-game-light.png"
+                    alt="Chess app on a phone"
+                  />
+                </picture>
+              </div>
+            </div>
+            <div>
+              <span class="eyebrow">PROJECT</span>
+              <h3>Chess, without the metrics</h3>
+              <p>No ratings, no streaks—just a quiet board.</p>
+            </div>
+          </a>
+        </div>
+      </nav>
+    </main>
+
+    <section id="contact" class="contact-section page-width">
+      <div class="contact-panel">
+        <div>
+          <h2 class="contact-title">Let's talk.</h2>
+          <p class="contact-text">
+            Open to new roles, projects, or a chat about code and flying.
+          </p>
+        </div>
+        <div class="button-row">
+          <a href="mailto:sate.falcons-7t@icloud.com" class="button"
+            ><span class="monochrome-icon"
+              ><img src="../images/email-icon.svg" alt="" /></span
+            >Email</a
+          >
+          <a
+            href="https://github.com/johntchampion"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span class="monochrome-icon"
+              ><img src="../images/github-icon.svg" alt="" /></span
+            >GitHub</a
+          >
+          <a
+            href="https://www.linkedin.com/in/john-champion-108ba8141/"
+            class="button"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><span class="monochrome-icon"
+              ><img src="../images/linkedin-icon.png" alt="" /></span
+            >LinkedIn</a
+          >
+        </div>
+      </div>
+      <footer class="site-footer">
+        <span>© 2026 John Champion</span>
+        <a
+          href="../index.html#open-terminal"
+          class="terminal-hint"
+          data-terminal-trigger
+          >press ~ for a terminal</a
+        >
+      </footer>
+    </section>
+  </body>
+</html>
